@@ -1,0 +1,18 @@
+.box_holder{:style=>"height:221px;"}
+  .red_banner{:style=>"background:none repeat scroll 0 0 #4C7CBE;color:white;font-size:18px;height:35px;margin-left:-20px;margin-top:-10px;text-align:center;width:109.5%;padding-top:10px"}
+    %b Please verify this is your account
+  .notice_message{:style=>"color:#3B3B3B;font-size:16px;margin:14px auto !important;text-align:left;width:370px;"}
+    %p
+      Before we export your information please confirm this
+      account is yours.
+      %br
+        %br
+          Enter your password to confirm your account. 
+        %br
+          - form_tag '/users/check_export_login' do
+            = password_field_tag (:password,"", :class => "", :style=>"border:3px solid greay;float:left;height:22px;margin-top:-7px;width:222px;")
+            =  image_submit_tag("/images/app/enter.png", :disable_with => "/images/app/enter.png", :class => 'hype-button-new' ,:style=>'margin-left:14px;margin-top:-10px;',:onclick=>"closeForCsv()")
+  %hr{:style=>"display:block !important;color:#B2B2B2;"}
+    = link_to "cancel" ,"#{export_my_data_user_profile_path(:user_id => current_user.id)}",:style=>"float:right" , :onclick=>"$.fancybox.close();" 
+          
+    

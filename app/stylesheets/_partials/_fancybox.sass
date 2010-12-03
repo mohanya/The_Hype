@@ -1,0 +1,613 @@
+body#searches, body#users_favorites
+  #fancybox-inner 
+    #form-header
+      padding-left: 20px
+      padding-top: 5px
+      padding-bottom: 5px
+      //width: 300px
+      img
+        float: left
+      span
+        float: left
+        position: relative
+        color: #cccccc
+        font-size: 20px
+        top: 10px
+        margin-left: 10px
+    #centered_forms
+      padding-right: 0px
+      padding-left: 10px
+      padding-top: 10px
+      padding-bottom: 10px
+      form
+        margin-top: 10px
+        padding-top: 0
+      background: #fff
+      width: 750px
+      .twitter, .facebook, .tags
+        label
+          line-height: 22px !important
+      .twitter
+        background: url('/images/icons/twitter_30.png') no-repeat scroll 98% 75% #bdcee5 !important
+        a.tip
+          right: 38px
+      .facebook 
+        background: url('/images/icons/facebook_30.png') no-repeat scroll 98% 75% #bdcee5 !important
+        a.tip
+          right: 38px
+      .field
+        background: #bdcee5
+        float: left
+        width: 230px
+        height: 35px
+        padding-left: 15px
+        margin-right: 5px
+        position: relative
+        a 
+          position: absolute
+          top: 10px
+          right: 100px
+        label
+          float: left
+          margin-bottom: 0px
+          color: #333333
+          font-size: 17px
+          line-height: 35px
+        span.format-info
+          display: block
+          line-height: 11px
+          font-size: 11px
+          color: #666
+          clear: both
+        span.red
+          color: #BC100E
+          line-height: 22px
+      #sub_categories_header
+        a 
+          display: block
+          border: 1px solid #3b3b3b
+          +border-radius(6px)
+          color: #999999
+          padding: 5px 10px 
+          margin: 5px
+          float: left
+          &.selected
+            background: #3b3b3b
+            color: #fff
+      .row
+        margin-bottom: 0px
+        height: 45px
+        padding-top: 5px
+        clear: both
+        select
+          float: left
+          width: 220px
+          padding: 10px 
+        input
+          float: left
+          width: 200px
+          height: 22px
+        label.error
+          color: #BC100E
+          margin-left: 40px
+          float: left
+          margin-top: 10px
+        .extra
+          width: 235px
+          float: right
+          span
+            display: block
+            font-size: 11px
+            color: #999
+  .step
+    .box
+      float: left
+      h1 
+        background-color: #bdcee5
+        padding: 6px 0px 6px 10px
+        margin-bottom: 10px
+        font-weight: normal
+        span
+          color: #666
+          font-size: 10px
+      h1.filled
+        background: #bdcee5 url('/images/app/event_header.png') left center no-repeat
+        padding-left:  20px
+      h2
+        margin-bottom: 5px
+        position: relative
+        a.tip
+          font-size: 13px
+          font-weight: normal
+          position: absolute
+          top: 0
+          right: 15px
+      .wait_spinner
+        position: absolute
+        top: 10%
+        left: 50%
+    div#first_box
+      width: 270px
+      padding-right: 34px
+      background: url('/images/app/fancy-arrow.png') top right no-repeat
+      #suggestions
+        position: relative
+        height: 210px
+        border: 2px solid #ccc
+        padding: 10px
+        padding-right: 0px
+        height: 210px
+        border-bottom: 0px
+        #primary_source, #secondary_source
+          position: relative
+          height: 80px
+          overflow: auto
+          margin-bottom: 5px
+        dl 
+          overflow: hidden
+          color: #4C7CBE 
+          margin-top: 5px
+          margin-bottom: 0px
+          dt
+            margin: 0px
+            margin-left: 10px
+            cursor: pointer
+        .empty
+          margin-top: 20px
+          margin-bottom: 20px
+          margin-left: 10px
+          color: #666
+      .edit_keyword
+        position: absolute
+        bottom: 0px
+        left: 0px
+        width: 100%
+      #edit_keyword_link, #close_keyword
+        width: 100%
+        background-color: #CCCCCC
+        text-align: center
+        padding: 5px 0px
+        display: block
+      #keyword_form
+        border: 2px solid #ccc
+        border-top: 0px
+        span
+          font-size: 11px
+          margin-left: 5px 
+          padding-top: 3px
+          display: block
+          color: #666
+      #new_keyword
+        margin: 5px
+        width: 140px
+    .second
+      margin-bottom: 30px
+      width: 410px
+      height: 290px
+      textarea#item_short_description
+        border: 2px solid #ccc
+        width: 405px
+        height: 220px
+    .third
+      width: 220px
+      height: 290px
+      margin-bottom: 30px
+      padding-left: 34px
+      background: url('/images/app/fancy-arrow.png') top left no-repeat
+      textarea#item_short_description
+        border: 2px solid #ccc
+        width: 215px
+        height: 220px
+    .added
+      width: 230px
+      border: 2px #bdcee5 solid
+      min-height: 270px
+      .content_section
+        padding: 10px
+        .hint
+          color: #666
+          font-size: 11px
+          padding-left: 5px
+          margin: 0px
+        .static_location
+          position: relative
+          height: 60px
+          padding-left: 10px
+        input.false-text
+          border: 0px
+          padding: 0
+          margin: 0
+          display: none
+          background-color: none
+          float: left
+          background: none
+        input#static_zip
+          width: 50px
+        input#static_city, input#static_state
+          width: 80px
+        input#static_address
+          width: 100px
+        .dynamic_location
+          position: relative
+          margin-top: 10px
+          label
+            position: absolute
+            top: 3px
+            left: 10px
+            font-size: 14px
+            color: #ccc
+          .find_event_additional_info, .find_place_additional_info
+            position: absolute
+            right: 0px
+            top: 0px
+        .static_time
+          position: relative
+          margin-bottom: 10px
+          .until
+            color: #999
+            margin-bottom: 3px
+            display: none
+        .change, .change_time
+          background-color: #CCCCCC
+          +border-radius(4px)
+          padding: 4px
+        #dynamic_time
+          margin-top: 10px
+        #dynamic_time, .dynamic_end_time
+          display: block
+          input
+            float: left
+            background-image: url("/images/app/calendar.png")
+            background-position: 99% center
+            background-repeat: no-repeat
+            border: 1px solid #999999
+            margin-top: 2px
+          input.time_input
+            width: 70px
+            float: right
+          input.date_input
+            width: 130px
+            margin-right: 5px
+            float: left
+          .end_date_handler,  .end_time_handler
+            background-image: url("/images/app/fancy-button.png")
+            background-position: left center
+            background-repeat: no-repeat
+            display: block
+            color: #4C7CBE
+            height: 16px
+            padding-top: 5px
+            padding-bottom: 5px
+            padding-left: 20px
+            &.unchecked
+              background-image: url("/images/app/fancy-empty-button.png")
+          .end_date_handler
+            float: left
+          .end_time_handler
+            float: right
+      #google_local_results
+        position: relative
+        height: 100px
+        overflow: auto
+        padding: 0
+        margin-top: 5px
+        display: none
+        dl
+          margin-bottom: 0px
+          overflow: hidden
+        dt
+          cursor: pointer
+          margin: 5px 0px 0px 5px 
+          color: #4C7CBE
+        .google_local_results_wait
+          position: absolute
+          top: 40%
+          left: 50%
+        .empty
+          margin-top: 10px
+          margin-left: 10px
+    .empty
+      color: #666
+    #image_box
+      border: 2px solid #bdcee5
+      position: relative
+      h1
+        margin-bottom: 0
+    #primary_image_display
+      text-align: center
+      float: right
+      height: 180px
+      width: 180px
+      img.current_image
+        max-width: 150px
+        max-height: 200px
+    #secondary_images_display
+      float: right
+      text-align: left
+      padding: 10px
+      width: 160px
+      .secondary
+        max-width:  50px
+        max-height: 50px
+        margin-left: 2px
+    .tabbed
+      overflow: auto
+      margin: 0px
+    #custom_image
+      label
+        position: absolute
+        top: 20px
+        left: 20px
+        font-size: 14px
+        color: #999
+      .search_image
+        max-width: 120px
+        max-height: 120px
+      p
+        margin: 10px
+        span.hint
+          color: #999
+          font-size: 11px
+          padding-left: 10px
+      p.error
+        color: #BC100E
+      .google_image_wrap
+        height: 140px
+        width: 140px
+        
+    #image_search_results
+      width: 530px
+      height: 200px
+      position: relative
+      .google_image_wrap
+        height: 170px
+        width: 170px
+    #image_search_results, #image_url_displays
+      .search_image
+        padding: 0px
+        margin: 10px
+      .google_image_wrap
+        float: left
+        input
+          visibility: hidden
+      .selected_image
+        border: solid 5px #225588
+      .selected_primary
+        border: solid 5px #BC100E
+      .image_search_results_wait
+        position: absolute
+        bottom: 50%
+        left: 50%
+        z-index: 22222
+        background: #fff
+        border: 4px solid #fff
+        +border-radius(4px)
+    #load_more_images
+      text-decoration: none
+      bottom: 0px
+      position: relative
+      display: block
+      text-align: center
+      font-size: 20px
+      width: 530px
+      background-color: #bdcee5
+      border-top: solid 2px #bbbbbb
+      &:hover
+        background-color: #333333
+        color: white
+    ul.select-filter
+      list-style: none
+      width: 250px
+      li
+        float: left
+        padding-top: 0px
+        margin: 10px 20px
+        a
+          +border-radius(9px)
+          width: 60px
+          padding-top: 2px 
+          padding-bottom: 2px 
+          text-align: center
+          display: block
+          &.selected, &:hover
+            background: #333333
+            color: white
+            text-decoration: none
+    .image-result-item
+      margin-left: 20px
+      img
+        max-height: 100px
+        max-width: 100px
+  #custom_image
+    width: 510px
+    height: 180px
+    text-align: left
+    display: none
+    padding: 10px
+    position: relative
+    #add_from_url
+      margin-bottom: 10px
+      margin-left: 10px
+      height: 20px
+      display: block
+      float: left
+    #new_image_url
+      width: 360px
+      margin-left: 10px
+      height: 20px
+      float: left
+      font-size: 16px
+      padding-top: 5px
+      padding-bottom: 5px
+    label
+      margin-left: 10px
+      
+  #hype-it
+    .current_image
+      float: left
+    h2
+      margin-top: 5px
+      margin-left: 10px
+      padding: 0px
+      width: 350px
+      float: left
+    span
+      margin-top: 5px
+      margin-left: 10px
+      width: 350px
+      float: left
+    .two-options-holder
+      float: right
+      width: 190px
+      margin-right: 20px
+      a.hype-item, a.hype-items
+        background: url(/images/app/hypeit.png) no-repeat
+        float: right
+        display: block
+        width: 113px
+        height: 44px
+        text-indent: -999px
+      a.show-item
+        float: right
+        margin-top: 10px
+        width: 150px
+        text-align: center
+        background-color: white
+        border: 1px solid #777777
+        padding: 4px
+        +border-radius(7px)
+        color: #333333
+        text-decoration: none
+        font-size: 14px
+        &:hover
+          background-color: #555555
+          border-color: white
+          color: white
+
+  .buttons
+    padding-right: 20px
+    line-height: 36px
+    margin-top: 10px
+    .red
+      display: block
+      float: left
+      color: #BC100E
+    #back_button 
+      input
+        background: none
+        border: 0px
+    #cancel
+      margin-right: 20px
+      color: #999
+      display: block
+      float: right
+
+body
+  fieldset#tags_pros_cons
+    label
+      float: left
+      margin-right: 5px
+      font-size: 16px
+      &.the-good
+        color: $blue_default
+      &.the-bad
+        color: #c10101
+        margin-right: 16px
+    .field
+      float: left
+
+#fancy_outer
+  overflow-x: hidden
+  #fancy_inner
+    background: #333333
+    #fancy_bg
+      span
+        color: white
+        font-weight: bold
+        font-size: 18px
+        position: relative
+        top: -25px
+        left: 25px
+      #centered_forms
+        #next-button
+          cursor: pointer
+          float: right
+        form
+          padding-top: 0 !important
+        max-width: 550px
+        background: white
+        .step
+          .row
+            .field
+              clear: both
+              display: block
+              margin: 10px 0
+              label
+                color: #666666
+                font-weight: bold
+              input
+                float: right
+                width: 200px
+                position: relative
+                top: -14px
+              select
+                margin-left: 63px
+              span
+                font-size: 10px
+                color: #999999
+                float: left
+                position: relative
+                top: -3px
+                left: 0px
+          .selected-image
+            float: left
+          #image-search-results
+            float: right
+            width: 300px
+            img
+              max-width: 100px
+        #add_final
+          img.current_image
+            float: left
+          label
+            float: left
+            position: relative
+            top: 35px
+            font-size: 14px
+            font-weight: bold
+            color: #666666
+            margin-left: 15px
+          a#submit_and_hype
+            position: relative
+            top: 26px
+            margin-left: 35px
+          hr
+            margin-top: 15px
+            background: #cccccc
+            color: #cccccc
+            border: 1px solid #cccccc
+            height: 1px
+            display: block !important
+
+.buttons
+  border-top: 1px solid #cccccc
+  padding-top: 10px
+  #next_button_div
+    input
+      background: url("/images/app/popup_next_button.png") no-repeat top left
+      cursor: pointer
+      width: 76px
+      height: 36px
+      float: right
+      border: 0
+      &.submit_button
+        background: url("/images/app/popup_finish_button.png") no-repeat top left  
+        width: 74px
+        height: 38px
+  #back_button
+    input
+      float: right
+      padding-top: 10px
+      border: 0
+      color: #666666
+      background-color: #eeeeee

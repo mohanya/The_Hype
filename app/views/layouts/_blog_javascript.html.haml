@@ -1,0 +1,8 @@
+/ Load jQuery
+= google_jquery :version => '1.3.2'#, :local => true
+/ Load jQuery UI
+= google_jqueryui :version => '1.7.1'#, :local => true
+/ Load Blog Specific
+=# javascript_include_tag '', :cache => "blog_specific_js"
+/ Load Defaults
+= javascript_include_tag 'jquery.coolinput.js', '/facebox/facebox.js', 'blog.js'

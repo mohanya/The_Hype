@@ -1,0 +1,6 @@
+= image_tag('icons/like.png') 
+-if size < 3 
+  =activity.likes.collect{|x| x.user.name}.join(' and ')
+-else
+  =size.to_s + ' people'
+Liked This

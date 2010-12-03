@@ -1,0 +1,17 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml", :'xmlns:fb' => "http://www.facebook.com/2008/fbml", :lang => "en", :'xml:lang' => "en"}
+  %head
+    = render :partial => "layouts/site_head"
+    = render :partial => "layouts/google"
+  %body{:id => body_id(params[:controller], params[:id])}
+    = fb_connect_javascript_tag
+    = init_fb_connect "XFBML", :js => :jquery
+    = render :partial => "shared/top_bar"
+    = render :partial => "shared/flash_container"
+    
+    #container
+      .content
+        - render :partial => "shared/hype_form"
+        = yield
+    = render :partial => "shared/footer"
+    = render :partial => "shared/google_analytics"

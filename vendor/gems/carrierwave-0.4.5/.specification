@@ -1,0 +1,491 @@
+--- !ruby/object:Gem::Specification 
+name: carrierwave
+version: !ruby/object:Gem::Version 
+  hash: 5
+  prerelease: false
+  segments: 
+  - 0
+  - 4
+  - 5
+  version: 0.4.5
+platform: ruby
+authors: 
+- Jonas Nicklas
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-02-19 00:00:00 -06:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: rubyforge
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 9
+        segments: 
+        - 2
+        - 0
+        - 3
+        version: 2.0.3
+  type: :development
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: gemcutter
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 19
+        segments: 
+        - 0
+        - 3
+        - 0
+        version: 0.3.0
+  type: :development
+  version_requirements: *id002
+- !ruby/object:Gem::Dependency 
+  name: newgem
+  prerelease: false
+  requirement: &id003 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 7
+        segments: 
+        - 1
+        - 5
+        - 2
+        version: 1.5.2
+  type: :development
+  version_requirements: *id003
+- !ruby/object:Gem::Dependency 
+  name: rspec
+  prerelease: false
+  requirement: &id004 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 15
+        segments: 
+        - 1
+        - 2
+        - 8
+        version: 1.2.8
+  type: :development
+  version_requirements: *id004
+- !ruby/object:Gem::Dependency 
+  name: cucumber
+  prerelease: false
+  requirement: &id005 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 211
+        segments: 
+        - 0
+        - 3
+        - 96
+        version: 0.3.96
+  type: :development
+  version_requirements: *id005
+- !ruby/object:Gem::Dependency 
+  name: activerecord
+  prerelease: false
+  requirement: &id006 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 5
+        segments: 
+        - 2
+        - 3
+        - 3
+        version: 2.3.3
+  type: :development
+  version_requirements: *id006
+- !ruby/object:Gem::Dependency 
+  name: sqlite3-ruby
+  prerelease: false
+  requirement: &id007 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 21
+        segments: 
+        - 1
+        - 2
+        - 5
+        version: 1.2.5
+  type: :development
+  version_requirements: *id007
+- !ruby/object:Gem::Dependency 
+  name: dm-core
+  prerelease: false
+  requirement: &id008 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 45
+        segments: 
+        - 0
+        - 9
+        - 11
+        version: 0.9.11
+  type: :development
+  version_requirements: *id008
+- !ruby/object:Gem::Dependency 
+  name: data_objects
+  prerelease: false
+  requirement: &id009 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 35
+        segments: 
+        - 0
+        - 9
+        - 12
+        version: 0.9.12
+  type: :development
+  version_requirements: *id009
+- !ruby/object:Gem::Dependency 
+  name: do_sqlite3
+  prerelease: false
+  requirement: &id010 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 45
+        segments: 
+        - 0
+        - 9
+        - 11
+        version: 0.9.11
+  type: :development
+  version_requirements: *id010
+- !ruby/object:Gem::Dependency 
+  name: sequel
+  prerelease: false
+  requirement: &id011 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 15
+        segments: 
+        - 3
+        - 2
+        - 0
+        version: 3.2.0
+  type: :development
+  version_requirements: *id011
+- !ruby/object:Gem::Dependency 
+  name: rmagick
+  prerelease: false
+  requirement: &id012 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 39
+        segments: 
+        - 2
+        - 10
+        - 0
+        version: 2.10.0
+  type: :development
+  version_requirements: *id012
+- !ruby/object:Gem::Dependency 
+  name: mini_magick
+  prerelease: false
+  requirement: &id013 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 21
+        segments: 
+        - 1
+        - 2
+        - 5
+        version: 1.2.5
+  type: :development
+  version_requirements: *id013
+- !ruby/object:Gem::Dependency 
+  name: mongo_mapper
+  prerelease: false
+  requirement: &id014 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 23
+        segments: 
+        - 0
+        - 6
+        - 8
+        version: 0.6.8
+  type: :development
+  version_requirements: *id014
+- !ruby/object:Gem::Dependency 
+  name: mongoid
+  prerelease: false
+  requirement: &id015 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 63
+        segments: 
+        - 0
+        - 10
+        - 4
+        version: 0.10.4
+  type: :development
+  version_requirements: *id015
+- !ruby/object:Gem::Dependency 
+  name: aws-s3
+  prerelease: false
+  requirement: &id016 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        - 6
+        - 2
+        version: 0.6.2
+  type: :development
+  version_requirements: *id016
+- !ruby/object:Gem::Dependency 
+  name: timecop
+  prerelease: false
+  requirement: &id017 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 27
+        segments: 
+        - 0
+        - 3
+        - 4
+        version: 0.3.4
+  type: :development
+  version_requirements: *id017
+- !ruby/object:Gem::Dependency 
+  name: json
+  prerelease: false
+  requirement: &id018 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 1
+        segments: 
+        - 1
+        - 1
+        - 9
+        version: 1.1.9
+  type: :development
+  version_requirements: *id018
+- !ruby/object:Gem::Dependency 
+  name: hoe
+  prerelease: false
+  requirement: &id019 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 27
+        segments: 
+        - 2
+        - 5
+        - 0
+        version: 2.5.0
+  type: :development
+  version_requirements: *id019
+description: |-
+  * RDoc Documentation {available at Rubyforge}[http://carrierwave.rubyforge.org/rdoc].
+  * Source code {hosted at GitHub}[http://github.com/jnicklas/carrierwave]
+  * Please {report any issues}[http://github.com/jnicklas/carrierwave/issues] on GitHub
+  * Please direct any questions at the {mailing list}[http://groups.google.com/group/carrierwave]
+  * Check out the {example app}[http://github.com/jnicklas/carrierwave-example-app]
+email: 
+- jonas.nicklas@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- History.txt
+- Manifest.txt
+- features/fixtures/bork.txt
+- features/fixtures/monkey.txt
+- README.rdoc
+files: 
+- Generators
+- History.txt
+- Manifest.txt
+- README.rdoc
+- Rakefile
+- carrierwave.gemspec
+- cucumber.yml
+- features/caching.feature
+- features/download.feature
+- features/file_storage.feature
+- features/file_storage_overridden_filename.feature
+- features/file_storage_overridden_store_dir.feature
+- features/file_storage_reversing_processor.feature
+- features/fixtures/bork.txt
+- features/fixtures/monkey.txt
+- features/grid_fs_storage.feature
+- features/mount_activerecord.feature
+- features/mount_datamapper.feature
+- features/step_definitions/activerecord_steps.rb
+- features/step_definitions/caching_steps.rb
+- features/step_definitions/datamapper_steps.rb
+- features/step_definitions/download_steps.rb
+- features/step_definitions/file_steps.rb
+- features/step_definitions/general_steps.rb
+- features/step_definitions/mount_steps.rb
+- features/step_definitions/store_steps.rb
+- features/support/activerecord.rb
+- features/support/datamapper.rb
+- features/support/env.rb
+- features/versions_basics.feature
+- features/versions_nested_versions.feature
+- features/versions_overridden_filename.feature
+- features/versions_overriden_store_dir.feature
+- lib/carrierwave.rb
+- lib/carrierwave/compatibility/paperclip.rb
+- lib/carrierwave/core_ext/blank.rb
+- lib/carrierwave/core_ext/file.rb
+- lib/carrierwave/core_ext/inheritable_attributes.rb
+- lib/carrierwave/core_ext/module_setup.rb
+- lib/carrierwave/mount.rb
+- lib/carrierwave/orm/activerecord.rb
+- lib/carrierwave/orm/datamapper.rb
+- lib/carrierwave/orm/mongoid.rb
+- lib/carrierwave/orm/mongomapper.rb
+- lib/carrierwave/orm/sequel.rb
+- lib/carrierwave/processing/image_science.rb
+- lib/carrierwave/processing/mini_magick.rb
+- lib/carrierwave/processing/rmagick.rb
+- lib/carrierwave/sanitized_file.rb
+- lib/carrierwave/storage/abstract.rb
+- lib/carrierwave/storage/cloud_files.rb
+- lib/carrierwave/storage/file.rb
+- lib/carrierwave/storage/grid_fs.rb
+- lib/carrierwave/storage/right_s3.rb
+- lib/carrierwave/storage/s3.rb
+- lib/carrierwave/test/matchers.rb
+- lib/carrierwave/uploader.rb
+- lib/carrierwave/uploader/cache.rb
+- lib/carrierwave/uploader/callbacks.rb
+- lib/carrierwave/uploader/configuration.rb
+- lib/carrierwave/uploader/default_url.rb
+- lib/carrierwave/uploader/download.rb
+- lib/carrierwave/uploader/extension_whitelist.rb
+- lib/carrierwave/uploader/mountable.rb
+- lib/carrierwave/uploader/processing.rb
+- lib/carrierwave/uploader/proxy.rb
+- lib/carrierwave/uploader/remove.rb
+- lib/carrierwave/uploader/store.rb
+- lib/carrierwave/uploader/url.rb
+- lib/carrierwave/uploader/versions.rb
+- merb_generators/uploader_generator.rb
+- rails_generators/uploader/USAGE
+- rails_generators/uploader/templates/uploader.rb
+- rails_generators/uploader/uploader_generator.rb
+- script/console
+- script/destroy
+- script/generate
+- spec/compatibility/paperclip_spec.rb
+- spec/fixtures/bork.txt
+- spec/fixtures/landscape.jpg
+- spec/fixtures/portrait.jpg
+- spec/fixtures/test.jpeg
+- spec/fixtures/test.jpg
+- spec/mount_spec.rb
+- spec/orm/activerecord_spec.rb
+- spec/orm/datamapper_spec.rb
+- spec/orm/mongoid_spec.rb
+- spec/orm/mongomapper_spec.rb
+- spec/orm/sequel_spec.rb
+- spec/processing/image_science_spec.rb
+- spec/processing/mini_magick_spec.rb
+- spec/processing/rmagick_spec.rb
+- spec/sanitized_file_spec.rb
+- spec/spec_helper.rb
+- spec/storage/cloudfiles_spec.rb
+- spec/storage/grid_fs_spec.rb
+- spec/storage/right_s3_spec.rb
+- spec/storage/s3_spec.rb
+- spec/uploader/cache_spec.rb
+- spec/uploader/configuration_spec.rb
+- spec/uploader/default_url_spec.rb
+- spec/uploader/download_spec.rb
+- spec/uploader/extension_whitelist_spec.rb
+- spec/uploader/mountable_spec.rb
+- spec/uploader/paths_spec.rb
+- spec/uploader/processing_spec.rb
+- spec/uploader/proxy_spec.rb
+- spec/uploader/remove_spec.rb
+- spec/uploader/store_spec.rb
+- spec/uploader/url_spec.rb
+- spec/uploader/versions_spec.rb
+has_rdoc: true
+homepage: http://carrierwave.rubyforge.org
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --main
+- README.rdoc
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: carrierwave
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: "* RDoc Documentation {available at Rubyforge}[http://carrierwave.rubyforge.org/rdoc]"
+test_files: []
+

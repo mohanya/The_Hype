@@ -1,0 +1,20 @@
+- comment = conversation
+- margin =  (comment.depth < 5 ) ? (comment.depth * 100)  : 400
+- counter  =counter || 1 
+-unless counter == 0
+  %hr.comment-separator{:style => "margin-left: #{margin}px;"}
+.conversation_comment.clearfix{:style => "margin-left: #{margin}px;", :id => comment.id, :class => comment.parent_id? ? "reply" : ""}
+  = image_tag comment.user.profile.avatar.url(:small), :class => "avatar"
+  .comment-content
+    %span.user_link= link_to h(comment.user.name), user_path(comment.user)
+    %span.comment_text= h comment.comment_text
+    .comment-meta
+      %span.time= time_ago_in_words(comment.created_at) + " ago"
+      - if current_user and Like.first(:conditions => {:object_id => comment.id, :object_type => comment.class.name, :user_id => current_user.id})
+        %span.reply_image 
+          Liked
+      - elsif current_user
+        %span.reply_image= link_to (image_tag('icons/like.png') + " Like", "javascript:;", :class => 'like_link', :id => "like-#{comment.id}")
+      //%span.reply_image= link_to (image_tag('icons/flag.png') + " Flag", "#", :class => 'flag_link', :id => @commentable.id)
+      %span.reply_image= link_to (image_tag('icons/arrow-grey.png') + " Reply", "javascript:;", :class => 'reply_link', :id => @commentable.id)
+.clear

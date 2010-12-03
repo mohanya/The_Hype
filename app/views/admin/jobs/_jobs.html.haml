@@ -1,0 +1,8 @@
+%h2 Jobs
+- if @jobs.blank?
+  %p No jobs were found.
+- else
+  %table{:class => "listings sortable", :cellspacing => "0", :cellpadding => "0"}
+    = render :partial => 'thead'
+    %tbody
+      = render :partial => "job", :collection => @jobs

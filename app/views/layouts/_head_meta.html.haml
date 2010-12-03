@@ -1,0 +1,17 @@
+/ Content Optimization
+- if @page_description
+  %meta{:content => "#{@partial_title}", :property => "og:title"}
+  %meta{:content => "#{@page_description}", :property => "og:description"}
+  %meta{:name => 'medium', :content => 'medium_type'}
+- if @page_keywords
+  %meta{:name => "keywords", :content => "#{@page_keywords}"}
+- if @page_image_src
+  %link{:rel => 'image_src', :href => @page_image_src}
+
+/ Search Engine Indexing
+%meta{:name => "robots", :content => "index, follow"}
+%meta{:name => "robots", :content => "noodp, noydir"}
+%meta{:name => "googlebot", :content => "index, follow"}
+/ Set the Base URL
+%base{:href => root_url}
+%link{ :rel =>"shortcut icon", :href =>"/favicon.ico", :type=> "image/x-icon"}

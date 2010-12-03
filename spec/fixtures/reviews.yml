@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  item_id: 1
+  criteria_1: 1
+  criteria_2: 1
+  criteria_3: 1
+  comments: MyText
+  recommended: false
+  shared: false
+
+two:
+  user_id: 1
+  item_id: 1
+  criteria_1: 1
+  criteria_2: 1
+  criteria_3: 1
+  comments: MyText
+  recommended: false
+  shared: false

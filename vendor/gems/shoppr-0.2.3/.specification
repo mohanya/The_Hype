@@ -1,0 +1,209 @@
+--- !ruby/object:Gem::Specification 
+name: shoppr
+version: !ruby/object:Gem::Version 
+  hash: 17
+  prerelease: false
+  segments: 
+  - 0
+  - 2
+  - 3
+  version: 0.2.3
+platform: ruby
+authors: 
+- Wynn Netherland
+- Jim Mulholland
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-06-16 00:00:00 -05:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: hashie
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - "="
+      - !ruby/object:Gem::Version 
+        hash: 23
+        segments: 
+        - 0
+        - 2
+        - 0
+        version: 0.2.0
+  type: :runtime
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: httparty
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 11
+        segments: 
+        - 0
+        - 5
+        - 0
+        version: 0.5.0
+  type: :runtime
+  version_requirements: *id002
+- !ruby/object:Gem::Dependency 
+  name: thoughtbot-shoulda
+  prerelease: false
+  requirement: &id003 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id003
+- !ruby/object:Gem::Dependency 
+  name: jeremymcanally-matchy
+  prerelease: false
+  requirement: &id004 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id004
+- !ruby/object:Gem::Dependency 
+  name: mocha
+  prerelease: false
+  requirement: &id005 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id005
+- !ruby/object:Gem::Dependency 
+  name: fakeweb
+  prerelease: false
+  requirement: &id006 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id006
+- !ruby/object:Gem::Dependency 
+  name: hashie
+  prerelease: false
+  requirement: &id007 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id007
+description: 
+email: jim@squeejee.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README.markdown
+files: 
+- History
+- License
+- README.markdown
+- Rakefile
+- VERSION.yml
+- lib/shoppr.rb
+- lib/shoppr/api_exception.rb
+- lib/shoppr/attribute.rb
+- lib/shoppr/attribute_selection.rb
+- lib/shoppr/attribute_value.rb
+- lib/shoppr/category.rb
+- lib/shoppr/category_selection.rb
+- lib/shoppr/client.rb
+- lib/shoppr/client_tracking.rb
+- lib/shoppr/consumer_review.rb
+- lib/shoppr/dynamic_navigation_history.rb
+- lib/shoppr/feature.rb
+- lib/shoppr/feature_group.rb
+- lib/shoppr/feature_rating.rb
+- lib/shoppr/general_search_response.rb
+- lib/shoppr/generic_response.rb
+- lib/shoppr/image.rb
+- lib/shoppr/keyword_search.rb
+- lib/shoppr/offer.rb
+- lib/shoppr/offer_selection.rb
+- lib/shoppr/product.rb
+- lib/shoppr/product_selection.rb
+- lib/shoppr/search_history.rb
+- lib/shoppr/server_detail.rb
+- lib/shoppr/store.rb
+- test/fixtures/general_search_specs_offers_reviews.xml
+- test/fixtures/generic_response.xml
+- test/fixtures/nikon.xml
+- test/fixtures/no_options.xml
+- test/shoppr/client_test.rb
+- test/shoppr/general_search_response_test.rb
+- test/shoppr/generic_response_test.rb
+- test/test_helper.rb
+has_rdoc: true
+homepage: http://github.com/squeejee/shoppr
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: shoppr
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: Ruby wrapper for the Shopping.com API
+test_files: 
+- test/shoppr/client_test.rb
+- test/shoppr/general_search_response_test.rb
+- test/shoppr/generic_response_test.rb
+- test/test_helper.rb

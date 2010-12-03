@@ -1,0 +1,35 @@
+%div#congrats.signup-steps.index
+  = image_tag('/images/app/header4.png', :class => 'congrats-img')
+  .signup-step
+    = render :partial => 'shared/signup_wizard', :locals => {:current_step => 'congrats'}
+    .steps
+      .step
+        %h2 Congratulations #{@user.profile.first_name},
+        %p 
+          Your friends can now learn more about your consumer style and knowledge as well as discover
+          what gets you Hyped! If you did not complete your profile, no worries just select
+          =image_tag '/images/app/profile/complete-it-button.png'
+          from your dashboard on your homepage at anytime. To change your settings select
+          =image_tag '/images/app/settings_button.png'
+          on the top navigation bar above.
+        %p 
+          Now it is time to gather 
+          %u Your
+          Crowd of trusted sources. Select 'Invite' to find out if any of your friends are already on The Hype
+          and to invite those that are not.
+        %p 
+          The Hype is a place to exchange and find authentic, trusted consumer knowledge. It is your site and
+          is entirely powered by consumers like you. Please let us know how we can make it a more reliable, simpler
+          and useful service. Thank you.
+
+        %p.signature Now go spread some consumer wisdom!
+    .clearfix
+    .navigation
+      .button
+        = button_to("", new_friends_facebook_path, :id => 'share-and-invite-friends', :method => :get)
+      .links
+        = link_to('Go Back', scope_path(current_user, :scope => 'settings'), :class => 'back')
+        or
+        = link_to('Skip this step', root_path)
+      = link_to('No thanks take me to the site', root_path, :id => 'to-the-site')
+      

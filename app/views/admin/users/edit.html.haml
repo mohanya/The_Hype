@@ -1,0 +1,15 @@
+.columns.one.clearfix
+  .column.one
+    %h1= "Editing #{@user.login}"
+    
+    / Edit user form
+    - form_for @user, :url => admin_user_url(@user), :builder => HandcraftedFormBuilder do |form|
+      = form.text_field :login, :example => "frank"
+      = form.text_field :email, :example => "Frank@gethandcrafted.com"
+      = form.password_field :password
+      = form.password_field :password_confirmation
+      - fields_for @user.profile, :builder => HandcraftedFormBuilder do |profile|
+        = profile.text_field :first_name, :example => "Frank"
+        = profile.text_field :last_name, :example => "Miller"
+        = profile.check_box :subscribed, :label => "Subscribed to the newsletter?"
+      = form.submit "Update the user account"

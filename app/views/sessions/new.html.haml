@@ -1,0 +1,51 @@
+:CSS
+  .fb_connect_button a#RES_ID_fb_login img#RES_ID_fb_login_image {filter:alpha(opacity=0);}
+  a.fbconnect_login_button{filter:alpha(opacity=0);}
+
+.index#user-signin
+  .span-13
+    #signin-form  
+      #signin-area
+        %h2 Sign in to The Hype
+        - form_tag session_path do
+          %fieldset
+            %legend Login Form
+            .row
+              = label_tag 'login', "Username or email", {:style => "top:3px;"}
+              = text_field_tag 'login', nil, {:class => 'label_example'}
+              =link_to "Forgot your username?", new_password_url(), :class => "forgotten_password"
+            .row
+              = label_tag 'log-in', "password", {:style => "top:3px;"}
+              = password_field_tag 'password', nil, {:class => "label_example"}
+              = link_to "Forgot your password?", new_password_url(), :class => "forgotten_password"
+          
+            .save_actions
+              %div{:style => "position: relative; padding: 0pt; margin: 0pt 0pt 10px -3px;"}
+                %label
+                  = check_box_tag 'remember_me'
+                  %span{:style => "position: absolute; top: 2px;"}
+                    Remember me
+              = submit_tag '', {:id => 'sign-in-button'}
+                
+        %h3 Use Facebook to Sign in
+        .fb_connect_button
+          -#= fb_login_button('window.location = "/users/new?id_provider=facebook";', :length => :long)
+          -#=image_tag("/images/app/facebook-connect-button1.png",:style=>"position:absolute;top:327px;left:18px;")
+          = link_to image_tag('/images/app/facebook-connect-button1.png',:style=>"position:absolute;top:327px;left:18px;"), root_url
+      = image_tag('app/signin-separator.png', :class => 'signin-separator')
+      #signup-area
+        %h2 Don't have an account?
+        %h3 Create one in seconds
+        .row.join
+          -#= link_to '', new_user_path, :class => 'join-link'
+          = link_to '', root_url, :class => 'join-link'
+          = link_to 'Learn more', '#', :class => 'learn-more-link'
+        %h3 Use Facebook to create one
+        .fb_connect_button
+          -#= fb_login_button('window.location = "/users/new?id_provider=facebook";', :length => :long)
+          -#=image_tag("/images/app/facebook-connect-button1.png",:style=>"position:absolute;top:243px;")
+          = link_to image_tag('/images/app/facebook-connect-button1.png',:style=>"position:absolute;top:243px;"), root_url
+      %br.clear
+
+  = render :partial => 'shared/reasons_to_join', :locals => {:show_title => true}
+  

@@ -1,0 +1,15 @@
+lastfm:
+  api_key: 3264b20f033ca143aa6d13d08a2ad0f2 
+  api_secret: fb9c60f268aae2fbb3ab0d5c37bc05b1
+upcoming:
+  api_key: 38dfef5f20 
+moviedb:
+  api_key: c29a0b0be0891bdf0ae3aef6d2613c18 
+googleajax:
+  api_key: 'ABQIAAAA1XbMiDxx_BTCY2_FkPh06RRaGTYH6UMl8mADNa0YKuWNNa8VNxQEerTAUcfkyrr6OwBovxn7TDAH5Q'
+  referer: 'http://test.thehypenetworks.com'
+googlemaps:
+  api_key:
+    localhost: 'ABQIAAAApKZgVIH31FH8j-7Knz9_FRT2yXp_ZAY8_ufC3CFXhHIE1NvwkxRXMdQ5Wi4WK24Chgh6da_moru07w'
+    thehype_local: 'ABQIAAAAUZFlSPDyitH_E6dqAnJ1XhQdyu46IXkDGsqRl54QGv7x3ppnVRRTkZEponXxAUeBSH21lSazrW0pkQ'
+    thehype_test: 'ABQIAAAAZAtLy8JmXf5vBnkgY6VleBQtl9Cj0idhJ93bdmC3GHhkS6PSNRR8gNdEG-bmJViIg32ciA6GmVuzaQ'

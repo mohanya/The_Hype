@@ -1,0 +1,6 @@
+.hypes.tab#reviews
+  .clearfix
+    -if !@reviews.empty?
+      = render :partial => 'reviews/review_block', :object =>  @reviews
+    -else
+      = render :partial => 'reviews/no_reviews'

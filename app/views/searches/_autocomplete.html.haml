@@ -1,0 +1,25 @@
+-unless @item_results.empty?
+  %h1 Items
+  %ul
+    -@item_results.each do |item|
+      %li.display_box{:rel => item_path(item), :onClick => "toPage(this.id);", :id => item.id}
+        %span.image_holder
+          = link_to image_tag(item.thumb_image), item_path(item.id), :title => item.short_description
+        %span.name
+          = link_to(truncate(h(item.name), :length => 35), item_path(item))
+        %span.category
+          = item.category.name if item.category
+-unless @user_results.empty?
+  %h1 Users
+  %ul
+    -@user_results.each do |user|
+      %li.display_box{:rel => user_path(user), :onClick => "toPage(this.id);", :id => user.id}
+        %span.image_holder
+          = link_to(image_tag(user.profile.avatar.url(:small), :class => 'photo'), user_path(user))
+        %span.user_name
+          = link_to(truncate(h(user.name), :length => 35), user_path(user))
+
+
+-unless @user_results.empty? and  @item_results.empty?
+  #all-results-footer  
+    = link_to('See all results', search_path(:query => @query))

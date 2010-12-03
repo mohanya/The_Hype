@@ -1,0 +1,12 @@
+#similar_items
+  - @items.each do |i|
+    .item
+      .item_image
+        = link_to image_tag(i[:image_url]), i[:link]
+      %h4= link_to i[:name], i[:link]
+      .item_category{:style => 'color: #a2a2a2; font-size: 90%'}
+        =h ItemCategory.find_by_id(i[:category]).name
+      - if i[:score] and i[:score] > 0
+        .meta{ :class => i[:score_color] }
+          .rating
+            = i[:score].round(1)

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+  <results xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" for="hearts">
+    <opensearch:Query role="request" searchTerms="hearts" startPage="1"/>
+    <opensearch:totalResults>1163</opensearch:totalResults>
+    <opensearch:startIndex>0</opensearch:startIndex>
+    <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+    <albummatches>
+      <album>
+        <name>Sgt. Pepper's Lonely Hearts Club Band</name>
+        <artist>The Beatles</artist>
+        <id>1416528</id>
+        <url>http://www.last.fm/music/The+Beatles/Sgt.+Pepper%27s+Lonely+Hearts+Club+Band</url>
+        <image size="small">http://userserve-ak.last.fm/serve/34s/36505421.png</image>
+        <image size="medium">http://userserve-ak.last.fm/serve/64s/36505421.png</image>
+        <image size="large">http://userserve-ak.last.fm/serve/126/36505421.png</image>
+        <image size="extralarge">http://userserve-ak.last.fm/serve/300x300/36505421.png</image>
+        <streamable>0</streamable>
+      </album>
+      <album>
+        <name>Some Hearts</name>
+        <artist>Carrie Underwood</artist>
+        <id>2317937</id>
+        <url>http://www.last.fm/music/Carrie+Underwood/Some+Hearts</url>
+        <image size="small">http://userserve-ak.last.fm/serve/34s/32495679.jpg</image>
+        <image size="medium">http://userserve-ak.last.fm/serve/64s/32495679.jpg</image>
+        <image size="large">http://userserve-ak.last.fm/serve/126/32495679.jpg</image>
+        <image size="extralarge">http://userserve-ak.last.fm/serve/300x300/32495679.jpg</image>
+        <streamable>1</streamable>
+      </album>
+      <album>
+        <name>Hearts of Oak</name>
+        <artist>Ted Leo and The Pharmacists</artist>
+        <id>2029289</id>
+        <url>http://www.last.fm/music/Ted+Leo+and+The+Pharmacists/Hearts+of+Oak</url>
+        <image size="small">http://images.amazon.com/images/P/B000084T2V.01.MZZZZZZZ.jpg</image>
+        <image size="medium">http://images.amazon.com/images/P/B000084T2V.01.MZZZZZZZ.jpg</image>
+        <image size="large">http://images.amazon.com/images/P/B000084T2V.01.MZZZZZZZ.jpg</image>
+        <image size="extralarge">http://images.amazon.com/images/P/B000084T2V.01.MZZZZZZZ.jpg</image>
+        <streamable>1</streamable>
+      </album>
+    </albummatches>
+  </results>
+</lfm>

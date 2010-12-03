@@ -1,0 +1,476 @@
+html,
+body {
+  height: 100%;
+  margin: 0 0 1px 0;
+  padding: 0;
+}
+
+body {
+  font: 13px Arial, Helvetica, sans-serif;
+  color: #353535;
+}
+
+a {
+  color: #4c7cbe;
+  text-decoration: none;
+}
+a:hover {
+  color: #225588;
+  text-decoration: underline;
+}
+a:focus, a:active {
+  outline: none;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+p img {
+  padding: 0;
+  max-width: 100%;
+}
+
+img.centered {
+  display: block;
+  margin: 15px auto;
+  padding: 0;
+}
+img.alignright {
+  display: inline;
+  float: left;
+  margin: 15px 20px;
+}
+img.alignleft {
+  display: inline;
+  float: right;
+  margin: 15px 20px;
+}
+
+.hidden,
+hr {
+  display: none !important;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+form, fieldset {
+  border: 0;
+}
+
+#warning,
+#notice {
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  position: relative;
+  z-index: 50;
+  top: 0px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #333333;
+  opacity: 1;
+}
+
+#notice #warning_wrap,
+#notice #notice_wrap, #warning #warning_wrap, #warning #notice_wrap {
+  padding: 10px 0;
+}
+#notice #warning_wrap p,
+#notice #notice_wrap p, #warning #warning_wrap p, #warning #notice_wrap p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#notice #warning_wrap p span,
+#notice #notice_wrap p span, #warning #warning_wrap p span, #warning #notice_wrap p span {
+  margin: 0;
+}
+
+#warning {
+  background: #d91822;
+}
+
+#notice {
+  background: #7fbe66;
+}
+
+div#errorExplanation {
+  background: #cc0000;
+  border: 3px solid #b00000;
+  color: white;
+  margin: 0px 10px 15px 0;
+  padding: 10px 15px;
+}
+div#errorExplanation h2 {
+  border-bottom: 1px solid #b00000;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+div#errorExplanation p {
+  font-size: 12px;
+}
+div#errorExplanation ul {
+  margin: 10px 0;
+  padding: 0 0 0 14px;
+}
+div#errorExplanation ul li {
+  font-size: 12px;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+body {
+  color: #353535;
+  background: url("/images/landing/bg.png") repeat-x top left;
+  color: white;
+  font-size: 15px;
+  background:url("/images/landing/landing_page_background_revised_darker.PNG") no-repeat  0 64px;
+}
+
+#container {
+  width: 980px;
+  margin: 0px auto;
+  
+}
+
+.column {
+  float: left;
+}
+
+.logo {
+  width: 310px;
+  padding-right:30px;
+  height: 532px;
+  background:url(../../images/landing/1.png) no-repeat bottom left;
+}
+.logo img {
+  margin-top: 8px;
+}
+
+.main {
+  width: 500px;
+  height: 532px;
+}
+.main ul {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px;
+  clear: both;
+  display: block;
+  list-style-type: none;
+}
+.main ul li {
+  width: 156px;
+  float: left;
+}
+.main ul li a {
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: lighter;
+  padding: 5px 10px;
+  font-weight: bold;
+  text-shadow: 0.2em 0.2em 0.2em #333333;
+  color: #cccccc;
+}
+.main ul li a:hover, .main ul li a:active {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background: black;
+  color: white;
+  text-decoration: none;
+}
+.main ul li.first {
+  text-align: left;
+}
+.main ul li.last {
+  text-align: right;
+}
+.main ul li.middle {
+  text-align: center;
+}
+.main .text {
+  margin-top: 50px;
+  width: 480px;
+}
+.main .text p {
+  text-shadow: 2px 2px 0 black;
+}
+.main .text p.noBottomMargin {
+  margin-bottom: 0px;
+}
+.main .text p.smallTopMargin {
+  margin-top: 5px;
+}
+.main .text p.info {
+  margin-bottom: 30px;
+}
+.main .text a {
+  color: #4971aa;
+}
+
+.login_box a img, .connected a img {
+  border: 0;
+  float: left;
+}
+
+.login_box fieldset {
+  border: 0;
+  float: left;
+  padding: 0;
+  margin: 0;
+  height: 48px;
+}
+.login_box form {
+  position: relative;
+  border: 0;
+  width: 380px;
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+.login_box form input.text_field {
+  float: left;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: 0 none;
+  height: 31px;
+  width: 217px;
+  margin-top: 10px;
+  background:url(../../images/landing/email-textbox-bg-new.png) no-repeat;
+  padding-left:20px;
+}
+.login_box form input.submit {
+  background: url("/images/landing/invite.png") repeat-x top left;
+  border: 0;
+  text-indent: -9999px;
+  font-size: 0;
+  height: 32px;
+  width: 90px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.login_box form label {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 17px;
+  color: silver;
+  font-size: 14px;
+}
+.login_box p.hint {
+  clear: both;
+  font-size: 11px;
+  color: #cccccc;
+  margin: 0px;
+  padding: 0px;
+  text-shadow: none;
+}
+
+.connected {
+  color: #cccccc;
+  font-size: 11px;
+  height: 532px;
+  margin-left: 40px;
+  position: relative;
+  width: 100px;
+}
+.connected .icons {
+  position: absolute;
+  top: 135px;
+  left:6px;
+  width: 100px;
+}
+.connected .icons p {
+  margin: 5px;
+}
+.connected .icons img {
+  margin-bottom: 10px;
+  margin-right: 5px;
+  float: left;
+}
+
+.foot {
+  float: right;
+  color: #cccccc;
+  font-size: 13px;
+}
+.foot a {
+  color: #cccccc;
+  font-size: 13px;
+}
+
+#sign-in-button {
+  background: url("/images/app/sign-in-button.png") no-repeat;
+  border: none;
+  display: inline;
+  width: 112px;
+  height: 41px;
+  cursor: pointer;
+}
+
+#landing #fancybox-outer {
+  background: url("/images/landing/bg_pop.png") repeat transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+#landing #fancybox-outer div#fancy-bg-s {
+  bottom: -20px;
+}
+#landing #fancybox-inner {
+  overflow: hidden !important;
+  background: #cccccc;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+#landing #fancybox-inner .box_holder {
+  margin: 3px;
+  background: white;
+}
+#landing #fancybox-inner .box_holder .red_banner, #landing #fancybox-inner .box_holder .blue_banner {
+  width: 100%;
+  color: white;
+  font-size: 18px;
+  height: 33px;
+  padding-top: 12px;
+  text-align: center;
+}
+#landing #fancybox-inner .box_holder .red_banner {
+  background: #c10101;
+}
+#landing #fancybox-inner .box_holder .blue_banner {
+  background: #4c7cbe;
+}
+#landing #fancybox-inner .box_holder .notice_message {
+  width: 370px;
+  margin: 30px auto;
+  color: #3b3b3b;
+  font-size: 18px;
+}
+#landing #fancybox-inner .box_holder .notice_message p {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+#landing #fancybox-inner .box_holder .notice_message span {
+  font-size: 12px;
+}
+#landing #fancybox-inner .box_holder .notice_message a {
+  margin: 0px 0px 5px 110px;
+  display: block;
+  border: 0;
+  border: 0;
+}
+#landing #fancybox-inner .box_holder .notice_message a img {
+  border: 0;
+}
+#landing #fancybox-inner .box_holder .notice_message img.wait {
+  margin: 0px 0px 5px 150px;
+  border: 0;
+  display: block;
+}
+#landing #fancybox-inner .notices {
+  height: 234px;
+}
+#landing #fancybox-inner .first_box {
+  margin-left: 20px;
+  margin-top: 20px;
+  float: left;
+  width: 250px;
+  margin-right: 30px;
+  margin-bottom: 14px;
+}
+#landing #fancybox-inner .first_box h2 {
+  color: #353535;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#landing #fancybox-inner .first_box fieldset, #landing #fancybox-inner .first_box form {
+  margin: 0;
+  padding: 0;
+}
+#landing #fancybox-inner .first_box form .save_actions {
+  line-height: 41px;
+  height: 41px;
+}
+#landing #fancybox-inner .first_box form .save_actions label {
+  color: #353535;
+}
+#landing #fancybox-inner .first_box form .save_actions input {
+  line-height: 41px;
+}
+#landing #fancybox-inner .first_box form .row {
+  position: relative;
+  margin: 15px 0;
+}
+#landing #fancybox-inner .first_box form .row label {
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: #353535;
+}
+#landing #fancybox-inner .first_box form .row input {
+  width: 250px;
+  height: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#landing #fancybox-inner .first_box form .row p {
+  margin: 0;
+}
+#landing #fancybox-inner .first_box form .row .forgotten_password {
+  font-size: 10px;
+  color: #225588;
+  margin-top: 2px;
+}
+#landing #fancybox-inner .second_box {
+  margin-top: 30px;
+  float: left;
+}
+#landing #fancybox-inner .second_box .info_box {
+  background: #a3bad9;
+  padding: 20px 10px 20px 10px;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  width: 130px;
+  font-size: 12px;
+  color: #353535;
+}
+#landing #fancybox-inner .second_box .info_box p {
+  display: inline;
+  margin: 0;
+}
+#landing #fancybox-inner .second_box .info_box span {
+  display: block;
+  margin-top: 20px;
+}
+
+.login-box{margin-top:7px;}
+.login_box{ padding-left:68px;
+ padding-right:67px;
+}
+.bg{background:url("/images/landing/bg-copy.png") repeat-x;}

@@ -1,0 +1,15 @@
+#nav_main
+  #nav_main_wrap.clearfix
+    %ul
+      %li#nav_main_dashboard= link_to "<span>Dashboard</span>", admin_dashboard_url
+      - if @site.allow_blog?
+        %li#nav_main_posts= link_to "<span>Blog</span>", admin_posts_url
+      %li#nav_main_users= link_to "<span>Users</span>", admin_users_url
+      %li#nav_main_items= link_to "<span>Items</span>", admin_items_url
+      %li#nav_main_categories= link_to "<span>Categories</span>", admin_item_categories_url
+      %li#nav_main_emails= link_to "<span>Emails</span>", admin_emails_url
+      %li#nav_main_infos= link_to "<span>News</span>", admin_infos_url
+      - if @site.beta_invites?
+        %li#nav_main_invites= link_to "<span>Invites</span>", admin_invites_url
+      - if @site.referrals?
+        %li#nav_main_profiles= link_to "<span>Profiles</span>", admin_profiles_url

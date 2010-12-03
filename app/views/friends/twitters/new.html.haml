@@ -1,0 +1,70 @@
+.friends
+  = render(:partial => "friends/common.html.haml")
+  .content
+    = render(:partial => "friends/menu.html.haml")
+
+    .text-area
+      .header
+        Post an invite to your Twitter Followers
+      Once you have allowed The Hype to connect to Twitter just select 'Send'.
+      %br
+      You can then Preview your invite and edit it to your liking. After previewing
+      %br
+      it select 'Post'.Your invite will then be posted to your Follower's Twitter Feed.
+
+
+    %div
+      .button
+        - if current_user.twitter?
+          %a{:id => "new_post", :href => "#post_popup"}=image_tag("app/send2.png", :alt => "")
+        - else
+          %a{:id => "authorize", :href => "#authorize_popup"}=image_tag("app/send2.png", :alt => "")
+
+        %a{:id => "auto_post", :href => "javascript:;", :style => "display:none;"}
+          <img src='/images/app/send2.png' />
+
+      .preview
+        %input{:id => "preview_post", :type => 'checkbox', :checked => true}
+      .preview-label
+        Preview
+      .spinner-main 
+        %img{:id => "spinner", :style => "display:none;", :src => "/images/wait.gif"}
+      .clear
+  %div{:style => "display:none;"}
+
+    .popup-content{:id => "post_popup"}
+      .header-logo
+        = image_tag("app/logo_popups.png")
+        .preview Preview
+        .clear
+      .header
+        Here is what your Followers will see in their Twitter Feed
+      .header2
+        You can edit this automated post as you like, but keep to the alotted characters.
+      .word-count
+        %em{:class => "num_characters"} 47
+      %form{:method => "post", :id => "twitt_form", :action => "/friends/twitter"} 
+        %textarea{:id => "twitt_body", :name => "twitt_body", :rows => 3}Trying out this new site abt easily sharing consumer knowledge w/ friends. http://thehype.com
+
+        .line
+        .submit{:id => 'form_submit'}
+          %input{:type => "image", :src => "/images/app/post_blue.png"}
+        .back
+          %a{:id => 'back', :href => "javascript:;"}Back
+        .spinner 
+          %img{:id => "spinner", :style => "display:none;", :src => "/images/wait.gif"}
+        .clear
+
+    .popup-content{:id => "authorize_popup"}
+      .header-logo= image_tag("app/logo_popups.png")
+      .content
+        You haven't linked your Twitter account with your Hype account.
+        Please select 'Link' to connect your account with Twitter.
+      .butt
+        .link
+          %a{:id => "auth", :href => "javascript:;"}= image_tag("app/twitter_link.png")
+        .back
+          or&nbsp; 
+          %a{:id => 'back', :href => "javascript:;"}Cancel
+        .clear
+

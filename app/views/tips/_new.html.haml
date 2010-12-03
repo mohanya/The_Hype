@@ -1,0 +1,12 @@
+:CSS
+  #add_tip label_example{margin-right:0;}
+  #add_tip label{top:7px;}
+
+#add_tip
+  - form_for Tip.new, :url => item_tips_path(@item) do |f|
+    = f.label :advice, "Add a tip for this item"
+    = f.text_field :advice, :class => 'label_example'
+    = submit_tag('', :id => 'submit_tip', :style=>"background:url('/images/app/blue_button_for_hottips_add_new.png') no-repeat scroll 0 0 transparent;width:69px;height:32px;margin:0;padding:0;position:absolute;left:300px;top:0px;")
+  .example
+    e.g. get the iPhone at Best Buy for 10% less
+= javascript_include_tag 'tips'

@@ -1,0 +1,10 @@
+- form_for(@invite, :url => invites_url()) do |f|
+  %fieldset
+    %legend Send a new invite
+    .row
+      = f.label :email
+      = f.text_field :email
+    .save_actions
+      = f.submit "Send invite"
+      or
+      = link_to "Cancel and go back", root_url

@@ -1,0 +1,101 @@
+#graph-up.box_holder
+  .navigation_holder
+    %h1
+      = truncate(h(@item.name), :length => 30)
+      %span= @item.category.name if @item.category
+    .navigation
+      %ul.clearfix
+        %li.meter
+          %a{:rel => "meter", :class => 'selected'}
+            Meter
+        %li.buzz
+          %a{:rel => "buzz"}
+            Buzz
+        %li.sentiment
+          %a{:rel => "sentiment"}
+            Sentiment
+    .clear  
+  .graph-tab
+    #meter
+      .pie{:style => "background-image: url('#{@google_meter}')"}
+        %span.temp#cool
+          Cool
+        %span.temp#moderate
+          Moderate
+        %span.temp#hot
+          Hot
+      .clear
+        &nbsp;
+      .small The total # of mentions of an item across Facebook and Twitter right now.
+    #buzz{:style => 'display:none'}
+      / I have no idea what this code is about. bm 
+      %script{:src=>"/javascripts/swfobject.js", :type=>"text/javascript", :charset=>"utf-8"}
+      - unless request.user_agent.include?("iPhone")
+        #buzzer
+          You need to upgrade your Flash player
+        :javascript
+          var so = new SWFObject("amcharts/amstock.swf", "amstock", "650", "270", "8", "#FFFFFF");
+          so.addVariable("path", "");
+          so.addVariable("settings_file", escape("amcharts/buzz.xml,amcharts/common_settings.xml"));
+          // transparent allows for z-indexing
+          so.addParam("wmode", "transparent");
+          so.addVariable("additional_chart_settings", encodeURIComponent("<settings><data_sets><data_set did='1'><file_name>#{trend_item_path(@item.id)}.csv</file_name></data_set></data_sets></settings>"));
+          so.addVariable("preloader_color", "#F0F0F0");
+            so.write("buzzer");
+      - else
+        /iPhone JavaScript based only chart
+        #buzz2{:style => "width:650px;height:270px;"}
+        :javascript  
+          var item_id = "#{@item.id}";
+          $(document).ready(function() {
+            renderTrendChart(item_id);
+          });
+        #buzz3{:style => "width:650px;height:50px;"}
+  
+      .clear
+        &nbsp;
+      .small
+        Based on the # of Facebook and Twitter mentions over time.
+    #sentiment{:style => 'display:none'}
+      .left_size
+        - if @google_sentiment
+          .pie{:style => "background-image: url('#{@google_sentiment}')"}
+            &nbsp;
+        - else
+          .pie
+            %span
+              Be the first to offer sentiment for this item by Hyping it.
+            
+        .tag_cloud
+          - item_tag_cloud(@item, @ids, %w(xxs xs s l xl xxl)) do |tag, css_size, css_type|
+            %span{:class => "#{css_size} #{css_type}"}
+              = h(tag)      
+        #legend
+          %span.pos
+            %span.block
+              +
+            %span.text
+              Positive
+          %span.neg
+            %span.block
+              = "-"
+            %span.text
+              Negative
+      .right_size
+        .real
+          %h2.good The Good
+          %ul
+            - @pro_counts.each do |pro|
+              %li #{pro[0]} (#{h(pro[1])})
+        .fluff
+          %h2.bad The Bad
+          %ul
+            - @con_counts.each do |con|
+              %li #{con[0]} (#{h(con[1])})
+      .clear
+        &nbsp;
+      .small
+        Based on 
+        = @reviews_count 
+        Hypes
+=javascript_include_tag 'snapshot'

@@ -1,0 +1,251 @@
+// Top Bar
+#top_bar
+  background: #323436 url(/images/app/topbar.png) repeat-x
+  color: #bbbbbb
+  font-size: 11px
+  padding: 0 12px
+  position: relative
+  z-index: 100
+  .container
+    padding-top: 0
+    padding-bottom: 5px
+    position: relative
+    overflow: visible !important
+    #logo-image-link
+      float: left
+      position: absolute
+      left: 0
+      z-index: 1000
+  a
+    color: #bbbbbb
+  a:hover
+    color: white
+    text-decoration: none
+  p.welcome
+    display: inline
+    float: right
+    a
+      text-decoration: underline
+  p.welcome
+    margin: 16px 0 0
+    color: white
+    padding-right: 5px
+  ul
+    padding: 8px 0
+    &#nav_user
+      +float(left)
+      padding-left: 75px
+      margin-top: 4px
+      li
+        text-align: center
+        a
+          text-align: center
+          display: inline-block
+          font-size: 14px
+          font-weight: lighter
+          padding: 5px 10px
+          font-weight: bold
+          text-shadow: 0.2em 0.2em 0.2em #333333
+          &:hover
+            +border-radius(7px)
+            background: black
+          color: #cccccc
+    &#nav_user_alt
+      +float(right)
+      margin-left: 6px
+      padding: 14px 0 4px
+      li
+        float: left
+        display: inline
+      li.user-info
+        img
+          width: 20px
+          height: 20px
+          padding: 2px
+          background: white
+          +border-radius(3px)
+      li.last-hype
+        display: inline-block
+        position: relative
+        padding-left: 0
+        span.last-item-hyped
+          a
+            color: $blue_dark
+            display: inline
+      li
+        position: relative
+        a
+          display: block
+          &.submenu_link
+            width: 77px
+            padding: 3px 0px 0px 7px
+            &.highlighted
+              +border-radius(7px)
+              background: black
+        .submenu
+          position: absolute
+          top: 28px
+          left: 14px
+          width: 70px
+          height: auto
+          border: 1px solid #aaaaaa
+          background-color: white
+          display: none
+          padding-top: 5px
+          padding-bottom: 5px
+          +box-shadow(1px, 1px, 1px, #cccccc)
+          .menu-item
+            width: 60px
+            padding-bottom: 2px
+            padding-left: 7px
+            font-size: 12px
+            font-weight: bold
+            a
+              color: #888888
+              &:hover
+                color: #1876bd
+      li.regular_link
+        padding-top: 4px
+    li
+      display: inline
+      list-style: none
+      margin-right: 5px
+      padding-left: 8px
+      &:first-child
+        border-left: none
+        padding-left: 0
+  #search
+    +float-left
+    width: 250px
+    padding-top: 9px
+    margin-left: 20px
+    position: relative
+    .search_forms
+      clear: both
+      .search_selection
+        margin-right: 10px
+        float: left
+        text-align: center
+        position: relative
+        top: -4px
+        div
+          margin: 1px auto
+          text-align: center
+    legend
+      display: none
+    h2
+      color: #353535
+      font-size: 13px
+      font-weight: bold
+    input[type="text"]
+      +base_font
+      border: 0px
+      width: 180px
+      height: 34px
+      background: transparent url(/images/app/search_field.png) no-repeat top left
+      outline: 0px
+      color: #999999
+      font-size: 13px
+      line-height: 36px
+      padding-left: 25px 
+      float: left
+    input[type="text"], x:-moz-any-link
+      &:focus
+        color: #333333
+      &.blur
+        color: #999999
+    input[type="submit"]
+      font-size: 12px
+      border: 0px
+      height: 34px
+      width: 39px
+      background: transparent url(/images/app/search_tag.png) no-repeat top left
+      cursor: pointer
+      text-indent: -9999px
+      font-size: 0px
+      float: left
+    .search_options
+      text-align: right
+      padding-right: 90px
+    .search_selection
+      .search_items,
+      .search_users
+        font-size: 12px
+        padding: 1px 3px
+        +border-radius(2px)
+        text-align: center
+        color: #bdbdbd
+        &:hover
+          cursor: pointer
+        &.selected
+          background: #bdbdbd
+          color: #333333
+          text-shadow: 0px 1px 1px white
+      .search_items
+        margin-right: 5px
+      .search_users
+
+  #display
+    width: 350px
+    display: none
+    overflow: hidden
+    border: 1px solid #666
+    border-bottom: 1px solid #999
+    top: 100%
+    left: 0px
+    position: absolute
+    background: #fff
+    z-index: 10
+    ul
+      list-style-type: none
+      margin: 0px
+      padding: 0px
+    h1
+      color: #DD7626
+      font-size: 20px
+      margin-left: 5px
+      margin-top: 5px
+    li.display_box
+      padding: 5px
+      margin-right: 0px
+      height: 35px
+      display: block
+      span.name
+        width: 210px
+      span.user_name
+        width: 210px
+      span.name, .user_name
+        display: block
+        overflow: hidden
+        float: left
+        a
+          font-weight: bold
+          font-size: 16px
+          color: #353535
+      span.category
+        font-size: 15px
+        color: #999
+        float: left
+        width: 65px
+        overflow: hidden
+        display: block
+      span.image_holder
+        width: 60px
+        float: left
+        text-align: left
+        display: block
+        img
+          height: 35px
+          max-width: 50px
+    li.display_box:hover, li.selected
+      background: #f6f6f7
+  #all-results-footer
+    background: #000
+    height: 20px
+    border-top: 1px solid #ccc
+    text-align: right
+    padding-right: 5px
+    line-height: 20px
+    a, a:hover
+      color: #4C7CBE
+      font-size: 13px

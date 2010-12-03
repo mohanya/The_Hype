@@ -1,0 +1,54 @@
+#top_bar
+  .container.clearfix
+    = link_to image_tag('app/nav_bar_logo.png'), root_url, :id => "logo-image-link"
+    %ul#nav_user
+      %li= link_to "Home", root_url, :class => "dropdown", :style=> "#{(controller.controller_name == 'pages' && controller.action_name == 'index') ? 'border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px;background: black;' : ''}"
+      %li
+        = link_to "Browse", items_path, :class => "dropdown", :style=> "#{(controller.controller_name == 'Items' && controller.action_name == 'index') ? 'border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px;background: black;' : ''}"
+        / category dropdown ul here
+      %li
+        = link_to "Friends", "/friends/facebook/new", :class => "dropdown", :style=> "#{(controller.controller_name == 'facebooks' && controller.action_name == 'new') ? 'border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px;background: black;' : ''}"
+        / explore dropdown ul here
+
+    #search
+      -form_tag search_url, :method => :get, :id => 'search_form' do
+        .search_forms
+          = text_field_tag "query", @query, :autocomplete => "off"
+          = submit_tag "Search", :name => nil, :id=>"search_form_submit"
+      #display
+
+    - if logged_in?
+
+      %ul#nav_user_alt
+        %li.user-info
+          = link_to image_tag(current_user.profile.avatar.url(:thumb), :class => "photo"), user_path(current_user), :title => 'View your Profile', :rel => 'bottomLeft-topRight', :class => 'qtip', :id=>"photo_user_info"
+        %li.last-hype
+          = "Hey, #{current_user.name} <br/> <span class='last-item-hyped'>#{last_hype_of_user(current_user)}</span>"
+        %li.settings
+          = link_to(image_tag('app/settings_button.png'), "javascript:;", :title => "View your Inbox and edit <br/> your Settings &amp; Profile", :class => 'qtip submenu_link', :rel => 'bottomLeft-topRight', :id => 'user_profile_link')
+          .submenu.settings_submenu
+            .menu-item
+              %a{:href => inbox_messages_path, :class=>"dropdown"}Inbox
+            .menu-item
+              %a{:href => edit_user_path(current_user), :class=>"dropdown"}Profile
+            .menu-item
+              %a{:href => edit_user_password_path(current_user), :class=>"dropdown"}Settings
+            .menu-item
+              =link_to 'Logout', logout_path, :class => 'fb_logout' 
+            - if current_user.admin?
+              .menu-item
+                %a{:href => "/admin", :id=>"admin_link"}Admin
+        /
+          %li.regular_link
+            - if current_user.facebook_user?
+              = link_to "Log out", "#", :class => "fb_logout"
+            - else
+              = link_to "Log out", logout_url
+        
+          - if current_user.admin?
+            %li.regular_link
+              = link_to 'Admin', '/admin'
+    
+    - unless logged_in?
+      %p.welcome
+        = "Not logged in #{link_to "Login", login_url} or #{link_to "Create an Account", root_url}"

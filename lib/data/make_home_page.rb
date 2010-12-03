@@ -1,0 +1,1 @@
+Page.create(:title => "Home", :permalink => "home", :body => "Welcome to the Handcrafted Bootstrap Application.", :published => true)

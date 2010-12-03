@@ -1,0 +1,15 @@
+.row
+  = form.label :login
+  = form.text_field :login
+.row
+  = form.label :email
+  = form.text_field :email
+.row
+  = form.label :time_zone
+  = form.time_zone_select :time_zone, TimeZone.us_zones
+.row
+  = form.label :password
+  = form.password_field :password
+.row
+  = form.label :password_confirmation
+  = form.password_field :password_confirmation

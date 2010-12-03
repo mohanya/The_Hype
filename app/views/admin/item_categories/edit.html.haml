@@ -1,0 +1,7 @@
+.columns.one.clearfix
+  .column.one
+    %h1= "Editing #{@item_category.name}"
+    
+    / Edit user form
+    - form_for @item_category, :url => admin_item_category_url(@item_category), :builder => HandcraftedFormBuilder do |form|
+      =render :partial => 'form', :object => form

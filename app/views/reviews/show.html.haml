@@ -1,0 +1,8 @@
+.index
+  %h1.style_1
+    = "Review of #{link_to @review.item.name, @review.item}"
+  .hypes
+    = render :partial => @review
+    
+- content_for :scripts do
+  %script{:src => "http://static.ak.fbcdn.net/connect.php/js/FB.Share", :type => "text/javascript"}

@@ -1,0 +1,81 @@
+= javascript_include_tag "help.js"
+.container#new_hype
+  #form-header
+    = image_tag 'app/blue_logo.png'
+    %h2= "You are Hyping: " + truncate(@item.name, :length => 30)
+    = image_tag(@item.tiny_image, :width=>"150px")
+    %br.clear
+  .padding
+    - form_remote_for @review, :url => item_reviews_path(@item) do |f|
+      = f.error_messages
+      = hidden_field_tag :from_wizard, params[:wizard]
+      .form.clearfix
+        - field_set_tag "Hype Form", :id => "hype_form" do
+          .right
+            - field_set_tag "First Words", :id => "first_words" do
+              .row.clearfix
+                .label
+                  = f.label :first_word_list, "First thoughts that come to m"
+                  %span.word-count
+                    %em.num_characters 75
+                    characters remaining
+                .field
+                  = f.text_area :first_word_list, :class => "elastic character_count"
+            - field_set_tag "Criteria Selects", :id => "criteria_selects" do
+              .option-set
+                .label.ratings{:title => 'The degree of excellence of the item'}
+                  Quality
+                .options.clearfix{:style => "display:none"}
+                  .option{:title => "can't get much worse"} 1
+                  .option{:title => "subpar"} 2
+                  .option{:title => "decent"} 3
+                  .option{:title => "excellent"} 4
+                  .option{:title => "can't get much better"} 5
+                  = f.select :criteria_1, Review.scores
+              .option-set
+                .label.ratings{:title => 'worth of an item compared to price paid'}
+                  Value
+                .options.clearfix{:style => "display:none"}
+                  .option{:title => "not worth the lint in my pocket"} 1
+                  .option{:title => "barely worth it"} 2
+                  .option{:title => "decent"} 3
+                  .option{:title => "excellent"} 4
+                  .option{:title => "worth every penny and then some"} 5
+                  = f.select :criteria_2, Review.scores
+              .option-set
+                .label.ratings{:title => 'how useful, beneficial, functional an item is'}
+                  Utility
+                .options.clearfix{:style => "display:none"}
+                  .option{:title => "none whatsoever"} 1
+                  .option{:title => "minimal"} 2
+                  .option{:title => "decent"} 3
+                  .option{:title => "excellent"} 4
+                  .option{:title => "changed my world"} 5
+                  = f.select :criteria_3, Review.scores, :style => "display:none"
+            - field_set_tag "Pros and Cons", :id => "tags_pros_cons" do
+              .row
+                .label
+                  %label.the-good= "The Good"
+                .field
+                  = f.text_field :pro_list, :size => 60, :title => 'Enter your own or select, if any, all that apply from below.', :class => 'pros-cons'
+                  %ul.pros
+                    - @item.pros.each do |pro|
+                      %li= link_to pro, "#"
+                %br.clear
+              .row
+                .label
+                  %label.the-bad= "The Bad"
+                .field
+                  = f.text_field :con_list, :size => 60, :title => 'Enter your own or select, if any, all that apply from below.', :class => 'pros-cons'
+                  %ul.cons
+                    - @item.cons.each do |con|
+                      %li= link_to con, "#"
+                %br.clear
+            - field_set_tag "Sharing Buttons", :id => "sharing_buttons" do
+              .row
+                // link_to "Worth the Hype?", "#", :class => "recommend_this"
+                // link_to "Add To My Top Ten", "#", :class => "top_ten_this"
+                = f.check_box :recommended, :style => "display: none"
+            = render(:partial => "reviews/new/comments.html.haml", :locals => {:f => f})
+            = render(:partial => "reviews/new/bottom.html.haml")
+= render("reviews/new/ajax_form.html.haml")

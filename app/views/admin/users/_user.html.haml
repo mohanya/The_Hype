@@ -1,0 +1,13 @@
+%tr
+  %td= link_to user.login, edit_admin_user_url(user)
+  %td= user.created_at.strftime("%m/%d/%y")
+  %td= user.admin?
+  - if @site.beta_invites?
+    %td= user.invites
+  %td= link_to "Activate", activate_admin_user_url(user), :method => :post if user.activation_code
+  %td
+    = link_to "Promote to Admin", make_admin_admin_user_url(user), :method => :post unless user.admin?
+    = link_to "Demote to User", remove_admin_admin_user_url(user), :method => :post  if user.admin?
+  %td 
+    = link_to "Suspend Account", suspend_admin_user_url(user), :method => :put unless user.suspended?
+    = link_to "Unsuspend Account", unsuspend_admin_user_url(user), :method => :put if user.suspended?

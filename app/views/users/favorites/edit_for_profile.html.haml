@@ -1,0 +1,11 @@
+%div{:id => "profile-edit", :class => "profile-edit main no_margin_top" }
+  .signup-step
+    = render(:partial => "users/favorites/form.html.haml")
+  .save-button
+    = image_tag("app/save-button.png", :id => "submit2", :ref => "profile", :style => "float:left")    
+    .cancel
+      or&nbsp;
+      %a{:href => edit_user_path(@user)}cancel
+    .clear
+  = render(:partial => "users/favorites/popup.html.haml")
+

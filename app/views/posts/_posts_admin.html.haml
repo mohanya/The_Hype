@@ -1,0 +1,6 @@
+- if logged_in? && current_user.admin?
+  .posts_admin
+    .inner.clearfix
+      %ul
+        %li#manage_blog_posts= link_to "Manage Blog Posts", admin_posts_url
+        %li#add_new_post= link_to "Add a New Post", new_admin_post_url()

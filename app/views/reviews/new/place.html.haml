@@ -1,0 +1,48 @@
+= javascript_include_tag "help.js"
+.container#new_hype
+  = render(:partial => 'reviews/new/header')
+  .padding
+    - form_for @review, :url => item_reviews_path(@item) do |f|
+      = f.error_messages
+      .form.clearfix
+        - field_set_tag "Hype Form", :id => "hype_form" do
+          .right
+            = render(:partial => 'reviews/new/first', :locals => {:f => f})
+            - field_set_tag "Criteria Selects", :id => "criteria_selects" do
+              = image_tag '/images/app/quality.gif', :class => 'criteria_bar qtip', :title => "Degree of excellence of the item", :rel =>'topMiddle-'
+              = image_tag '/images/app/value.gif', :class => 'criteria_bar qtip', :title => "Worth of an item compared to price paid", :rel =>'topMiddle-'
+              = image_tag '/images/app/appeal.gif', :class => 'criteria_bar qtip', :title => "Level of interest or attraction for the item", :rel => 'topMidlde-'
+              .option-set.first
+                /.label.ratings{:title => 'The degree of excellence of the item'}
+                /  Quality
+                .options.clearfix{:style => "display:none"}
+                  .option{:title => "can't get much worse", :class => 'option1'}
+                  .option{:title => "subpar", :class => 'option2'}
+                  .option{:title => "decent", :class => 'option3'}
+                  .option{:title => "excellent", :class => 'option4'}
+                  .option{:title => "can't get any better", :class => 'option5'}
+                  = f.select :criteria_1, Review.scores
+              .option-set
+                /.label.ratings{:title => 'worth of an item compared to price paid'}
+                /  Value
+                .options.clearfix{:style => "display:none"}
+                  .option{:title => "not worth the lint in my pocket", :class => 'option1'}
+                  .option{:title => "barely worth it", :class => 'option2'}
+                  .option{:title => "decent", :class => 'option3'}
+                  .option{:title => "excellent", :class => 'option4'}
+                  .option{:title => "worth every penny and then some", :class => 'option5'}
+                  = f.select :criteria_2, Review.scores
+              .option-set.last
+                /.label.ratings{:title => 'level of interest or attraction for the item'}
+                /  Appeal
+                .options.clearfix{:style => "display:none"}
+                  .option{:title => "zero, none, nada, nilch", :class => 'option1'}
+                  .option{:title => "maybe a little", :class => 'option2'}
+                  .option{:title => "ok I'm interested", :class => 'option3'}
+                  .option{:title => "very interested", :class => 'option4'}
+                  .option{:title => "I'm obsessed", :class => 'option5'}
+                  = f.select :criteria_3, Review.scores, :style => "display:none"
+            = render(:partial => "reviews/new/pros_cons.html.haml", :locals => {:f => f})
+            = render(:partial => "reviews/new/comments.html.haml", :locals => {:f => f})
+            = render(:partial => "reviews/new/bottom.html.haml")
+= render("reviews/new/ajax_form.html.haml")

@@ -1,0 +1,6 @@
+%tr
+  %td= item.created_at.strftime("%m/%d/%y")
+  %td= link_to item.name, edit_admin_item_url(item)
+  %td= item.twitter_query
+  %td= link_to "View", item_url(item)
+  %td= link_to "Delete", admin_item_url(item), {:method => :delete, :confirm => 'This will delete ' + item.name}

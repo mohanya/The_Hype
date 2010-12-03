@@ -1,0 +1,4 @@
+%tr
+  %td= link_to job.id, admin_job_url(job)
+  %td= job.run_at.to_s(:date_time)
+  %td= job.failed_at.nil? ? "No" : "Yes"

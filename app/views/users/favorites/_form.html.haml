@@ -1,0 +1,83 @@
+.start_hyping
+  .top-header
+    %span{:class => "left"} My All-Time Top Hyped Items
+    %span{:class => "center"} Those items that are worth all the hype and then some
+    .help_links
+      %a{:href => "javascript:;", :title => image_tag('/images/app/top_hype_example.png', :class => 'example'), :class => 'help', :rel => 'topMiddle-bottomMiddle-min-790-example_holder'}see an example
+      = render(:partial => "users/profiles/why_complete")
+  - if params[:from] == 'profile'
+    = render(:partial => "users/favorites/steps_blue.html.haml")
+  -else 
+    = render(:partial => "users/favorites/steps_green.html.haml")
+  
+      
+  .categories
+    - form_tag(user_favorites_path(current_user.id), :method => "put", :id => "top-items") do
+      - @categories.each do |cat|
+        .top-item
+
+          - if cat.children and !cat.children.empty?
+            - cat.children.each do |e|
+              %span{:class => cat.id + '_sub', :id => e.id, :name => e.name, :style => "display:none"}
+            - item = find_item_for_category(cat, @items)
+          - else
+            - item = @items[cat.id]
+
+          - if !item
+            .tick
+              %a{:id => "#{cat.id}_remove", :class => "remove", :href => "javascript:;", :style => "display:none;"}=image_tag('app/signup_steps/tick.png')
+            .image
+              %img{:id => "#{cat.id}_item_image", :src => '', :style => 'display:none'}
+              %span{:class => "rating",:id => "#{cat.id}_item_rating", :style => 'display:none;'}
+              .label{:id => "#{cat.id}_item_label"}=(cat.name=='TV' ? cat.name : cat.name.capitalize)
+            .item-name{:id => "#{cat.id}_item_name", :style => 'display:none;'}
+              .text
+
+            %div{:style => params[:from] != "profile" ? 'display:none' : 'display:block'}
+              .edit
+                %a{:class => "add", :ref => cat.id, :href => "#popup", :style => "display:none"}= image_tag("app/edit.png")               
+
+            .add-button{:id => "#{cat.id}_add_button"}
+              %a{:ref => cat.id, :id => cat.id, :class => "add", :href => "#popup"}=image_tag("app/plus.png", :alt => "")
+            .clear
+
+            = hidden_field_tag("#{cat.id}_field", cat.id, :name => cat.id + "_field")
+
+          - else
+            .tick
+              %a{:id => "#{cat.id}_remove", :class => "remove", :href => "javascript:;"}=image_tag('app/signup_steps/tick.png')
+            .image
+              %img{:id => "#{cat.id}_item_image", :src => item.item.item_image}
+              - rating_value = item.item.score.round.to_f
+              %span{:class => "rating",:id => "#{cat.id}_item_rating", :style => "#{if rating_value.to_i > 0 then '' else 'display:none' end}"}= rating_value
+
+              .label{:id => "#{cat.id}_item_label", :style => "display:none"}=(cat.name=='TV' ? cat.name : cat.name.capitalize)
+            .item-name{:id => "#{cat.id}_item_name"}
+              .text=item.item.name
+              .bottom
+                - if cat.parent
+                  = h(cat.parent.name.camelize.singularize)
+                - else
+                  = h(cat.name.camelize.singularize)
+
+            %div{:style => params[:from] != "profile" ? 'display:none' : 'display:block'}
+              .edit
+                %a{:class => "add", :ref => cat.id, :href => "#popup"}= image_tag("app/edit.png")
+
+            .add-button{:id => "#{cat.id}_add_button", :style => "display:none;"}
+              %a{:ref => cat.id, :class => "add", :href => "#popup"}=image_tag("app/plus.png", :alt => "")
+            .clear
+          
+            = hidden_field_tag("#{cat.id}_field", item.item.id, :name => item.item.category_id + "_field")
+      .clear
+      .footer
+        =image_tag("app/little_help_banner.png")
+        %div#example_holder
+          Take a look at an 
+          %a{:href => "javascript:;", :title => image_tag('/images/app/top_hype_example.png', :class => 'example'), :class => 'help', :rel => 'topMiddle-bottomMiddle-min-790-example_holder'}example
+      = render(:partial => "users/favorites/nav_links.html.haml") if params[:from] != "profile"
+
+      .clearfix
+      
+:javascript
+  var _myDummyBeforeUnload= {allowBeforeUnload: 1, userId: "#{params[:user_id]}", alphaPopupSession: "#{session[:alpha_popup] ? 1 : 0}"} 

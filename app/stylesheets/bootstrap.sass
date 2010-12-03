@@ -1,0 +1,280 @@
+@import compass/reset.sass
+
+html, body
+  height: 100%
+  margin: 0 0 1px 0
+  padding: 0
+
+body
+  background: #e5e5e5
+  color: #141414
+  font: 13px Arial, Helvetica, sans-serif
+
+// Structure
+#container
+  margin: 0 auto
+  width: 770px
+
+#left
+  background: white
+  border: 4px solid #cccccc
+  border-top: none
+  border-bottom-right-radius: 3px
+  -moz-border-radius-bottomright: 3px
+  -webkit-border-bottom-right-radius: 3px
+  border-bottom-left-radius: 3px
+  -moz-border-radius-bottomleft: 3px
+  -webkit-border-bottom-left-radius: 3px
+  display: inline
+  float: left
+  padding: 15px
+  width: 500px
+
+#right
+  display: inline
+  float: right
+  width: 205px
+
+#centered
+  background: white
+  border: 4px solid #cccccc
+  border-radius: 3px
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  margin: 0 auto
+  margin-top: 50px
+  width: 500px
+
+#centered .inner
+  padding: 25px
+
+// #mast_head
+#mast_head
+  background: url(/images/public/handcrafted_avatar.png) no-repeat -3px 0
+  border-bottom: 1px solid #cccccc
+  margin-bottom: 25px
+  padding-bottom: 25px
+
+#mast_head h1
+  font-size: 28px
+  margin: 10px 0 10px 0
+
+#mast_head h1 a
+  color: #141414
+  text-decoration: none
+
+#mast_head h2
+  color: #888888
+  font: italic normal 16px Georgia, sans-serif
+  letter-spacing: 0.5px
+  margin: 0 0 25px 0
+
+#mast_head p
+  font-size: 14px
+  line-height: 1.5
+
+// Set the left and right padding
+// Makes the width of .content = 390px
+#mast_head h1,
+#mast_head h2,
+#mast_head p,
+.content
+  padding: 0 20px 0 75px
+
+// Centered
+#centered h2
+  border-bottom: 1px solid #cccccc
+  color: black
+  font: bold 15px Arial, Helvetica, sans-serif
+  margin: 0 0 10px 0
+  padding-bottom: 5px
+
+// Element Styles
+// Left
+.content
+  padding-bottom: 15px
+  h2
+    border-bottom: 3px solid #f0f0f0
+    font-size: 20px
+    margin-bottom: 10px
+    padding-bottom: 6px
+  p
+    font-size: 13px
+    line-height: 1.6
+    margin-bottom: 8px
+  ul
+    margin: 15px 0 10px 18px
+    li
+      font-size: 18px
+      line-height: 1.6
+      margin: 0 0 8px 0
+  ol
+    margin: 15px 0
+    li
+      color: #888888
+      font-size: 12px
+      margin-bottom: 15px
+      h3
+        color: #141414
+        font-size: 16px
+        margin-bottom: 5px
+        a
+          border-bottom: 1px solid #e0e0e0
+          color: #141414
+        a:hover
+          border-bottom: 1px solid #3252b2
+          color: #3252b2
+          text-decoration: none
+      p
+        color: #353535
+        font-size: 12px
+
+// Right
+#right h4
+  border-bottom: 1px solid #cccccc
+  font-size: 16px
+  margin: 30px 0 10px 0
+  padding-bottom: 10px
+
+// Left Links
+#left
+  a,
+  a:link,
+  a:visited
+    color: #3252b2
+    text-decoration: none
+  a:hover
+    text-decoration: underline
+  a:focus,
+  a:active
+    outline: none
+
+// Right Links
+#right
+  a,
+  a:link,
+  a:visited
+    color: #0033cc
+    padding: 1px
+    text-decoration: underline
+  a:hover
+    background: #0033cc
+    color: white
+    text-decoration: none
+  a:focus,
+  a:active
+    outline: none
+  // Nav User
+  ul
+    margin: 0
+    padding: 0
+    li
+      display: block
+      font-size: 13px
+      line-height: 1.3
+      margin-bottom: 5px
+
+// Form Styling
+#centered form
+  margin-top: 0
+  input[type="submit"]
+    margin: 0
+
+form
+  margin-top: 20px
+  fieldset
+    border: none
+  legend
+    display: none
+  .row
+    margin: 0 0 12px 0
+  .instructions
+    margin: 0 0 20px 0
+  .save_actions
+    border-top: 1px dashed #cccccc
+    margin-top: 10px
+    padding-top: 10px
+  label
+    display: block
+    font-size: 13px
+    font-weight: bold
+    margin-bottom: 3px
+  input[type="text"],
+  form input[type="password"]
+    font-size: 14px
+    padding: 4px
+    width: 380px
+  textarea
+    font-size: 14px
+    height: 120px
+    padding: 4px
+    width: 380px
+  input[type="text"],
+  input[type="password"],
+  textarea
+    font-family: Arial, Helvetica, sans-serif
+  input[type="submit"]
+    margin: 15px 0
+  input[type="text"].blur
+    color: #999999
+  a,
+  a:link,
+  a:visited
+    color: #0033cc
+    padding: 1px
+    text-decoration: underline
+  a:hover
+    background: #0033cc
+    color: white
+    text-decoration: none
+  a:focus,
+  a:active
+    outline: none
+
+.row.first_last > div
+  display: inline
+  float: left
+  width: 180px
+  first-child:
+    margin-right: 20px
+  input[type=text]
+    width: 100%
+
+// Beta Notice
+.notice
+  background-color: #ffffea
+  background-image: url(/images/app/mouse_arrow_32.png)
+  background-repeat: no-repeat
+  background-position: 15px 12px
+  border: 1px solid #ececd8
+  margin: 0 0 20px 0
+  padding: 10px 10px 10px 63px
+  h4
+    font-size: 15px
+    margin-bottom: 5px
+  p
+    font-size: 12px
+    margin: 0
+  a:hover
+    text-decoration: underline
+
+.notice.beta
+  background-image: url(/images/shared/icon_pointer_32.png)
+
+.notice.invites
+  background-image: url(/images/shared/icon_magic_32.png)
+
+.notice.referrals
+  background-image: url(/images/shared/icon_referrals_32.png)
+
+.hidden
+  display: none !important
+
+// P.I.E. FLOAT CLEARING
+// www.positioniseverything.net/easyclearing.html
+.clearfix:after
+  clear: both
+  content: "."
+  display: block
+  height: 0
+  visibility: hidden

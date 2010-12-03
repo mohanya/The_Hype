@@ -1,0 +1,12 @@
+%h2 Request an Invite
+- if logged_in?
+  = render :partial => "shared/notice_invites"
+- else
+  = render :partial => "shared/notice_beta"
+= error_messages_for :invite
+- form_for(@invite, :url => invites_path, :builder => HandcraftedFormBuilder ) do |f|
+  %fieldset
+    %legend Invite details
+    = f.text_field :email
+    = f.submit "Request invite" do
+      - link_to "Cancel and go back", root_url

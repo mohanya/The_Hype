@@ -1,0 +1,6 @@
+/- form_tag new_item_url, :method => :get, :id => 'add_item_form' do        
+/  = hidden_field_tag "query", @query
+/  %button.add-and-hype{:type => 'submit', :name => nil} Add an item
+
+%div{:style=>"position:absolute;right:50px;top:63px;"}
+  = link_to image_tag('/images/app/Button_Add_Item.png'),  "/items/new?query=#{@query}", :rel => "fancybox", :class => 'add-and-hype', :style =>'margin-left:39px;padding:13px 82px 7px 33px;'

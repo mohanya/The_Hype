@@ -1,0 +1,27 @@
+#categories
+  .header
+    .container
+      %h1 
+        Items Directory
+        &raquo;
+        %small
+          All
+      
+  .page_body#category-lower.container
+    #cat-lower-left
+      %ul#category-select
+        %li
+          Select Item Category:
+        %li
+          %a{ :href => "#", :class => "selected"}
+            All
+        %li
+          %a{ :href => "#"}
+            Category 2
+          
+      .category-container.index
+        = render :partial => 'items/item', :collection => @items
+        %br.clear
+    #cat-lower-right
+      %h2 sidebar stuff will go here
+    %br.clear

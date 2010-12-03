@@ -1,0 +1,37 @@
+= render(:partial => 'inbox/menu', :locals => {:selected => 'comments'}) 
+#comments-index
+  #inbox-header
+    = will_paginate_messages(@comments)
+  .toolbar
+    .selection
+    .filter
+      %ul
+        %li Show
+        %li{ :class => showing_unread? ? nil : 'selected' }= link_to_if(showing_unread?, "All", inbox_comments_path)
+        %li{ :class => showing_unread? ? 'selected' : nil }= link_to_unless(showing_unread?, "Unread", unread_inbox_comments_path)
+  #inbox-body.comments
+    - if @comments.count > 0
+      - @comments.each do |comment| 
+        - div_for(comment, :class => "comment #{inbox_element_dom_class(comment)}") do #, :class => comment_dom_class(comment)) do 
+          .sender
+            = link_to(image_tag(comment.user.profile.avatar.url(:small), :class => 'avatar'), user_path(comment.user))
+            = link_to(comment.user.name, user_path(comment.user), :class => 'name')
+          .subject
+            = comment_subject(comment, true, true)
+          .truncated-body
+            = link_to(truncate(comment.comment_text, :length => 50), inbox_comment_path(comment), :class => 'body-prev')
+          .date
+            = comment.created_at.strftime("%B %d, %Y")
+          = link_to("Delete", inbox_comment_path(comment), :method => :delete, :class => :delete)
+    - else
+      .blank-slate
+        - if showing_unread?
+          You have no unread comments.
+          = link_to("View all comments.", inbox_comments_path)
+        - else 
+          You have no comments
+
+  #inbox-footer
+    = will_paginate_messages(@comments)
+
+

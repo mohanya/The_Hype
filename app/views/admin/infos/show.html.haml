@@ -1,0 +1,15 @@
+.columns.one.clearfix
+  .column.one
+    %h1= "Manage News"
+    
+    %h2
+      Headline: 
+    %p 
+      = @info.headline
+    %h2
+      Visible:
+    %p
+      = link_to h(@info.visible), edit_admin_info_path(@info)
+
+    %p
+      = link_to 'Back', admin_infos_url

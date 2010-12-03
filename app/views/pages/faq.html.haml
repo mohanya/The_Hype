@@ -1,0 +1,31 @@
+#pages.index
+  %h1 FAQ
+  
+  =render(:partial => 'pages/menu', :locals => {:selected => 'faq'})
+  
+  .page_content
+
+    %h2
+      =image_tag('/images/app/faq_header.png')
+
+    .info
+   
+      %p 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique sollicitudin tellus ut vulputate. Mauris aliquet ligula eget purus facilisis in sagittis tellus hendrerit. Sed vel metus a elit bibendum euismod. Donec vestibulum congue tellus, ut pretium dolor mattis ut. Vivamus vitae ultricies nulla. Aliquam tristique enim at diam posuere ut hendrerit diam tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin euismod dui, sit amet tempus est faucibus ut. Aliquam blandit metus at massa tempor vel mollis tortor consequat. Nunc commodo rhoncus egestas. Sed pellentesque porta sapien, eu pellentesque erat mollis sit amet. Donec ut lectus sapien. Nam lacinia tristique lectus, ultricies dignissim tellus vehicula eu. Donec consectetur rhoncus condimentum. 
+  
+      %ul 
+        %li
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        %li
+          Mauris cursus arcu tincidunt leo semper ultricies.
+        %li
+          Mauris sed lectus a sapien pulvinar commodo.
+        %li
+          Cras rhoncus nunc quis nunc tristique vehicula.
+        %li
+          Proin eu mi vitae enim molestie tincidunt.
+        %li
+          Nam porta faucibus enim, nec ullamcorper massa lobortis ut.
+
+
+.clear

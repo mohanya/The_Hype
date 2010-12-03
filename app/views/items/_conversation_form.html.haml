@@ -1,0 +1,23 @@
+= javascript_include_tag "signin.js"
+- comment_parent_id = @comment.blank? ? "" : @comment.parent_id
+- comment_class = (@comment.blank? || @comment.parent.blank?) ? "" : @comment.parent.class.name
+.conversation_comment_form
+  - form_tag(comments_path, :id=>"form_#{rand(1000)}") do
+    %div
+      = image_tag current_user.profile.avatar.url(:small), :class => "avatar"
+      = label_tag :comment_text,  "What are your thoughts on this item?"
+      = text_area_tag :comment_text, '', :cols => 79, :rows => 2, :class => "comment_textarea label_example", :id => "comment_text-#{rand(444759)}"
+      = hidden_field_tag :commentable_type, @commentable.class.name
+      = hidden_field_tag :commentable_id, @commentable.id
+      = hidden_field_tag :parent_comment_id, comment_parent_id
+      = hidden_field_tag :comment_type, comment_class 
+      %br/
+      %span{:style=>"display:none;color:red;float:left;font-size:13px;margin:10px 0 0 140px;"}
+        Please enter text for your comment to be posted.
+      %span.submit-button
+        = submit_tag "", :class => 'reply_button'
+        = image_tag 'wait.gif', :class => 'wait'
+        or
+        %span.cancel= link_to "cancel", "#", :class => "cancel_link"  
+      %br.clear
+  .clear

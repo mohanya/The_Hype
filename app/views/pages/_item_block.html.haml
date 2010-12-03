@@ -1,0 +1,9 @@
+%span.item-image
+  = image_tag item.thumb_image
+%span.item-title
+  = truncate(item.name, :length => 20)
+%span.item-meta
+  = item.last_hyped_at.blank? ? "Be the first to Hype this item!": "Hyped #{safe_time_ago_in_words(item.last_hyped_at)}"
+- if item.score > 0
+  %span.item-rating{:class => item.score_color}
+    = item.score.nil? ? "0" : '%.1f' % item.score.to_f

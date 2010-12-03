@@ -1,0 +1,9 @@
+.columns.one.clearfix
+  .column.one
+    %h1= "Editing #{@email.name}"
+
+= error_messages_for :email
+-form_for(@email, :url => admin_email_url(@email), :method => :put, :builder => HandcraftedFormBuilder) do |form| 
+  = render :partial => "form", :object => form
+  = form.submit 'Update'do 
+    - link_to 'Cancel and Go Back', admin_email_url(@email)

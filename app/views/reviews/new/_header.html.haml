@@ -1,0 +1,9 @@
+#form-header
+  = image_tag 'app/logo_popups.png'
+  .header_info
+    %h2= truncate(@item.name, :length => 45)
+    %span
+      Only Hype items you own or have direct experience with.
+      =link_to 'Authenticity Policy', 'javascript:;', :title => "The Hype is designed to provide authenticity and transparency to the consumer marketplace. We believe that every consumer is entitled to reliable and trusted consumer information. As such, each user is highly encouraged to be transparent and complete their profile and is required to only post consumer feedback that is authentic. Users who create false or misleading profiles and/or post false or misleading information will be suspended from The Hype and may be held financially liable for any damages incurred per Federal and International law.", :rel =>'bottomLeft-topLeft-min-320', :class => 'qtip'
+  = image_tag(@item.tiny_image, :width=>"150px")
+  %br.clear

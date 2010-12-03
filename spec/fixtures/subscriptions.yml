@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  profile_id: 1
+  subscribed_at: 2009-02-21 23:22:34
+  signup_ip_address: MyString
+
+two:
+  profile_id: 1
+  subscribed_at: 2009-02-21 23:22:34
+  signup_ip_address: MyString

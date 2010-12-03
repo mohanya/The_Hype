@@ -1,0 +1,52 @@
+.columns.one.clearfix
+  .column.one
+    %h1= "Manage #{@site.name} invites"
+    
+    .tabs.clearfix
+      %ul
+        %li= link_to "Pending Invites", "#tab1"
+        %li= link_to "Used Invites", "#tab2"
+        %li= link_to "Send an Invite", "#tab3"
+        %li= link_to "Update Invites", "#tab4"
+      .clearfix
+      // Tab 1
+      #tab1
+        %h2 Pending Invites	
+        - if !@pending_invites.empty?
+          %table{:class => "listings sortable", :cellspacing => "0", :cellpadding => "0"}
+            = render :partial => 'thead'
+            %tbody
+              = render :partial => "invite", :collection => @pending_invites
+        - else
+          %p There are no pending invites.
+      // Tab 2
+      #tab2
+        %h2 Used Invites
+        - if !@used_invites.empty?
+          %table{:class => "listings sortable", :cellspacing => "0", :cellpadding => "0"}
+            = render :partial => 'thead'
+            %tbody
+              = render :partial => "invite", :collection => @used_invites
+        - else
+          %p There are no pending invites.
+      // Tab 3
+      #tab3
+        %h2 Send an invite
+        - form_for(Invite.new, :url => admin_invites_url) do |f|
+          .row
+            = f.label :email
+            = f.text_field :email
+          .row.save_actions
+            = f.submit "Send invite"
+      // Tab 4
+      #tab4
+        %h2 Update Invites
+        %p Default Invites Count: 3
+        %p= "Current Invites Total: #{User.invite_count}"
+		
+        - form_tag reset_admin_invites_url do |i|
+          .row
+            = label(:invite, :number, "Reset invites to:")
+            = text_field(:invite, :number, :size => 3, :id => "update_invites")
+          .row.save_actions
+            = submit_tag("Update invites")

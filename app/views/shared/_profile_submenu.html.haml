@@ -1,0 +1,31 @@
+%h1 
+  = apropriate_profile_header
+%ul#submenu.clearfix
+  %li{:class => selected_tab('messages/show', 'messages/index', 'comments/show', 'comments/index', 'notices/index')}
+    = link_to 'Inbox', inbox_messages_path
+  %li{:class => selected_tab('users/edit', 'favorites/edit')}
+    = link_to 'Profile', edit_user_path(current_user)
+  %li{:class => selected_tab('profiles/edit', 'passwords/edit', 'profiles/social_networks', 'profiles/delete_me','profiles/export_my_data','profiles/privacy')}
+    = link_to 'Settings', edit_user_password_path(current_user)
+
+
+- if settings_actions.include?(current_action)
+  %h3 Password, Notices, Account Info
+
+  #settings-navigation
+    /%span.current
+    = link_to "Password", edit_user_password_path(current_user), :class => current_action == 'passwords/edit' ? 'current' : ''
+    = link_to "Notices", scope_path(current_user, :scope => 'notices'), :class => current_action == 'profiles/edit' ? 'current' : ''
+    = link_to "Linked Accounts", social_networks_user_profile_path(current_user), :class => current_action == 'profiles/social_networks' ? 'current' : ''
+    = link_to "Delete Account", delete_me_user_profile_path(current_user), :class => current_action == 'profiles/delete_me' ? 'current' : ''
+    = link_to "Export", export_my_data_user_profile_path(current_user), :class => current_action == 'profiles/export_my_data' ? 'current' : ''
+    = link_to "Privacy", privacy_user_profile_path(current_user), :class => current_action == 'profiles/privacy' ? 'current' : ''
+- elsif  current_action =~ /(messages)|(comments)|(notices)/
+  %h3 Messages, Comments and Notices
+  
+- else
+  %h3 Everything about you
+  #settings-navigation
+    = link_to("Profile", edit_user_path(current_user), :class => current_action == 'users/edit' ? 'current' : '')
+    = link_to("Top Hyped List", edit_user_favorites_path(current_user, :from => "profile"), :class => current_action == 'favorites/edit' ? 'current' : '')
+.clear

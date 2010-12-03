@@ -1,0 +1,106 @@
+--- !ruby/object:Gem::Specification 
+name: ramdiv-mongo_mapper_acts_as_tree
+version: !ruby/object:Gem::Version 
+  prerelease: false
+  segments: 
+  - 0
+  - 0
+  - 5
+  version: 0.0.5
+platform: ruby
+authors: 
+- Jakob Vidmar
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-03-26 00:00:00 -05:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: mongo_mapper
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 0
+        - 6
+        - 8
+        version: 0.6.8
+  type: :runtime
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: shoulda
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 2
+        - 10
+        - 2
+        version: 2.10.2
+  type: :development
+  version_requirements: *id002
+description: Port of the old, venerable ActsAsTree with a bit of a twist
+email: jakob.vidmar@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- LICENSE
+- README.rdoc
+files: 
+- .document
+- .gitignore
+- LICENSE
+- README.rdoc
+- Rakefile
+- VERSION
+- lib/mongo_mapper_acts_as_tree.rb
+- ramdiv-mongo_mapper_acts_as_tree.gemspec
+- test/helper.rb
+- test/models/category.rb
+- test/models/ordered_category.rb
+- test/test_order.rb
+- test/test_tree.rb
+has_rdoc: true
+homepage: http://github.com/ramdiv/mongo_mapper_acts_as_tree
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.6
+signing_key: 
+specification_version: 3
+summary: ActsAsTree plugin for MongoMapper
+test_files: 
+- test/helper.rb
+- test/models/category.rb
+- test/models/ordered_category.rb
+- test/test_order.rb
+- test/test_tree.rb

@@ -1,0 +1,89 @@
+%div#profile-edit.signup-steps.index
+  = image_tag('/images/app/header2.png', :class => 'congrats-img')
+  .link= link_to("No thanks, take me to the site", '/')
+
+  - form_for @user, :url => user_profile_path(@user), :builder => HandcraftedFormBuilder do |f|
+    - f.fields_for :profile, :builder => HandcraftedFormBuilder do |p|
+      .signup-step
+        = render :partial => 'shared/signup_wizard', :locals => {:current_step => 'profile'}
+        .header
+          .description Only information with an asterisk is shown in your profile.
+          .help_links.top
+            %a{:href => "javascript:;", :title => image_tag('/images/app/user_profile_example.png', :class => 'example'), :class => 'help', :rel => 'leftTop-rightTop-min-550'}See an example 
+          .help_links.bottom
+            .bottom
+              = render(:partial => 'why_complete')
+        .steps
+          .step
+            .step-number.step1
+            .substeps
+              .substep
+                %h2 I'm Living in*
+                = p.country_select(:country)
+                = p.text_field :city, :label => 'City, State', :value => @city, :class =>'label_example'
+              .substep-arrow
+              .substep.no_label
+                %h2 Education
+                = p.select(:education_level_id, EducationLevel.all.collect{|edu| [ edu.name, edu.id ] }, {:include_blank => 'None'})
+              .substep-arrow
+              .substep
+                %h2 Job/Career
+                = p.text_field :job, :label => '', :class => 'label_example'
+            .clearfix    
+          .step
+            .step-number.step2
+            .substeps
+              .substep
+                %h2 A Blurb About Me*
+                = p.text_area :about_me, :label => 'A little goes a long way.. Just keep it real; who you are, what you do and any particular consumer knowledge you may possess.', :class => 'label_example'
+              .substep-arrow
+              .substep.essentials
+                %h2 My Essentials* 
+                %p.comment 
+                  be specific as possible
+                - @user.essentials.each_with_index do |essential, index|
+                  - fields_for("user[essentials][]", essential, :index => index) do |essential_builder|
+                    %div{:class => 'row autocompleting_text_field'}
+                      = essential_builder.label :essential_category,   essential.essential_category
+                      = essential_builder.text_field :item_name, :class => 'essential_search label_example'
+                      = essential_builder.hidden_field :item_id, :class => 'essential_item_id'
+                      = essential_builder.hidden_field :essential_category
+                      
+              .substep-arrow
+              .substep
+                %h2
+                  Consumer Type
+                - ConsumerType.all.each do |consumer_type|
+                  %div{:class => 'row radio'}
+                    %label
+                      = p.radio_button :consumer_type_id, consumer_type.id
+                      = consumer_type.name
+                  .description.radio
+                    = consumer_type.description
+              .clearfix
+          .step
+            .step-number.step3
+            .substeps
+              .substep
+                %h2 The Brands I Use &amp; Trust*
+                = p.text_field :trusted_brand_list, :label => 'eg. Acme widgets, Acme gadgets', :class => 'label_example'
+                .description
+                  please separate by commas
+              .substep-arrow
+              .substep.interests
+                %h2 My Interests*
+                %p.comment.interests
+                  please list in order of importance w/ first being most important
+                = p.text_field :interest_list, :label => 'eg. Famliy, Cycling, Reading, Traveling, Cooking', :class => 'label_example'
+                .description
+                  please separate by commas
+          .clearfix
+        .navigation
+          = f.submit "", :id => 'signup-step-next'
+          = link_to('Go Back,', edit_user_favorites_path(current_user), :class => 'back')
+          or
+          %a{:href => '#'} Cancel
+
+      .save-and-exit
+        = submit_tag "", :name => "save_and_exit", :id => 'signup-step-save-end-exit'
+

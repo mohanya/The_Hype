@@ -1,0 +1,58 @@
+- @address = "#{@item.venue_name} #{@item.address} #{h(@item.city)}, #{h(@item.state)} #{h(@item.zip)}" 
+%input{:type => 'hidden', :value => @address, :id => 'item_address'}
+%input{:type => 'hidden', :value => @item.name, :id => 'item_name'}
+
+.hypes.tab#details
+  %ul#map_images-select
+    %li
+      %a.option.selected#images{:href => ':javascript;', :onclick => 'return false;'} Images
+    %li
+      %a.option#map{:href => ':javascript;', :onclick => 'return false;'} Map
+  #map_canvas{:style => 'display: none'}
+  = render :partial => 'items/show/shared/images_display'
+
+  -cache(:key => @item.id.to_s + '_details') do
+    .desc_holder
+      = render :partial => 'items/show/shared/description'
+      -if @item.source_name
+        %p.item-source
+          = link_to 'source: ' + @item.source_name.to_s, @item.source_url
+      - if !@item.url.blank?
+        %div.info_box
+          %strong Website &nbsp;
+          %a{:href => full_url(@item.url)}= @item.url
+      %div.info_box
+        %strong Location
+        %p
+          - if (!@item.city.blank? && !@item.state.blank?)
+            = "#{@item.venue_name} #{@item.address} <br/>#{h(@item.city)}, #{h(@item.state)} <br/>#{h(@item.country)} #{h(@item.zip)} " if (!@item.city.blank? || !@item.venue_name.blank? || !@item.address.blank?)
+          -else
+            = "#{@item.source_id.gsub(',',',<br/>')}" if(!@item.source_id.blank?)
+  
+  %h1.clear{:style=>"padding-top:40px;"}
+    Similar Items
+    = render(:partial => 'items/select_similar', :locals => {:target => 'similar_items'})
+  .all-items.clear
+    = render :partial => 'items/item_hash'
+
+:javascript
+  var map = new GMap2(document.getElementById("map_canvas"));
+  map.setUIToDefault();
+  var geocoder = new GClientGeocoder();
+  show_item_location($('#item_address').val(), $('#item_name').val());
+
+      function show_item_location(address,name) {
+        geocoder.getLatLng(
+          address,
+          function(point) {
+            if (!point) {
+              // not sure what kind of error processing we want to do if the address can't be found.
+            } else {
+              map.setCenter(point, 13);
+              var marker = new GMarker(point);
+              map.addOverlay(marker);
+              marker.openInfoWindowHtml(name);
+            }
+          }
+        );
+      }

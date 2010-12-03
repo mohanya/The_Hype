@@ -1,0 +1,18 @@
+Click on one of the Track descriptions below
+%br/
+- @items.each_with_index do |item,index|
+  .item-suggestion
+    %dt.first.item-name{ :id => "item-#{index}", :style => 'color: #225588'}
+      = h(item.name) + ' - ' + item.artist_name.to_s
+      
+    %dd.hidden.first.description
+      - if item.short_description and item.short_description != ''
+        = item.short_description
+      - elsif item.full_description and item.full_description != ''
+        = item.full_description
+      - else
+        = item.name + ' Description Not Found'
+       
+    %span.hidden.source_id= item.source_id
+    %span.hidden.full_description= item.full_description
+    %span.hidden.artist_name= item.artist_name

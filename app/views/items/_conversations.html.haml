@@ -1,0 +1,8 @@
+.hypes.tab#conversations
+  %br.clear.clearfix
+  %div.conversation_wrapper
+    #conversation_form
+      - if current_user
+        = render :partial => "conversation_form"
+    .pag
+      = render :partial => "conversation_block", :object => @comments
