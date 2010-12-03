@@ -1,9 +1,0 @@
-.tip.clearfix
-  = image_tag tip.user.profile.avatar.url(:small), :class => "avatar"
-  .advice
-    %span.user_link= link_to h(tip.user.name), user_path(tip.user)
-    %span.comment_text= h tip.advice
-  .tip_vote{:rel => tip.id}
-    =link_to('','javascript:;', :class => 'tip_up voting', :rel => 'up')
-    %span.tip_score=tip.score
-    =link_to('','javascript:;', :class => 'tip_down voting', :rel => 'down')

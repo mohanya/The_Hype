@@ -1,8 +1,0 @@
-site:
-  id: 1
-  name: HandCrafted
-  url: http://gethandcrafted.com
-  description: A website built by hand
-  cm_api_key: 1234
-  cm_subscribers_list: 123
-  

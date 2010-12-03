@@ -1,7 +1,0 @@
-.columns.one.clearfix
-  .column.one
-    %h1#item_name= "#{@item.name}"
-    - form_for @item_media, :url => admin_item_item_medias_path(@item), :builder => HandcraftedFormBuilder do |form|
-      = form.text_field :remote_image_url
-      = form.submit "Create image"
-

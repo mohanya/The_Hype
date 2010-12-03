@@ -1,9 +1,0 @@
-.columns.one.clearfix
-  .column.one
-    %h1= "Manage #{@site.name} profiles"
-
-    %h2 Profiles
-    %table{:class => "listings sortable", :cellspacing => "0", :cellpadding => "0"}
-      = render :partial => 'thead'
-      %tbody
-        = render :partial => "profile", :collection => @profiles

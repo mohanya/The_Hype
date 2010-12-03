@@ -1,7 +1,0 @@
-.columns.one.clearfix
-  .column.one
-    %h1 New Blog Post
-    
-    - form_for(@post, :url => admin_posts_url(), :builder => HandcraftedFormBuilder) do |f|
-      = render :partial => "form", :object => f
-      = f.submit "Save this post"

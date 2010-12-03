@@ -1,2 +1,0 @@
-module Friends::TwittersHelper
-end

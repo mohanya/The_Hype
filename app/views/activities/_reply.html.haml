@@ -1,6 +1,0 @@
-%li.reply.clearfix
-  = link_to(image_tag(reply.user.profile.avatar.url(:small), :class => "photo"), user_path(reply.user), :class => "stream-avatar")
-  %span.reply_text
-    = h(reply.comment_text)
-    %span.reply_time= time_ago_in_words(reply.created_at) + ' ago'
-  .clear

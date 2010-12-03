@@ -1,4 +1,0 @@
-- if image.image_filename and !image.image_filename.blank?
-  %li.item_image
-    %span
-      = image_tag(image.image_url(:tiny_thumb), :alt => image.image_url(:large), :id => "image-#{image.id}")

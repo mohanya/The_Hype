@@ -1,9 +1,0 @@
-- field_set_tag "Comments", :id => "comments" do
-  .row.clearfix
-    .label
-      //= f.label "Additional Comments"
-      =link_to 'Your Review &darr;', 'javascript:;', :class => 'qtip additional_comments', :id => 'additional-comments-link', :title => 'This is where you can really get specific and detailed. Let your inner critic out and post what you know!', :rel =>'topLeft-bottomLeft-min-360'
-
-      = link_to "Review guidelines",'javascript:;', :class =>'review-guide qtip', :title => "Please do not include: HTML, personal information, or any profane, inflammatory or copyrighted information. Also, if you were given compensation in any form in exchange for writing this review, you are REQUIRED to disclose it in your comments.", :rel =>'bottomMiddle-topLeft-min-320'
-    #additional-comments.field{:style => 'display: none'}
-      = f.text_area :description, :id => "comments", :class => 'pros-cons', :title => 'This is where you can really get specific and detailed. Let your inner critic out and post what you know!'

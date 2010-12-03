@@ -1,6 +1,0 @@
-Time::DATE_FORMATS[:long_date] = "%B %d, %Y"
-Time::DATE_FORMATS[:date] = "%m/%d/%y"
-Time::DATE_FORMATS[:date_time] = "%m/%d/%y %r"
-Time::DATE_FORMATS[:mf] = "%Y-%m-%dT%H:%M:%S%z"
-Time::DATE_FORMATS[:mf_date] = "%Y-%m-%d"
-Time::DATE_FORMATS[:date_time12] = "%m/%d/%Y %I:%M%p"

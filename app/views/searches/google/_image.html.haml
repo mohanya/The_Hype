@@ -1,4 +1,0 @@
--image_id= image[:image_id].gsub(':', '') 
-.google_image_wrap{:id => image_id}
-    =image_tag(image[:tb_url], :class => 'search_image', :alt => image[:url])
-    = check_box_tag('image_checkbox[' + image_id + ']', image[:url])
