@@ -1,0 +1,11 @@
+.item_holder
+  = render(:partial => 'items/item', :object => item_preview)
+  .last_opinion
+    %span.orange 
+      - if rev = Review.first(:select=>[:first_word_list], :item_id => item_preview.id,   :first_word_list.nin =>  ["", nil])
+        &quot;
+        = truncate(h(rev.first_word_list), :length => 70)
+        &quot;
+    %span.hint
+      = truncate(h(item_preview.short_description), :length => 120)
+    = link_to('More', item_path(item_preview))

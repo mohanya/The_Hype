@@ -1,0 +1,264 @@
+@import _partials/base.sass
+@import _partials/site_alerts.sass
+@import _partials/border-radius.sass
+body
+  color: #353535
+  background: url('/images/landing/bg.png') repeat-x top left
+  color: #fff
+  font-size: 15px
+#container
+  width: 980px
+  margin: 0px  auto
+
+.column
+  float: left
+.logo
+  width: 310px
+  padding-left: 20px
+  height: 532px
+  img
+    margin-top: 8px
+.main
+  width: 500px
+  height: 532px
+  ul
+    margin-top: 20px
+    margin-bottom: 60px
+    margin-left: 0px
+    margin-right: 0px
+    padding: 0px
+    clear: both
+    display: block
+    list-style-type: none
+    li
+      width: 156px
+      float: left
+      a
+        text-align: center
+        display: inline-block
+        font-size: 14px
+        font-weight: lighter
+        padding: 5px 10px
+        font-weight: bold
+        text-shadow: 0.2em 0.2em 0.2em #333333
+        color: #ccc
+      a:hover, a:active
+        -moz-border-radius: 8px
+        -webkit-border-radius: 8px
+        border-radius: 8px
+        background: black
+        color: #fff
+        text-decoration: none
+    li.first
+      text-align: left
+    li.last
+      text-align: right
+    li.middle
+      text-align: center
+  .text
+    margin-top: 50px
+    width: 480px
+    p
+      text-shadow: 2px 2px 0 #000
+    p.noBottomMargin
+      margin-bottom: 0px
+    p.smallTopMargin
+      margin-top: 5px
+    p.info
+      margin-bottom: 30px
+    a
+      color: #4971AA
+.login_box, .connected
+  a
+    img
+      border: 0
+      float: left
+.login_box
+  fieldset
+    border: 0
+    float: left
+    padding: 0
+    margin: 0
+    height: 48px
+  form
+    position: relative
+    border: 0
+    width: 380px
+    float: left
+    padding: 0
+    margin: 0
+    input.text_field
+      float: left
+      -moz-border-radius: 8px
+      -webkit-border-radius: 8px
+      border-radius: 8px
+      border: 3px solid #fff
+      height: 22px
+      width: 240px
+      margin-top: 10px
+    input.submit
+      background: url('/images/landing/invite.png') repeat-x top left
+      border: 0
+      text-indent: -9999px
+      font-size: 0
+      height: 32px
+      width: 90px
+      float: left
+      margin-left: 10px
+      margin-top: 10px
+    label
+      display: block
+      position: absolute
+      left: 10px
+      top: 17px
+      color: silver
+      font-size: 14px
+  p.hint
+    clear: both
+    font-size: 11px
+    color: #ccc
+    margin: 0px
+    padding: 0px
+    text-shadow: none
+.connected
+  color: #ccc
+  font-size: 11px
+  height: 532px
+  margin-left: 40px
+  position: relative
+  width: 100px 
+  .icons
+    position: absolute
+    top: 135px
+    width: 100px
+    p
+      margin: 0
+    img
+      margin-bottom: 10px
+      margin-right: 5px
+      float: left
+
+.foot
+  float: right
+  color: #ccc
+  font-size: 13px
+  a
+    color: #ccc
+    font-size: 13px
+ 
+#sign-in-button
+  background: url("/images/app/sign-in-button.png") no-repeat
+  border: none
+  display: inline
+  width: 112px
+  height: 41px
+  cursor: pointer
+
+#landing
+  #fancybox-outer 
+    background: url('/images/landing/bg_pop.png') repeat  transparent
+    border: 1px solid black
+    +border-radius(5px)
+    div#fancy-bg-s
+      bottom: -20px
+   
+  #fancybox-inner
+    overflow: hidden !important
+    background: #ccc
+    +border-radius(3px)
+    .box_holder
+      margin: 3px
+      background: white
+      .red_banner, .blue_banner
+        width: 100%
+        color: #fff
+        font-size: 18px
+        height: 33px
+        padding-top: 12px
+        text-align: center
+      .red_banner
+        background: #c10101 
+      .blue_banner
+        background: #4c7cbe
+      .notice_message
+        width: 370px
+        margin: 30px auto
+        color: #3b3b3b
+        font-size: 18px
+        p 
+          margin-top: 0px
+          margin-bottom: 10px
+        span
+          font-size: 12px
+        a
+          margin: 0px 0px 5px 110px
+          display: block
+          border: 0
+          img
+            border: 0
+          border: 0
+        img.wait
+          margin: 0px 0px 5px 150px
+          border: 0
+          display: block
+    .notices
+      height: 234px
+    .first_box
+      margin-left: 20px
+      margin-top: 20px
+      float: left
+      width: 250px
+      margin-right: 30px
+      margin-bottom: 14px
+      h2
+        color: #353535
+        margin-top: 0px
+        margin-bottom: 0px
+      fieldset, form
+        margin: 0
+        padding: 0
+      form
+        .save_actions
+          line-height: 41px
+          height: 41px
+          label
+            color: #353535
+          input
+            line-height: 41px
+        .row
+          position: relative
+          margin: 15px 0
+          label
+            display: block
+            position: absolute
+            left: 5px
+            top: 5px
+            color: #353535
+          input
+            width: 250px
+            height: 12px
+            padding-top: 5px
+            padding-bottom: 5px
+          p 
+            margin: 0
+          .forgotten_password
+            font-size: 10px
+            color: #225588
+            margin-top: 2px
+    .second_box
+      margin-top: 30px
+      float: left
+      .info_box
+        background: #a3bad9
+        padding: 20px 10px 20px 10px 
+        +border-radius(7px)
+        width: 130px
+        font-size: 12px
+        color:  #353535
+        p 
+          display: inline
+          margin: 0
+        span
+          display: block
+          margin-top: 20px
+

@@ -1,0 +1,17 @@
+.index
+  .delete_me.clearfix
+    %h2 To permanently remove your account select 'Delete My Account'
+    %p 
+      By selecting 'Delete My Account' your account will no longer be active. <br />
+      All the information affiliated with your account including your Hypes, <br />
+      Comments, Tips and Messages will be permanently deleted. Your Profile<br />
+      page will be removed from the site and you, nor anyone else, will be able<br />
+      to access it again.
+    - form_tag "/users/#{current_user.id}", :method => :delete  do
+      %div
+        %input#sure.check{:name => "sure", :style => "float: left;", :type => "checkbox", :value => "true"}
+        %p.info{:style => "float: left;"}
+          I have read the above information regarding deleting my account and understand I
+          cannot undo this action once I select 'Delete My Account'.
+      =image_submit_tag('/images/app/delete_my_account_button1.png', :class => 'delete', :id => 'delete_button', :style => "float: none; clear: both; margin-left: 159px")
+      .clear

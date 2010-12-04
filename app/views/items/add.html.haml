@@ -1,0 +1,16 @@
+= "Step #{params[:step]}"
+- case params[:step]
+  - when '2'
+    .show-all.padding
+      - form_for :item do |f|
+        = f.label :short_description, "Add a description"
+        = f.text_area :short_description, :rows => 5
+        = hidden_field_tag 'step', 3
+        = f.submit "Next"
+      %br/
+      - if @results.size > 0
+        = "Or, choose a product below"
+        %dl#suggestions
+          - @results.each do |result|
+            %dt.first= result.name
+            %dd.first= result.short_description

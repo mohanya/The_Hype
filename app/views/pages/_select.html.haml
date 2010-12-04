@@ -1,0 +1,13 @@
+- if current_user
+  -target = target || ''
+  .select-div
+    %ul.select-filter
+      // braindead logic for functional demonstration
+      %li
+        %a.a-global{ :href => "javascript:;", :class => "option", :rel => target}
+          The Crowd
+      %li
+        %a.a-following{ :href => "javascript:;", :class => "selected option", :rel => target}
+          %span.underline Your
+          Crowd
+  .clear

@@ -1,0 +1,48 @@
+#new-message-popup{:style=>'padding: 13px; padding-bottom: 0px;'}
+  .form-header
+    = image_tag 'app/logo_popups.png', :class => 'logo'
+    .tweet_area
+      %h2.tweet
+        Tweet that: 
+        %span
+          = @item.name
+      %p You can edit this tweet if you like, but please remember to keep to 140 characters.
+    = image_tag(@item.tiny_image, :class => 'tweet_item_image' )
+    .clear
+  .form-body
+    -form_tag '/apis/twitter/tweet', :id => 'tweet_form' do
+      %table
+        %tr
+          %td
+            =image_tag 'twitter_bird.png', :id => 'bird'
+          %td
+            .inputs-area
+              .count
+                %span.num_characters
+                  = (140 - @text.length)
+                %span.num_desc characters
+              = text_area_tag :tweet_text, @text, :cols => 50, :rows => 5, :class => 'character_count'
+              = hidden_field_tag :item_id, @item_id
+      .buttons-area
+        = submit_tag "Send", :id => 'submit_tweet', :class => 'send-new-message'
+        = link_to 'Cancel', item_path(@item), :class => 'cancel'
+        .clear
+  .clear
+
+
+:javascript
+  $('#tweet_form').submit(function(){
+      $(this).find('#submit_tweet').attr("disabled", "true");
+      $.ajax({
+        url: '/apis/twitter/tweet',
+        type: "POST",
+        data :  $(this).serialize(),
+        success: function(html, status) {
+           $("#fancybox-inner").html(html);
+        }
+    });
+    return false;
+  });
+
+
+     

@@ -1,0 +1,33 @@
+= render(:partial => 'inbox/menu', :locals => {:selected => 'messages'}) 
+#messages-show
+  #inbox-header
+    = link_to(image_tag('/images/app/inbox/back-messages.png'), inbox_messages_path, :class => 'back')
+    = link_to(image_tag('/images/app/inbox/delete-button.png'), inbox_message_path(@message, :from_show => true), :id => "delete-button", :method => :delete)
+    .pagination
+      = previous_message_button(@message)
+      = next_message_button(@message)
+  - div_for(@message, :class => inbox_element_dom_class(@message)) do 
+    .sender
+      -if @message.sender.name!='The Hype Team'
+        = link_to(image_tag(@message.sender.profile.avatar.url(:small), :class => 'avatar'), user_path(@message.sender))
+        = link_to(@message.sender.name, user_path(@message.sender), :class => 'name')
+      -else
+        =image_tag(@message.sender.profile.avatar.url(:small))
+        %span{:class=>'name'}
+          =@message.sender.name
+    .date
+      = @message.created_at.strftime("%B %d, %Y")
+    .subject{:style=>"#{(@message.sender.name=='The Hype Team' ? 'display:none;' : '')}"}
+      = @message.subject
+    .body{:style=>"#{(@message.sender.name=='The Hype Team' ? 'margin-top:-26px;' : '')}"}
+      = @message.body
+    -if @message.sender.name!='The Hype Team'
+      = link_to("Reply", reply_inbox_message_path(@message), :id => "message-reply-toggle-link")
+  .inline-reply-form{ :style => "display: none;" }
+    - form_for Message.new_reply(@message), :url => inbox_messages_path, :method => :post do |f|
+      = f.text_area :body
+      = f.hidden_field :receiver_id
+      = f.hidden_field :subject
+      = f.submit "", :class => 'send-button'
+  #inbox-footer
+

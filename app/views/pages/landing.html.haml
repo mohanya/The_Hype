@@ -1,0 +1,26 @@
+%br/
+.text
+  %p
+    We are an early-stage start up that is interested in leveraging the 
+    evolving social graph, game theory and the wisdom of the crowd to 
+    benefit consumers and impact the consumer marketplace.
+
+  %p
+    The Hype will allow you to easily capture and exchange your
+    consumer experiences as they happen with your friends and family.
+
+  %p
+    We are currently in a private alpha to work out the kinks.  If you are
+    interested in helping us improve the site please enter your email below.  
+    You can also stay updated by subscribing to our blog as 
+    well as connecting with us on Twitter and Facebook.
+    
+  %div.login_box
+    - form_for Invite.new  do |f|
+      - field_set_tag do
+        = f.label 'email', "Enter your email here"
+        = f.text_field'email', :class => 'text_field label_example'
+        = submit_tag('Request invite', :class => 'submit', :id => 'buttonek')
+    %p.hint
+      No worries on getting spammed we hate it too!
+

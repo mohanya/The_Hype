@@ -1,0 +1,10 @@
+- field_set_tag "First Words", :id => "first_words" do
+  .row.clearfix
+    .label
+      = f.label :first_word_list, "First thoughts that come to mind", :title => 'If you could only describe this item in one or two sentences what would you say?', :class => 'qtip', :rel => 'bottomRight-topLeft-min-240'
+      %span.word-count
+        %em.num_characters 140
+        Characters 
+    .field
+      = f.text_area :first_word_list, :class => "character_count"
+      = hidden_field_tag :from_wizard, params[:wizard]

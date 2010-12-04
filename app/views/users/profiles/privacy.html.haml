@@ -1,0 +1,18 @@
+.index
+  .delete_me.clearfix
+    %h2 To change your privacy settings select from below
+    - form_for @user, :url => change_privacy_user_profile_path(@user),:options=>{:method=>:put} ,:builder => HandcraftedFormBuilder do |f|
+      - f.fields_for :profile, :builder => HandcraftedFormBuilder do |p|
+        - count = (@user.profile.private ? 0 : 1)
+        #private_radio{:style=>"display:inline;float:left;margin-left:15px"}
+          =p.radio_button("private", true, :onclick=>"profilePrivate('#{count}');", :class=>"user_profile_attributes_private_true")
+        #private_info{:style=>"display:inline;font-style: inherit;margin-left:10px;float:left;margin-top:2px;"} Make my information private 
+        %br/
+        %br/
+        %p{:style=>"font-style: inherit;color: #b2b2b2;margin-left:20px"}
+          If you select this your Hypes, comments and tips will not be <br />
+          available publicly. Only those you approve will be able<br />
+          to view your consumer information and profile.<br /><br/>
+		
+        =image_submit_tag('/images/app/save-button-new.png', :class => '', :id => 'privacy',:style=>"float: left;margin-left:136px;")
+        .clear

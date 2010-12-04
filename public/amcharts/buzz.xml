@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <data_sets>
+    <data_set did="1">
+      <title>Buzz</title>
+      <short>Buzz</short>
+      <color>#3b90cf</color>
+      <description/>
+      <file_name></file_name>
+      <main_drop_down selected="false"/>
+      <compare_list_box selected="false"/>
+      <csv>
+        <reverse>false</reverse>
+        <separator>,</separator>
+        <date_format>YYYY-MM-DD</date_format>
+        <decimal_separator>.</decimal_separator>
+        <columns>
+          <column>date</column>
+          <column>tweets</column>
+        </columns>
+        <data/>
+      </csv>
+    </data_set>
+  </data_sets>
+  <charts>
+    <chart>
+      <height>60</height>
+      <title>Buzz:</title>
+      <border_color>#CCCCCC</border_color>
+      <border_alpha>100</border_alpha>
+      <legend>
+        <show_date>true</show_date>
+        <text_size>15</text_size>
+      </legend>
+      <events>
+        <show_balloon/>
+        <use_hand_cursor>true</use_hand_cursor>
+        <url_target/>
+        <bullet>sign</bullet>
+        <color/>
+        <color_hover>#b1f4ff</color_hover>
+        <border_color>#3b90cf</border_color>
+        <border_alpha/>
+        <text_color/>
+        <size/>
+        <hide_period/>
+      </events>
+      <graphs>
+        <graph>
+          <axis/>
+          <type>line</type>
+          <connect>false</connect>
+          <data_sources>
+            <close>tweets</close>
+          </data_sources>
+          <period_value>average</period_value>
+          <compare_source>tweets</compare_source>
+          <title/>
+          <color>#0077CC</color>
+          <width>2</width>
+          <alpha/>
+          <fill_alpha>50</fill_alpha>
+          <dashed/>
+          <bullet/>
+          <bullet_size/>
+          <smoothed/>
+          <legend>
+            <date key="false" title="false"><![CDATA[{close}]]></date>
+            <period key="false" title="false"><![CDATA[{average}]]></period>
+            <date_comparing key="false" title="false"/>
+            <period_comparing key="false" title="false"/>
+            <comparing_only/>
+            <digits_after_decimal>
+              <data>2</data>
+              <percents/>
+            </digits_after_decimal>
+          </legend>
+        </graph>
+      </graphs>
+    </chart>
+  </charts>
+  <scroller>
+    <enabled>true</enabled>
+    <connect>false</connect>
+    <height>20</height>
+    <graph_data_source>tweets</graph_data_source>
+    <graph_selected_color>#3b90cf</graph_selected_color>
+    <graph_selected_fill_color>#3b90cf</graph_selected_fill_color>
+    <resize_button_style>dragger</resize_button_style>
+    <resize_button_color>#d5d5d5</resize_button_color>
+  </scroller>
+  <balloon>
+    <border_color>#1f7fd7</border_color>
+  </balloon>
+</settings>

@@ -1,0 +1,73 @@
+.index.clearfix.item-results
+
+  %h1.style_1{:style => 'margin-bottom: 30px'} Search Results
+  
+  %h1.search-result
+    Item Results
+
+  #items
+    %br.clear
+    .categories
+      %ul
+        %li Sort by type:
+        %li
+          %a{:href => '#', :class => 'set_category button selected', :style => 'margin-right: 15px'} Show All
+          - for category in ItemCategory.roots
+            %li
+              %a{:href => '#', :class => 'set_category button'}=plural_category_name(category)
+              - count = category_search_count(@query, category.id)
+              %span.count
+                - if count > 0
+                  == [#{count}]
+              .category_id{:style => 'display: none'}=category.id
+    .results
+      
+    /=render :partial => 'results', :locals => {:results => @item_results, :item => true}
+    %br.clear
+      
+    .wait
+      = image_tag 'wait.gif'
+    .paging
+      .initial
+        %a{:class => 'more_results next items', :href => '#'} More Results
+        
+      .pagination
+        %a{:href => '#', :class => 'previous items'} Previous
+        « Page
+        %span#items_page_number
+        » 
+        %a{:class => 'next items', :href => '#'} Next
+    %br.clear
+    
+    .addhype{:style => 'background-color:#EFF0F3;padding-bottom:30px;position:relative;'}
+      %h2{:style => 'margin-bottom: 15px; margin-left: 30px; padding-bottom: 0px;'}
+        Can't find it?
+      %strong{:style => 'clear: left; margin-left: 30px;'}
+        Be the first to add this item. We have made adding items quick and easy. Select 'Add Item' to get started.
+      = render :partial => "shared/add_item_form"
+      %p{:style=>'margin-left:30px;'}
+        Before you add a new item please make sure you spelled the item correctly to avoid adding duplicates. Thanks :-)
+      %br.clear
+    .addhype{:style => 'margin-top: 0px;'}
+
+.index.clearfix.item-results
+
+  %h1.search-result
+    All Matches for People
+  %br.clear
+    
+  #users
+    .results
+    %br.clear
+    = image_tag 'wait.gif', :class => 'wait'
+    .paging
+      .initial
+        %a{:class => 'more_results next items', :href => '#'} More Results
+        
+      .pagination
+        %a{:href => '#', :class => 'previous items'} Previous
+        « Page
+        %span#items_page_number
+        » 
+        %a{:class => 'next items', :href => '#'} Next
+  =#render :partial => 'results', :locals => {:results => @user_results, :person => true}

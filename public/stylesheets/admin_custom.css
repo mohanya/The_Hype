@@ -1,0 +1,55 @@
+body#admin_items #container #content #content_inner #admin-additional-images h1 {
+  margin-top: 30px; }
+body#admin_items #container #content #content_inner #admin-additional-images table tr td img {
+  max-width: 400px !important;
+  max-height: 200px !important; }
+
+.google_image_wrap {
+  float: left;
+  height: 175px;
+  width: 175px; }
+  .google_image_wrap input {
+    visibility: hidden; }
+
+#image_search_results {
+  width: 700px;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-radius-topright: 8px;
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-radius-topleft: 8px;
+  background-color: #fff;
+  padding: 4px;
+  padding-left: 30px;
+  margin: 0px;
+  float: right; }
+  #image_search_results .search_image {
+    padding: 0px;
+    margin: 10px; }
+
+.selected_image {
+  border: solid 5px #225588;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px; }
+
+.selected_primary {
+  border: solid 5px red;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px; }
+
+#load_more_images {
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-radius-bottomright: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-radius-bottomleft: 8px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  float: right;
+  width: 740px;
+  padding: 4px;
+  background-color: #fff;
+  border-top: solid 2px #bbb; }
+  #load_more_images:hover {
+    background-color: #333;
+    color: #fff; }

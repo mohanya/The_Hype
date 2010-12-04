@@ -1,0 +1,12 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", :'xml:lang' => "en"}
+  %head
+    = render :partial => "layouts/site_head"
+  %body{:id => body_id(params[:controller], params[:id])}
+    = render :partial => "shared/top_bar"
+    = render :partial => "shared/flash_container"
+    #container
+      .content
+        = yield
+    = render :partial => "shared/footer"
+    = render :partial => "shared/google_analytics"

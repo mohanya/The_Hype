@@ -1,0 +1,16 @@
+.main{:id => "profile-edit"}
+  .main-header{:style=>"#{session[:help_text_on_top] ? '' : 'visibility:hidden;'}"}
+    %span{:class => "left"}
+      Congratulations
+      =current_user.name+',' 
+      your account is created.
+    .sub-header Now it is time to Hype a few items, create your profile and share some of that wisdom
+    .link= link_to("No thanks, take me to the site", '/', :id=>"no_thanks")
+
+  .signup-step
+    = render :partial => 'shared/signup_wizard', :locals => {:current_step => 'favourites'}
+    = render(:partial => "users/favorites/form.html.haml")
+  .save-button
+    = image_tag("app/signup_steps/save-and-exit-button.png", :id => "submit2", :ref => "homepage")    
+    = render(:partial => "users/favorites/popup.html.haml")
+- session[:help_text_on_top] = nil

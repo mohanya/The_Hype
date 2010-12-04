@@ -1,0 +1,25 @@
+- if !@user || (current_user == @user )
+  .no_friends{:style => "font-size: 13px; color: #999999;margin-left:125px;"}
+    %img{:src=>"/images/app/small_icon_crowd.png", :style=>"padding-left:122px;"}
+    - if friend_status=='following'
+      %p{:style=>"text-align: justify;margin-top:10px;font-family:helvetica neue;color:#999999;font-size:13px;width:291px;font-weight:normal;"}
+        You are not Following anyone yet. To find people to Follow 
+        =link_to('Invite', '/friends/facebook/new', :style => 'color:#4b7cc5;text-decoration:none;')
+        your friends and trusted sources to The Hype.
+    - else
+      %p{:style=>"text-align: justify;margin-top:10px;font-family:helvetica neue;color:#999999;font-size:13px;width:291px;font-weight:normal;"}
+        You have yet to be added to anyone's crowd!
+      %p{:style=>"text-align: justify;margin-top:10px;font-family:helvetica neue;color:#999999;font-size:13px;width:291px;font-weight:normal;"}
+        To encourage being followed 
+        =link_to('Invite', '/friends/facebook/new', :style => 'color:#4b7cc5;text-decoration:none;') 
+        your friends to The Hype, complete your profile so they can find you and begin capturing your experiences by adding, Hyping and tagging items.
+- elsif (@user && (current_user != @user))
+  .no_friends{:style => "font-size: 15px;font-weight:inherit;margin-top:10px;margin-bottom:20px;margin-left:12px;"}
+    = @user.name
+    %span{:id=>"no_friends_text"}
+      - if friend_status=='following'
+        has not added anyone to his crowd yet.
+      - else
+        has no followers. Add their wisdom to 
+        %span{:style=>"text-decoration:underline;"}Your
+        Crowd by following them!

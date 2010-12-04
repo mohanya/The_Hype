@@ -1,0 +1,9 @@
+-if item_favorite.nil? || item_favorite.favorite == false 
+  .add-to-faves
+    = link_to image_tag('app/favorite.png'), "#", :class => 'favorite_link qtip', :id => item.id, :title => "Select the icon to add the item to your ‘Favorites’.  Favorites are items that get you hyped and you would recommend to others.", :rel => 'bottomMiddle-topLeft-min-250'
+
+-else
+  .add-to-faves
+    = link_to image_tag('app/is_favorite.gif'), "#", :class => 'favorite_link qtip', :id => item.id, :title => "Remove from favorites", :rel => 'bottomMiddle-topLeft'
+
+= image_tag 'wait.gif', :class => 'wait', :style =>'display: none'

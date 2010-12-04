@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+  <results xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" for="cheats">
+    <opensearch:Query role="request" searchTerms="cheats" startPage="1"/>
+    <opensearch:totalResults>266</opensearch:totalResults>
+    <opensearch:startIndex>0</opensearch:startIndex>
+    <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+    <trackmatches>
+      <track>
+        <name>Before He Cheats</name>
+        <artist>Carrie Underwood</artist>
+        <url>http://www.last.fm/music/Carrie+Underwood/_/Before+He+Cheats</url>
+        <streamable fulltrack="1">1</streamable>
+        <listeners>128687</listeners>
+        <image size="small">http://userserve-ak.last.fm/serve/34s/32495679.jpg</image>
+        <image size="medium">http://userserve-ak.last.fm/serve/64s/32495679.jpg</image>
+        <image size="large">http://userserve-ak.last.fm/serve/126/32495679.jpg</image>
+        <image size="extralarge">http://userserve-ak.last.fm/serve/300x300/32495679.jpg</image>
+      </track>
+      <track>
+        <name>Older Cheats</name>
+        <artist>Damien Rice</artist>
+        <url>http://www.last.fm/music/Damien+Rice/_/Older+Cheats</url>
+        <streamable fulltrack="0">1</streamable>
+        <listeners>14574</listeners>
+      </track>
+      <track>
+        <name>Liars And Cheats (Acoustic)</name>
+        <artist>Hit the Lights</artist>
+        <url>http://www.last.fm/music/Hit+the+Lights/_/Liars+And+Cheats+%28Acoustic%29</url>
+        <streamable fulltrack="0">0</streamable>
+        <listeners>635</listeners>
+      </track>
+      <track>
+        <name>Salesmen, Cheats And Liars</name>
+        <artist>The Lowest of the Low</artist>
+        <url>http://www.last.fm/music/The+Lowest+of+the+Low/_/Salesmen%2C+Cheats+And+Liars</url>
+        <streamable fulltrack="0">0</streamable>
+        <listeners>592</listeners>
+        <image size="small">http://images.amazon.com/images/P/B000006T5V.01.MZZZZZZZ.jpg</image>
+        <image size="medium">http://images.amazon.com/images/P/B000006T5V.01.MZZZZZZZ.jpg</image>
+        <image size="large">http://images.amazon.com/images/P/B000006T5V.01.MZZZZZZZ.jpg</image>
+        <image size="extralarge">http://images.amazon.com/images/P/B000006T5V.01.MZZZZZZZ.jpg</image>
+      </track>
+      <track>
+        <name>Brendon Cheats</name>
+        <artist>Brendon Small</artist>
+        <url>http://www.last.fm/music/Brendon+Small/_/Brendon+Cheats</url>
+        <streamable fulltrack="0">0</streamable>
+        <listeners>584</listeners>
+      </track>
+      <track>
+        <name>Surrender</name>
+        <artist>The Cheats</artist>
+        <url>http://www.last.fm/music/The+Cheats/_/Surrender</url>
+        <streamable fulltrack="0">1</streamable>
+        <listeners>526</listeners>
+        <image size="small"/>
+        <image size="medium"/>
+        <image size="large"/>
+        <image size="extralarge"/>
+      </track>
+    </trackmatches>
+  </results>
+</lfm>

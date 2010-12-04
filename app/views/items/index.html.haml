@@ -1,0 +1,51 @@
+-content_for :scripts do
+  = javascript_include_tag 'pagination/items_pagination'
+#all-items.index.thumbs.clearfix
+  %h1
+    %span 
+      Browse Items
+    = render(:partial => 'items/select')
+  #items
+    %br.clear
+    .categories
+      %ul
+        %li{:style => 'font-size: 16px'}
+          Sort by type:
+        %li
+          - button_class = 'button'
+          - if @current_category == 'Show All' or @current_category.nil?
+            - button_class = button_class + ' selected'
+          =link_to('Show All', items_path, :class => button_class, :style => 'margin-right: 15px')
+        - for category in ItemCategory.roots
+          %li
+            - button_class = 'button'
+            - if @current_category == category.id
+              - button_class = button_class + ' selected'
+            =link_to(plural_category_name(category), items_path(:sort => params[:sort], :scope => params[:scope], :category => category.id), :class => button_class, :style => 'margin-right: 15px')
+            
+    .sorting
+      %ul
+        %li Show: 
+        - class_button = 'button'
+        - if @sort == 'most_recent' 
+          - class_button = class_button + ' selected'
+        %li= link_to('Most Recent', items_path(:category => @current_category, :sort => 'most_recent', :scope => params[:scope]), :class => class_button,:id=>'browse-most-recent')
+        
+        - class_button = 'button'
+        - if @sort == 'top_rated' || !@sort
+          - class_button = class_button + ' selected'
+        %li= link_to('Top Rated', items_path(:category => @current_category, :scope => params[:scope], :sort => 'top_rated'), :class => class_button,:id=>'browse-top-rated')
+        
+        - class_button = 'button'
+        - if @sort == 'most_active'
+          - class_button = class_button + ' selected'
+        %li= link_to('Most Active', items_path(:category => @current_category, :scope => params[:scope], :sort => 'most_active'), :class => class_button,:id=>'browse-most-active')
+      
+        - class_button = 'button'
+        - if @sort == 'most_hyped'
+          - class_button = class_button + ' selected'
+        %li= link_to('Most Hyped', items_path(:category => @current_category, :scope => params[:scope], :sort => 'most_hyped'), :class => class_button,:id=>'browse-most-hyped')
+  %spam{:id => 'index-ajax-spinner',:style=>"display:none;margin:150px 480px;position:fixed;z-index:1000;"}
+    %img{:src => "/images/ajax-spinner.gif"}
+  #browse
+    =render(:partial => 'item_block', :object => @items)

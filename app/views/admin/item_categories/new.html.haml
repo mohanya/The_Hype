@@ -1,0 +1,5 @@
+.columns.one.clearfix
+  .column.one
+    %h1= "New Category"    
+    - form_for(@item_category, :url => admin_item_categories_url(), :builder => HandcraftedFormBuilder) do |form|
+      =render :partial => 'form', :object => form

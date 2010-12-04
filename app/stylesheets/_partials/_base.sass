@@ -1,0 +1,94 @@
+// Colors
+$blue_default: #2793cf
+$blue_dark: #1876bd
+$orange_default: #ff6600
+$grey_accent_color: #686868
+
+=base_font
+  font: 13px Arial, Helvetica, sans-serif
+
+=bg_gradient_dark
+  background: #333333 url(/images/app/gradient_dark.png) repeat-x 0 bottom
+
+=link-button
+  background: #efefef url(/images/app/gradient_light_grey_to_white.png) repeat-x 0 top
+  border: 1px solid #cacaca
+  color: $blue_dark
+  display: inline-block
+  margin-right: 10px
+  padding: 4px 10px
+  +border-radius(2px)
+  &:hover
+    border-color: #888888
+    text-decoration: none
+
+// Base
+html,
+body
+  height: 100%
+  margin: 0 0 1px 0
+  padding: 0
+
+body
+  +base_font
+  color: #353535
+
+// Links
+a
+  color: #4c7cbe
+  text-decoration: none
+  &:hover
+    color: #225588
+    text-decoration: underline
+  &:focus,
+  &:active
+    outline: none
+
+// Floats
+=float_right
+  display: inline
+  float: right
+
+=float_left
+  display: inline
+  float: left
+
+p
+  margin-bottom: 1.5em
+
+// Images
+p img
+  padding: 0
+  max-width: 100%
+
+img
+  &.centered
+    display: block
+    margin: 15px auto
+    padding: 0
+  &.alignright
+    +float_left
+    margin: 15px 20px
+  &.alignleft
+    +float_right
+    margin: 15px 20px
+
+// Manipulation
+.hidden,
+hr
+  display: none !important
+
+.clear
+  clear: both
+
+// P.I.E. FLOAT CLEARING
+// www.positioniseverything.net/easyclearing.html
+.clearfix:after
+  clear: both
+  content: "."
+  display: block
+  height: 0
+  visibility: hidden
+
+form, fieldset
+  border: 0

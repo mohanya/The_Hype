@@ -1,0 +1,18 @@
+:css
+  .green-cloud{background:url("/images/welcome_banner_revised_new.png") no-repeat;width:865px !important;height:196px;}
+  .green-cloud .close{right:7px;top:4px;}
+  .green-cloud .top, .green-cloud .text{display:none;}
+  .green-cloud .close a{text-decoration:none;}
+
+.green-cloud{:id => "green_cloud"}
+  .close
+    %a{'', :class => "close", :href => "javascript:;"}
+      = image_tag("x.png")
+  .close{:id => "close2"}
+    
+  .top 
+    Welcome to The Hype
+    %span.hint What now?
+  .text
+    =image_tag('/images/app/welcome_screen.png', :size =>'843x118')
+

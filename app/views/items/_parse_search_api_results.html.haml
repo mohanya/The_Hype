@@ -1,0 +1,18 @@
+Click on one of the product descriptions below
+%br/
+- @items.each_with_index do |item,index|
+  .item-suggestion
+    %dt.first.item-name{ :id => "item-#{index}", :style => 'color: #225588'}
+      - if item.artist_name
+        = h(item.name) + ' - ' + item.artist_name.to_s
+      - else
+        = h(item.name)
+      
+    %dd.hidden.first.description
+      - if item.short_description
+        = item.short_description
+      - else
+        = item.name + ' Description Not Found'
+       
+    %span.hidden.source_id= item.source_id
+    %span.hidden.artist_name= item.artist_name

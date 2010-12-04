@@ -1,0 +1,48 @@
+= javascript_include_tag "help.js"
+.container#new_hype
+  = render(:partial => 'reviews/new/header')
+  .padding
+    - form_for @review, :url => item_reviews_path(@item) do |f|
+      = f.error_messages
+      .form.clearfix
+        - field_set_tag "Hype Form", :id => "hype_form" do
+          .right
+            = render(:partial => 'reviews/new/first', :locals => {:f => f})
+            - field_set_tag "Criteria Selects", :id => "criteria_selects" do
+              = image_tag '/images/app/image.gif', :class => 'criteria_bar qtip', :title => "Level of impression the item presents", :rel =>'topMiddle-'
+              = image_tag '/images/app/appeal_middle.gif', :class => 'criteria_bar qtip', :title => "Level of interest or attraction for the item", :rel =>'topMiddle-'
+              = image_tag '/images/app/talent_right.gif', :class => 'criteria_bar qtip', :title => "Level of skill or aptitude of the item", :rel =>'topMiddle-'
+              .option-set.first
+                /.label.ratings{:title => 'level of impression the item presents'}
+                /  Image
+                .options.clearfix{:style => "display:none"}
+                  .option{:title => "can't get much worse", :class => 'option1'}
+                  .option{:title => "maybe a little impressed", :class => 'option2'}
+                  .option{:title => "ok, I'm impressed", :class => 'option3'}
+                  .option{:title => "very impressed", :class => 'option4'}
+                  .option{:title => "sainthood isn't far off", :class => 'option5'}
+                  = f.select :criteria_1, Review.scores
+              .option-set
+                /.label.ratings{:title => 'level of interest or attraction for the item'}
+                /  Appeal
+                .options.clearfix{:style => "display:none"}
+                  .option{:title => "zero, none, nada, nilch", :class => 'option1'}
+                  .option{:title => "maybe a little", :class => 'option2'}
+                  .option{:title => "ok I'm interested", :class => 'option3'}
+                  .option{:title => "very interested", :class => 'option4'}
+                  .option{:title => "I'm obsessed", :class => 'option5'}
+                  = f.select :criteria_2, Review.scores
+              .option-set.last
+                /.label.ratings{:title => 'level of skill or aptitude of the item'}
+                /  Talent
+                .options.clearfix{:style => "display:none"}
+                  .option{:title => "stick to your day job", :class => 'option1'}
+                  .option{:title => "minimal", :class => 'option2'}
+                  .option{:title => "decent", :class => 'option3'}
+                  .option{:title => "amazing", :class => 'option4'}
+                  .option{:title => "legendary", :class => 'option5'}
+                  = f.select :criteria_3, Review.scores, :style => "display:none"
+            = render(:partial => "reviews/new/pros_cons.html.haml", :locals => {:f => f})
+            = render(:partial => "reviews/new/comments.html.haml", :locals => {:f => f})
+            = render(:partial => "reviews/new/bottom.html.haml")
+= render("reviews/new/ajax_form.html.haml")

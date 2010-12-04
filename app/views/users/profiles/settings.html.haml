@@ -1,0 +1,104 @@
+:css
+  a.fbconnect_login_button {
+  opacity:1;
+  }
+%div#profile-edit.signup-steps.index
+  = image_tag('/images/app/header3.png', :class => 'congrats-img')
+  .link= link_to("No thanks, take me to the site", '/')
+  - form_for @user, :url => user_profile_path(@user), :html => {:multipart => true},  :builder => HandcraftedFormBuilder do |f|
+    - f.fields_for :profile, :builder => HandcraftedFormBuilder do |p|
+      = hidden_field_tag 'scope', params[:scope]
+      .signup-step
+        = render :partial => 'shared/signup_wizard', :locals => {:current_step => 'settings'}
+        .header.settings
+          .help_links.top
+            %a{:href => "javascript:;", :title => image_tag('/images/app/user_profile_example.png', :class => 'example'), :class => 'help', :rel => 'leftTop-rightTop-min-550'}See an example 
+          .help_links.bottom
+            .bottom
+              = render(:partial => 'why_complete')
+        .steps
+          .step
+            .step-number.step1
+            .substeps
+              .substep
+                %h2 Notifications
+                %p.comment-notif Recieve updates by email for specific actions
+                %table
+                  %tr
+                    %td
+                      New Follower:
+                    %td
+                      = p.radio_button("follower_notice", true)
+                      = p.label("follower_notice_true", "Yes")
+                      = p.radio_button("follower_notice", false)
+                      = p.label("follower_notice_false", "No")
+                  %tr
+                    %td
+                      New Comment:
+                    %td
+                      = p.radio_button("comment_notice", true)
+                      = p.label("comment_notice_true", "Yes")
+                      = p.radio_button("comment_notice", false)
+                      = p.label("comment_notice_false", "No")
+                  %tr
+                    %td
+                      New Message:
+                    %td
+                      = p.radio_button("email_notice", true)
+                      = p.label("email_notice_true", "Yes")
+                      = p.radio_button("email_notice", false)
+                      = p.label("email_notice_false", "No ")
+
+              .substep-arrow
+              %div{:class => "substep social-networks"}
+                %h2 Link with other social profile's
+                Linking allows you to Post to Twitter and Facebook without having to login each time you are on the site.
+                Linking also verifies your authenticity &amp; helps your friends find you easier.
+                
+                %br
+                %br
+                
+                .social-buttons{:style=>"padding-top:0px;"}
+                  .button-area
+                    .button{:style=>"margin-left:43px;"}
+                      = link_to_twitter
+                      = link_to_facebook
+                    .clear
+
+            .clearfix
+          .step
+            .step-number.step2{:style=>"margin-top: -125px;"}
+            .substeps
+              .substep
+                %h2{:style=>"width:280px; margin-top:-110px;"} Privacy
+                #private_info{:style=>"margin-right:10px; display:inline;"} Make my information private 
+                - count = (@user.profile.private ? 0 : 1)
+                #private_radio{:style=>"display:inline;"}
+                  =p.radio_button("private", true, :onclick=>"profilePrivate('#{count}');", :class=>"user_profile_attributes_private_true")
+                %p{:style=>"width:355px;font-size:12px;margin-top:17px;"}
+                  If you select this your profile, Hypes, comments and tips will not be available publicly. Only those who approve will be able to view your profile and activity.
+
+            .clearfix    
+          .step
+            .step-number.step3
+            .substeps
+              .substep
+                %h2 Avatar (ie. Profile Picture)
+                = p.file_field :avatar, :label => '', :size=>20
+              .substep-arrow
+              .substep.web
+                %h2 Web Presence
+                %p.comment-presence
+                  This will be displayed on your profile
+                %span.fake_label Blog/Website
+                = p.text_field(:blog, :label => 'eg. www.myblog.com', :class => 'label_example')
+          .clearfix
+
+        .navigation
+          = f.submit "", :id => 'signup-step-finish'
+          = link_to('Go Back,', scope_path(current_user), :class => 'back')
+          or
+          %a{:href => root_path} Cancel
+      .save-and-exit
+        = submit_tag "", :name => "save_and_exit", :id => 'signup-step-save-end-exit'
+	

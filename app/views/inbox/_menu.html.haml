@@ -1,0 +1,8 @@
+#inbox-menu
+  %ul
+    %li{:class => "#{selected == 'messages' ? 'selected' : 'link'}"}
+      =link_to 'Messages', inbox_messages_path
+    %li{:class => "#{selected == 'comments' ? 'selected' : 'link'}"}
+      =link_to 'Comments', inbox_comments_path
+    %li{:class => "#{selected == 'notices' ? 'selected' : 'link'}"}
+      =link_to 'Notices', inbox_notices_path

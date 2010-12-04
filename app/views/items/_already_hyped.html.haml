@@ -1,0 +1,31 @@
+:css
+  #fancybox-inner
+  {
+  width: 480px !important;
+  height:247px !important;
+  background:none repeat scroll 0 0 #CCCCCC;
+  overflow:hidden !important;
+  }
+  #fancybox-outer
+  {
+  width:72%;
+  height:100%;
+  margin-left:90px;
+  }
+
+.box_holder{:style=>"height:237px;background:none repeat scroll 0 0 white;margin:5px;padding: 0;"}
+  .red_banner{:style=>"background:none repeat scroll 0 0 #C10101;color:white;font-size:18px;height:33px;padding-top:12px;text-align:center;width:100%;"}
+    You already Hyped this Item
+  .notice_message{:style=>"color:#3B3B3B;font-size:16px;margin:30px auto !important;text-align:left;width:405px;"}
+    %p
+      %b
+        You can only Hype an Item once .To add this item      
+        to your All-Time Top Hyped list and return to creating
+        your list select 'Add it.'
+      %div{:align=>"center", :style=>"margin-top:-14px;"}
+        %a{:id=>'add', :href => "javascript:;", :onclick=>"$.fancybox.close();"}
+          %img{:src=>'/images/app/add_item_wizard.png'}
+    %hr{:style=>"display:block !important;color:#B2B2B2;"}
+      = link_to "cancel" ,"javascript:;",:style=>"float:right;color:#B2B2B2;" , :onclick=>"$.fancybox.close();" 
+  .clear
+    &nbsp;

@@ -1,0 +1,12 @@
+- if params[:query]
+  %p.search_info
+    == Search results for
+    %strong= params[:query]
+
+.posts
+  - if @posts.blank?
+    = render :partial => "no_posts"
+  - else
+    = render :partial => @posts
+
+= will_paginate(@posts)

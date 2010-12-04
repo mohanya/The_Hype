@@ -1,0 +1,17 @@
+%ul#nav_user
+  %li= link_to "Homepage", root_url
+  - if logged_in? && current_user.admin?
+    %li= link_to "Admin", admin_url
+  - if @site.allow_blog
+    %li= link_to "Blog", blog_url
+  - if @site.referrals?
+    %li= link_to "Tell a Friend", new_referral_url
+  - if logged_in?
+    %li= link_to "My Account", user_url(current_user)
+    %li= link_to "Log out", logout_url
+  - else
+    %li= link_to "Log in", login_url
+    %li= link_to "Sign up", signup_url
+    - if @site.beta_invites?
+      %li= link_to "Request an Invite", new_invite_url
+  

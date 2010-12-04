@@ -1,0 +1,553 @@
+body.users-show
+  #container
+    .content
+      top: -100px
+      padding-top: 0
+
+#container.profile
+  text-align: center
+  .content
+    padding: 60px 0 60px 20px
+    width: 860px
+    margin-left: auto
+    margin-right: auto
+    text-align: left
+    h1
+      font-size: 21pt
+      border-bottom: 3pt solid #E5E6E8
+      padding: 0 2px
+      margin-top: 31px
+      float: left
+      display: inline
+      width: 466px
+    h1, x:-moz-any-link
+      margin-top: 30px
+    h3
+      font-size: 15px
+      color: #b2b2b2
+      font-weight: normal
+      padding: 2 px
+    ul#submenu
+      list-style-type: none
+      float: left
+      display: inline
+      padding: 0
+      margin-top: 26px
+      li
+        float: left
+        width: 121px
+        height: 41px
+        text-align: center
+        background: url(/images/app/submenu_bg.gif) repeat-x top left
+        border-bottom: 1px solid #cccccc
+        color: white
+        margin-right: 1px
+        +border-radius-top(3px)
+        a
+          height: 28px
+          padding-top: 13px
+          display: block
+          font-weight: bold
+          color: white
+        a:hover
+          background-color: #4c7cbe
+          +border-radius-top(2px)
+          text-decoration: none
+      li.selected
+        background: none
+        background-color: #4c7cbe
+        +border-radius-top(2px)
+        //height: 40px
+        //margin-top: 1px
+  .index
+    padding: 0
+    .notices, .social_networks, .change-password, .delete_me
+      margin: 25px
+      h2
+        font-size: 16px
+      table
+        color: #666666
+        font-size: 14px
+        td.radio
+          padding-bottom: 7px
+    .delete_me
+      line-height: 16px
+      width: 500px
+      .info
+        width: 270px
+        color: #999
+        font-size: 12px
+        float: right
+      input
+        float: right
+      input.check
+        margin-right: 10px
+        margin-left: 0px
+      input.delete
+        width: 180px
+        height: 40px
+        float: left
+    #centered_forms
+      //width: 445px
+      border: none
+      form
+        padding: 0
+        margin: 0
+        width: 445px
+        label
+          color: #666666
+        h3
+          margin-bottom: 15px
+          padding: 10px 0 3px 5px
+        h3.first
+          padding-top: 0px
+      .row
+        input[type="text"], input[type="password"], textarea
+          color: #4c7cbe
+          width: 276px
+          font-size: 13px
+        input.hinted
+          color: #999999
+        .hint
+          display: block
+
+body.users-edit
+  .index
+    width: 100%
+    h2
+      margin-top: 40px
+      margin-left: 24px
+      font-size: 15px
+    form
+      margin-left: 24px
+
+body.users-edit, body.profiles-edit
+  table
+    color: #666666
+    padding: 0 5px
+    tr
+      td
+        padding-bottom: 3px
+      td.left
+        width: 114px
+        text-align: right
+      td.right
+        width: 120px
+        text-align: left
+        padding-left: 40px
+      td.radio
+        padding-bottom: 7px
+
+.user_profile
+  padding-top: 0
+  .header
+    border: none
+    h1
+      font-size: 3em
+      color: #333333
+      text-shadow: 0 1px 1px white
+      float: left
+    ul
+      float: left
+      position: relative
+      top: 15px
+      left: 15px
+      li
+        display: inline
+        list-style: none
+        font-size: 1.5em
+        color: #999999
+        margin-left: 15px
+        span.count
+          color: #333333
+          font-weight: bold
+    #last-hype
+      .label,.time
+        color: #666666
+    .reputation-rating
+      span.rating
+        background: #1876bd !important
+  .profile-column-left
+    #user-vitalis
+      #tw_profile
+        text-decoration: none
+      #fb_profile
+        text-decoration: none
+    width: 230px
+    float: left
+    margin-right: 10px
+  .profile-column-right
+    width: 740px
+    float: left
+    &.page_body
+      background: white !important
+  #quick-user-info
+    padding: 11px 10px
+    background: url("/images/app/user_pane_background.png") repeat-x
+    border: none
+    +border-radius(10px)
+    .avatar, .action_links
+      text-align: center
+    .avatar
+      img
+        background-color: white
+        padding: 8px
+        border: 1px solid #cccccc
+        +border-radius(5px)
+    .add-to-friends
+      font-size: 0.9em
+      text-align: center
+      margin-top: 5px
+      &.hide
+        display: none
+    .more_less
+      .ellipse
+        display: inline
+      .more
+        display: none
+      .more_less_link
+        display: block
+    #about-user
+      .unknown
+        color: #999999
+  #user-profile-info
+    padding: 20px 10px
+    .profile_section
+      padding: 20px 10px
+      h3
+        margin-left: -10px
+      &#user-recently-hyped
+        border: 1px solid #cccccc
+  #user-signup-progress-info
+    margin: 10px
+    padding: 10px
+    background: #66686b
+    border: 1px solid #cbcbcb
+    +border-radius(5px)
+    h3, .bar, a
+      color: white
+    a
+      text-decoration: underline
+    .bar, a
+      font-weight: bold
+    .header
+      position: relative
+      margin-bottom: 10px
+      h3
+        font-size: 110%
+    #complete-it-button
+      background: url("/images/app/profile/complete-it-button.png") no-repeat
+      border: none
+      display: block
+      width: 75px
+      height: 24px
+      cursor: pointer
+      position: absolute
+      right: -5px
+      top: -2px
+    .progress-area
+      a
+        display: block
+        float: left
+        clear: none
+        padding: 0.2em 0 0 1.5em
+      #signup-progress-bar
+        float: left
+        background: white
+        width: 130px
+        border-top: 1px solid #d9dada
+        border-right: 1px solid #b3b4b5
+        .bar
+          margin-top: -1px
+          width: 25%
+          background: #4d7dbf
+          border-top: 1px solid #7394bf
+          .percent
+            padding: 3px 5px 3px 5px
+    .description
+      padding-top: 2.3em
+      color: #cccccc
+      text-align: center
+  .profile_section
+    dt
+      color: #555555
+    dd
+      color: #5881c0
+    li, .tag_cloud span
+      color: black
+    li
+      list-style: none
+    h3
+      margin-bottom: 1em
+    .tag_cloud
+      text-align: center
+    .unknown
+      color: #cccccc
+    .unknown, .complete-this-button
+      margin: 40px auto 30px auto
+    .header
+      h3
+        display: inline
+      a
+        font-size: 90%
+      margin-bottom: 1em
+  #user-essentials, #user-all-time-top-hyped, #user-trusted-brands, #user-interests
+    margin-left: 10px
+    margin-right: 10px
+  #user-recently-hyped
+    padding-left: 10px
+    padding-right: 10px
+    min-height: 110px
+    h3
+      margin-left: 0 !important
+    div
+      margin-left: 10px
+      font-size: 90%
+      dl
+        margin: 5px 0
+    dt, dd
+      display: inline
+    dt
+      color: #4c7cbe
+      font-weight: bold
+    dd
+      color: #999999
+      margin-left: 10px
+  #user-essentials
+    dd
+      margin-bottom: 1em
+  #user-vitals dt, #about-user h3
+    color: black
+  #user-vitals
+    font-size: 12px
+    div
+      margin-top: 3px
+    dl
+      margin-top: 3px
+    dt
+      font-weight: bold
+      margin-right: 10px
+      img
+        height: 18px
+        width: 18px
+        vertical-align: middle
+    dd
+      color: #363636
+      a
+        text-decoration: underline
+      a#RES_ID_fb_login
+        img
+          display: none 
+
+  #user-all-time-top-hyped, #user-vitals
+    dt
+      display: inline
+    dd
+      display: inline
+  #user-interests, #user-all-time-top-hyped, #user-essentials
+    border-bottom: 1px solid #aaaaaa
+  #user-vitals
+    width: 80%
+    margin: 0 auto
+    ul
+      li
+        list-style: none
+        margin: 5px 0
+        font-size: 10px
+  .complete-this-button
+    background: url("/images/app/profile/complete-this-button.png") no-repeat
+    border: none
+    display: block
+    width: 144px
+    height: 33px
+    cursor: pointer
+  #about-user
+    margin: 10px 0 0 2px
+    h3
+      font-size: 15px
+      margin: 0 0 5px 3px
+    p
+      font-size: 12px
+      color: #333333
+      margin-bottom: 5px
+    a
+      font-size: 11px
+
+#profile-lower
+  .navigation_holder
+    //border-bottom: 1px solid #cccccc
+    border-bottom: 3pt solid #e5e6e8
+    width: 100%
+  .section-with-heading
+    span.description
+      position: relative
+      top: -40px
+      left: 10px
+      color: #999999
+      display: block
+  h1#top_hypes_head, h1#reviews_head, h1#community_head
+    display: inline
+    float: left
+    font-size: 20pt
+    margin-top: 4px
+    width: 398px
+    padding: 2px
+    top: 0
+  h3#top_hypes_header, h3#reviews_header, h3#community_header
+    color: #b2b2b2
+    font-size: 15px
+    font-weight: normal
+    padding: 3px
+    padding-top: 0px
+  .navigation
+    top: 5px
+    float: right
+    display: inline
+    margin-bottom: 0px
+    ul
+      margin: 0 auto
+      +float_right
+    li,
+    a
+      +float_left
+    ul
+      li
+        display: inline
+        a
+          color: white
+          padding: 10px 23px
+          background: #333333 url(/images/app/submenu_bg.gif) repeat-x top left
+          border: 1px solid white
+          +border-radius-top(3px)
+          border-bottom: 1px solid #cccccc
+          border-left: none
+          &:hover, &.selected
+            background-color: #4c7cbe
+            background-image: none
+            color: white
+            text-decoration: none
+        .link
+          display: block
+          font-size: 14px
+          font-weight: bold
+          margin-bottom: 2px
+        .description
+          font-size: 11px
+  #top_hypes
+    h1
+      border: none
+      font-size: 16px
+      margin: 10px 0
+  .padding
+    background-color: transparent
+    margin-top: 0
+  #reviews
+    width: 800px
+    margin-top: 0px
+    .hype
+      &.review
+        padding: 10px
+        margin-bottom: 30px
+        border-radius: 5px
+        border-bottom: 1px solid #cacaca
+    .item-image, .review-left
+      float: left
+    .user
+      width: 270px
+      border-bottom: none
+      .actions
+        float: left
+        margin-top: 0
+        ul
+          width: auto
+          margin-top: 5px
+          float: left
+          li
+            a
+              width: 53px
+      .info
+        float: left
+        width: 188px
+      img.photo
+        width: 64px
+        height: 64px
+        display: block
+  .index
+    width: auto
+  .entry
+    width: 508px
+    h2
+      margin-bottom: 0
+  #community
+    .wait
+      margin-left: 340px
+      margin-top: 50px
+    .select-div
+      ul.select-filter
+        float: none
+        margin-left: 40px
+        margin-top: 0px
+        margin-bottom: 40px
+        li
+          margin-right: 20px
+          a 
+            font-size: 16px
+    width: 800px
+    margin-top: 0px
+    .hype
+      &.friend
+        padding: 10px
+        margin-bottom: 30px
+        border-radius: 5px
+        border-bottom: 1px solid #cacaca
+    .item-image, #review-left
+      float: left
+    .user
+      padding: 10px
+      margin-bottom: 30px
+      border-radius: 5px
+      border-bottom: 1px solid #cacaca
+      width: 800px
+      .actions
+        float: left
+        margin-top: 0
+        width: 100px
+        ul
+          width: auto
+          margin-top: 5px
+          float: left
+          li
+            a
+              width: 94px
+        .friend-wrapper
+          .add-to-friends
+            font-size: 0.9em
+            &.hide
+              display: none
+      .info
+        float: left
+        .time
+          color: #cccccc
+      img.photo
+        width: 86px
+        height: 86px
+        display: block
+        padding: 4px
+        +border-radius(4px)
+        border: 1px solid #cacaca
+  .index
+    width: auto
+  .entry
+    width: 508px
+.social_networks
+  a
+    display: block
+    float: left
+    width: 97px
+    height: 41px
+  #RES_ID_fb_login
+    background: url('/images/app/facebook_link.png') bottom left no-repeat
+    width: 97px
+    height: 41px
+    #RES_ID_fb_login_image
+      display: none

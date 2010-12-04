@@ -1,0 +1,27 @@
+development:
+  adapter: mongodb
+  host: localhost
+  database: the_hype
+  username:
+  password:
+test: &test
+  adapter: mongodb
+  host: localhost
+  database: the_hype_test
+  username:
+  password:
+itg:
+  adapter: mongodb
+  host: genesis.mongohq.com
+  database: the_hype-itg
+  username: squeejee
+  password: LetsRoll!
+production:
+  adapter: mongodb
+  host: genesis.mongohq.com
+  database: the_hype-itg
+  username: squeejee
+  password: LetsRoll!
+  
+cucumber:
+  <<: *test

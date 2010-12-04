@@ -1,0 +1,12 @@
+ul#activities li .item_icon a img {
+  height: 70px;
+}
+
+.column_right #top-rated-items .item_holder .item img, .column_right #most-active-conversations .item_holder .item img {
+  width: 80px;
+  height: 80px;
+}
+
+#landing .main .text {
+  margin-top: 70px;
+}

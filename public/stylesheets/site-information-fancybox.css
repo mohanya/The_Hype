@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+
+#users_favorites #fancybox-outer {
+  background: url("/images/app/fancy_black_bg.png") repeat transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+#users_favorites #fancybox-outer div#fancy-bg-s {
+  bottom: -20px;
+}
+#users_favorites #fancybox-inner {
+  overflow: hidden !important;
+  background: #cccccc;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+/*#users_favorites #fancybox-inner .wrap {
+  margin: 3px;
+  background: white;
+}*/
+#users_favorites #fancybox-inner .notices {
+  height: 234px;
+  }
+  
+.wrap1{ -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  background-color:#4c7cbe;
+  width:757px; height:562px;
+  background:url(../images/hype-intro-popup-header-img.png) no-repeat 637px 2px #4c7cbe;
+  margin:10px;}
+
+.blue-bg1{padding:15px 0 20px 17px;}  
+.blue-bg1 h1{color:#FFFFFF; font-size:22px; font-family:Arial, Helvetica, sans-serif; font-weight:bold; margin-bottom:5px;} 
+.blue-bg1 p{color:#FFFFFF; font-family:Arial, Helvetica, sans-serif; font-size:14px; margin:0; padding-left:2px;}
+
+.content1{-moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  background-color:#FFFFFF;
+  width:748px; height:458px; margin:0 4px 4px 4px;}
+  
+.content1 #feedback{margin:0 0 10px 10px; padding-top:10px; height:95px; position:relative;}
+.content1 #feedback img{position:absolute; top:67px; left:516px;}
+.content1 #feedback h1{color:#FFFFFF; font-family:Arial, Helvetica, sans-serif; font-size:16px; padding-left:42px; line-height:30px; font-weight:bold; background:url(../images/app/hype-intro-graphic-element1.png) no-repeat;}
+.content1 #feedback h2{color:#333333; font-family:Arial, Helvetica, sans-serif; font-size:14px; padding-left:42px; width:650px;}
+.content1 #feedback p{ color:#b2b2b2; color:#666666; font-family:Arial, Helvetica, sans-serif; font-size:13px; padding-left:50px; width:510px; margin-top:5px;}
+
+.content1 #edit-items{margin:0 0 10px 10px; height:80px;}
+.content1 #edit-items h1{color:#FFFFFF; font-family:Arial, Helvetica, sans-serif; font-size:16px; padding-left:42px; line-height:30px; font-weight:bold; background:url(../images/app/hype-intro-graphic-element2.png) no-repeat;}
+.content1 #edit-items p{color:#333333; font-family:Arial, Helvetica, sans-serif; font-size:14px; padding-left:42px; width:650px; font-weight:bold;}
+.content1 #edit-items p span{position:relative;}
+.content1 #edit-items p img{position:absolute; top:0px;}
+#disp{margin-left:26px;}
+
+.content1 #add{margin:0 0 10px 10px; height:90px;}
+.content1 #add h1{color:#FFFFFF; font-family:Arial, Helvetica, sans-serif; font-size:16px; padding-left:42px; line-height:30px; font-weight:bold; background:url(../images/app/hype-intro-graphic-element3.png) no-repeat;}
+.content1 #add p{ font-weight:bold; color:#333333; font-family:Arial, Helvetica, sans-serif; font-size:14px; padding-left:42px; width:670px;}
+
+.content1 #invite-friends{margin:0 0 10px 10px; height:95px;}
+.content1 #invite-friends h1{color:#FFFFFF; font-family:Arial, Helvetica, sans-serif; font-size:16px; padding-left:42px; line-height:30px; font-weight:bold; background:url(../images/app/hype-intro-graphic-element4.png) no-repeat;}
+.content1 #invite-friends p{color:#333333; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px; padding-left:42px; width:650px;}
+
+.content1 #start-hyping{ padding:0 267px;}
+
+#users_favorites #fancybox-wrap.graph #fancybox-inner{ -moz-border-radius:3px 3px 3px 3px;
+background:none repeat scroll 0 0;
+overflow:hidden !important;}
+
+#users_favorites #fancybox-wrap.graph #fancybox-outer {
+-moz-border-radius:10px 10px 10px 10px;
+background:url("/images/landing/bg_pop.png") repeat scroll 0 0 transparent;
+border:1px solid black;}

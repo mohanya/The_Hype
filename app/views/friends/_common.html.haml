@@ -1,0 +1,24 @@
+:CSS
+  .green-cloud .close{position:absolute;right:7px;top:4px;}
+  .green-cloud .close a{text-decoration:none;}
+  .narrow, .text{display:none;}
+  
+
+.green-cloud{:id => "green_cloud", :style =>"margin-left:-27px;background:url('/images/friends_banner_revised_new.png') no-repeat scroll 0 0 transparent;width:865px;height:155px;margin-bottom:0;"}
+  .close
+    %a{' ', :class => "close", :href => "javascript:;"}
+      = image_tag("x.png")
+  .close{:id => "close2"}
+    
+  .div{:class => "top",:style=>"font-size:20px;display:none;"} The Hype is better with your friends
+  .div{:class=> "text"}
+    Do you have consumer savvy friends or family members?
+    %br
+    Want to see what gets them Hyped?
+
+  .narrow= image_tag("app/narrow-n.png")
+.header
+  Gather Your Crowd
+
+
+

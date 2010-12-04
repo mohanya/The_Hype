@@ -1,0 +1,7 @@
+= form.error_messages
+= form.text_field :name, :example => "Products"
+= form.text_field :description
+= form.text_field :tag_name, :example => "Default tag that will be tied to every item of this type. e.g. 'product' or 'movie' "
+= form.select :api_source, AppSetting.api_sources
+= form.select :parent_id, ItemCategory.all.map {|ic| [ic.name, ic.id]}.sort, :include_blank => true
+= form.submit

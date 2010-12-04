@@ -1,0 +1,14 @@
+.index.clearfix.item-results.no-results
+  %p{:style => 'clear: left; margin-left: 10px;'}
+    Your search for
+    %strong= "\"#{@query}\""
+    had no matches
+  .results{:style=>'width:940px;'}
+    %h3{:style => 'font-size: 14px; font-weight: bold;'} A few suggestions:
+    %ul{:style => 'clear: left;'}
+      %li Make sure your search terms are spelled correctly
+      %li Try a different search using different words
+      %li
+        %span{:style=>"background-color:#EFF0F3;"}
+          Or, the item may not be in our database yet.
+  %img{:src => "/images/app/green-arrow.png", :style => "position:absolute;top:139px;left:300px;"}

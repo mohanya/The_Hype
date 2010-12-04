@@ -1,0 +1,12 @@
+.box_holder{:style=>"height:221px;"}
+  .red_banner{:style=>"background:none repeat scroll 0 0 #4C7CBE;color:white;font-size:18px;height:35px;margin-left:-20px;margin-top:-10px;text-align:center;width:109.5%;padding-top:10px"}
+    = image_tag('/images/app/lock.png', :style=>"float:left;margin:-3px 14px;")
+    %b{:style=>"margin-left:-50px"} This account is protected
+  .notice_message{:style=>"color:#3B3B3B;font-size:16px;margin:14px auto !important;text-align:left;width:385px;"}
+    %p
+      = user.name.titleize
+      has protected their account. You must be approved by this person to view their profile and activity. Select 'Request To Follow' to send a message to this person asking permission to follow them.
+    #follow_request_button{:align=>"center", :style=>"margin-top:-15px;"}
+      = link_to image_tag('/images/app/follow_request.png', :title=>"Send Follow request"), send_follow_request_users_path(:receiver_id=>user.id)
+  %hr{:style=>"display:block !important;color:#B2B2B2;"}
+    = link_to "Or, return to previous page" ,"#",:style=>"float:right" , :onclick=>"history.back();" 

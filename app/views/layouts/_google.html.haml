@@ -1,0 +1,59 @@
+:javascript
+  google.load('search', '1');
+
+  function searchComplete(searcher) {
+    // Check that we got results
+    if (searcher.results && searcher.results.length > 0) {
+      // Grab our content div, clear it.
+      var contentDiv = document.getElementById('image-search-results');
+      contentDiv.innerHTML = '';
+      var waitImage = document.getElementById('wait_image');
+      waitImage.setAttribute('style', 'display:none');
+
+      // Loop through our results, printing them to the page.
+      var results = searcher.results;
+      for (var i = 0; i < 6; i++) {
+        var imageDiv = document.createElement('span');
+        imageDiv.className = "image-result-item"
+        imageDiv.setAttribute('style', 'border: 1px solid #ccc; padding: 5px; display: inline-block; margin: 3px')
+        contentDiv.appendChild(imageDiv);
+        // For each result write it's title and image to the screen
+        var result = results[i];
+        var newImg = document.createElement('img');
+        // There is also a result.url property which has the escaped version
+        newImg.src = result.tbUrl;
+        newImg.className = 'google_image';
+
+        var check_box = document.createElement('input');
+        check_box.name = "google_image_checkbox[]";
+        check_box.value = newImg.src;
+        check_box.type = "checkbox"
+        // Put our title + image in the content
+        imageDiv.appendChild(check_box);
+        imageDiv.appendChild(newImg);
+        
+      }
+    }
+  }
+
+  function LoadGoogleImages() {
+    // Our ImageSearch instance.
+    var imageSearch = new google.search.ImageSearch();
+
+    // Restrict to extra large images only
+    imageSearch.setResultSetSize(google.search.Search.LARGE_RESULTSET);
+    imageSearch.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
+                               google.search.ImageSearch.IMAGESIZE_MEDIUM);
+
+    // Here we set a callback so that anytime a search is executed, it will call
+    // the searchComplete function and pass it our ImageSearch searcher.
+    // When a search completes, our ImageSearch object is automatically
+    // populated with the results.
+    imageSearch.setSearchCompleteCallback(this, searchComplete, [imageSearch]);
+
+    // Find me a beautiful car.
+    var itemName = $('#item_name').val();
+    imageSearch.execute(itemName);
+  }
+
+  google.setOnLoadCallback(LoadGoogleImages);

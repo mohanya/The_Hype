@@ -1,0 +1,22 @@
+.empty.exp
+  .comics
+    Do you own or have experience with this item?  
+  Be the 
+  %span.underline
+    first 
+  to Hype it and contribute to the wisdom of your crowd!
+  = link_to "Hype It!", new_item_review_path(@item), :class => "hype-item", :id => 'hype-button-small'
+.empty.crowd
+  .comics
+    If not, do you know someone who does? 
+  Share this item with your friends so they can share their experience.
+  %ul.sharing
+    %li= link_to_bigger_share("Do you have experience with #{@item.name}. If so, check out the hype & post what you know. http://thehype.com#{item_path(@item)}",@item.id)
+    
+    %li
+      %a{:name => "fb_share", :type =>"icon_link", :href =>"http://www.facebook.com/sharer.php"}
+    %li.clear.share
+      Share
+
+
+

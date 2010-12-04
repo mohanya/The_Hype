@@ -1,0 +1,9 @@
+.columns.one.clearfix
+  .column.one
+    %h1= "Editing News"
+
+= error_messages_for :info
+-form_for(@info, :url => admin_info_url(@info), :method => :put, :builder => HandcraftedFormBuilder) do |form| 
+  = render :partial => "form", :object => form
+  = form.submit 'Update'do 
+    - link_to 'Cancel and Go Back', admin_info_url(@info)

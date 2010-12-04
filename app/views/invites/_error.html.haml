@@ -1,0 +1,33 @@
+.box_holder.notices
+  .red_banner
+    -if !@email_empty.nil?
+      = error.errors.on(:email) 
+    - else
+      ="Please provide an email address"
+    
+  .notice_message
+    %p
+      - if error.errors.on(:explain_email) 
+        = error.errors.on(:explain_email)
+        %p
+          The Hype Team
+      - elsif error.errors.on(:resend)
+        If you did not receive the invite* please select the 'Resend' button and we will send a new one to you.
+        = link_to(image_tag('/images/resend_button.png'), resend_invite_path(Invite.find_by_email(error.email)), :id => 'resend_button')
+        %span
+          *Please check your spam folder. Your email service mail have automatically put it there. thank you.
+      - else
+        -if !@email_empty.nil?
+          Please provide another valid email address and submit your request again. 
+          %p
+            Thank you.
+          %p
+            The Hype Team
+        -else
+          Please provide email address and submit your request again.
+          %p
+            Thank you.
+          %p
+            The Hype Team
+  .clear
+    &nbsp;

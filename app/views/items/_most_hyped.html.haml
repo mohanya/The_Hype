@@ -1,0 +1,4 @@
+- most_hyped.each_with_index do |hyped_item,index|
+  %li.slider-item{:class => "#{index}" }
+    %a{ :href => "#{item_path(hyped_item)}"}
+      = render :partial => 'pages/item_block', :locals => {:item => hyped_item} 

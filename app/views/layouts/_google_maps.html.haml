@@ -1,0 +1,6 @@
+- if request.host == 'thehype.local'
+  %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{YAML::load(File.open("#{RAILS_ROOT}/config/external_apis.yml"))['googlemaps']['api_key']['thehype_local']}", :type => "text/javascript"}
+-elsif request.host == 'test.thehypenetworks.com'
+  %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{YAML::load(File.open("#{RAILS_ROOT}/config/external_apis.yml"))['googlemaps']['api_key']['thehype_test']}", :type => "text/javascript"}
+-else
+  %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=#{YAML::load(File.open("#{RAILS_ROOT}/config/external_apis.yml"))['googlemaps']['api_key']['localhost']}", :type => "text/javascript"}

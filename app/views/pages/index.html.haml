@@ -1,0 +1,161 @@
+#homepage.index
+  - if cookies[:green_panel] == "1"
+    = render(:partial => "pages/welcome")
+  = render(:partial => "pages/panel")  
+  .span-15#most-hyped
+    %h1
+      Most Hyped
+      %small
+        Those items that are trending right now
+    = render(:partial => 'pages/select', :locals => {:target =>'hyped_filter'})           
+    %span.prev-button
+      = image_tag 'app/homepage_prev_button.gif'
+    .slider-wrap
+      .carousel-position-buttons
+        %button.1.active{ :disabled => true}
+          
+        %button.2{ :disabled => true}
+          
+        %button.3{ :disabled => true}
+          
+        %button.4{ :disabled => true}
+          
+        %button.5{ :disabled => true}
+          
+      .slider-container
+        %ul#hyped_filter
+          -unless @most_hyped.empty?
+            =render(:partial =>  'items/most_hyped', :object => @most_hyped)
+          - else
+            %li
+              - if !@user || (current_user == @user )
+                %span.no_friends{:style => "font-size: 15px; color: #666666;"}
+                  = image_tag 'app/small_icon_crowd.png'
+                  %p{:style=>"text-align: justify;font-weight:normal;margin: 5px 25px 25px;color:#999999;font-family: helvetica neue;font-size:13px;"}
+                    You are not Following anyone yet. To find people to Follow 
+                    =link_to('Invite', '/friends/facebook/new', :style => 'color:#4b7cc5;text-decoration:none;') 
+                    your friends and trusted sources to The Hype.
+              - elsif (@user && (current_user != @user))
+                %span.no_friends{:style => "font-size: 15px;font-weight:inherit;margin-top:10px;margin-bottom:20px;margin-left:12px;"}
+                  = @user.name
+                  %span{:id=>"no_friends_text"}
+                    - if friend_status=='following'
+                      has not added anyone to his crowd yet.
+                    - else
+                      has no followers. Add their wisdom to 
+                      %span{:style=>"text-decoration:underline;"}Your
+                      Crowd by following them!
+  
+        
+        %br.clear
+    %span.next-button
+      = image_tag 'app/homepage_next_button.gif'
+  %div.clear
+
+  .column_left
+    #the-stream
+      %h1#stream{:style=>"border-bottom:1px solid #999999;"}
+        The Stream
+      = render(:partial => 'pages/select', :locals => {:target => 'activities'})
+      #live_update{:style => 'display: none'}
+        %span#live_count
+        =link_to ' more update(s) have been posted. Click here to refresh.', 'javascript:;', :class => 'live-stream'
+      %br
+      %br
+      %ul#activities
+        -if !@stream.empty?
+          = render :partial => 'activities/activity', :collection => @stream
+        -else
+          - if !@user || (current_user == @user )
+            %span.no_friends{:style => "font-size: 15px; color: #666666;"}
+              %img{:src=>"/images/app/large_icon_crowd.png", :style=>"padding-left:180px;"}
+              %p{:style=>"text-align: justify;margin-top:10px;font-family:helvetica neue;color:#999999;font-size:13px;font-weight:normal;"}
+                You are not Following anyone yet. To find people to Follow 
+                =link_to('Invite', '/friends/facebook/new', :style => 'color:#4b7cc5;text-decoration:none;') 
+                your friends and trusted sources to The Hype.
+          - elsif (@user && (current_user != @user))
+            %span.no_friends{:style => "font-size: 15px;font-weight:inherit;margin-top:10px;margin-bottom:20px;margin-left:12px;"}
+              = @user.name
+              %span{:id=>"no_friends_text"}
+                - if friend_status=='following'
+                  has not added anyone to his crowd yet.
+                - else
+                  has no followers. Add their wisdom to 
+                  %span{:style=>"text-decoration:underline;"}Your
+                  Crowd by following them!
+
+      = link_to ((image_tag 'app/pagination_UI_left_arrow.png'), "", {:class => 'stream-more-new', :offset =>0, :style => "display: none;", :onclick=>"$('html,body').animate({scrollTop: $('#the-stream').offset().top},'slow');"})
+      = link_to 'Newer Activity', "", :class => 'stream-more-new', :offset =>0, :style => "display: none;", :onclick=>"$('html,body').animate({scrollTop: $('#the-stream').offset().top},'slow');"
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      = link_to '&nbsp;&nbsp;&nbsp;&nbsp;Older Activity', "", :class => 'stream-more', :offset =>15, :style => "#{(@stream.size >= 15) ?  '' : 'display: none;'}", :onclick=>"$('html,body').animate({scrollTop: $('#the-stream').offset().top},'slow');"
+      = link_to ((image_tag 'app/pagination_UI_right_arrow.png'), "", {:class => 'stream-more', :offset =>15, :style => "#{(@stream.size >= 15) ?  '' : 'display: none;'}", :onclick=>"$('html,body').animate({scrollTop: $('#the-stream').offset().top},'slow');"})
+
+  .column_right
+    #top-rated-items
+      %h1{:style=>"border-bottom:1px solid #999999;"} Top Rated Items
+      =link_to('More', items_path, :class => 'more')
+      = render(:partial => 'pages/select', :locals => {:target => 'rated_filter'})           
+      #rated_filter
+        -if !@top_rated.empty?
+          = render :partial => 'items/item_preview', :collection => @top_rated
+        -else
+          - if !@user || (current_user == @user )
+            %span.no_friends{:style => "font-size: 15px; color: #666666;margin-left:0"}
+              %img{:src=>"/images/app/large_icon_crowd.png", :style=>"padding-left:127px;"}
+              %p{:style=>"text-align: justify;font-weight:normal;margin-top:10px;font-family:helvetica neue;font-size:13px;color:#999999;"}
+                You are not Following anyone yet. To find people to Follow 
+                =link_to('Invite', '/friends/facebook/new', :style => 'color:#4b7cc5;text-decoration:none;') 
+                your friends and trusted sources to The Hype.
+          - elsif (@user && (current_user != @user))
+            %span.no_friends{:style => "font-size: 15px;font-weight:inherit;margin-top:10px;margin-bottom:20px;margin-left:12px;"}
+              = @user.name
+              %span{:id=>"no_friends_text"}
+                - if friend_status=='following'
+                  has not added anyone to his crowd yet.
+                - else
+                  has no followers. Add their wisdom to 
+                  %span{:style=>"text-decoration:underline;"}Your
+                  Crowd by following them!
+
+      %br.clear
+
+    .advert.add_invite
+      =link_to(image_tag('/images/app/invite_button.png'), '/friends/facebook/new')
+
+    .clear
+   
+    #most-active-conversations
+      %h1 Most Active Conversations
+      =link_to('More', items_path(:sort => 'most_active'), :class => 'more')
+      = render(:partial => 'pages/select', :locals => {:target =>'talked_filter'})           
+      #talked_filter
+        -if !@most_commented.empty?
+          = render :partial => 'items/item_preview', :collection => @most_commented
+        -else
+          - if !@user || (current_user == @user )
+            %span.no_friends{:style => "font-size: 15px; color: #666666;margin-left:0"}
+              %img{:src=>"/images/app/large_icon_crowd.png", :style=>"padding-left:127px;"}
+              %p{:style=>"text-align: justify;font-weight:normal;margin-top:10px;font-family:helvetica neue;font-size:13px;color:#999999;"}
+                You are not Following anyone yet. To find people to Follow 
+                =link_to('Invite', '/friends/facebook/new', :style => 'color:#4b7cc5;text-decoration:none;') 
+                your friends and trusted sources to The Hype.
+          - elsif (@user && (current_user != @user))
+            %span.no_friends{:style => "font-size: 15px;font-weight:inherit;margin-top:10px;margin-bottom:20px;margin-left:12px;"}
+              = @user.name
+              %span{:id=>"no_friends_text"}
+                - if friend_status=='following'
+                  has not added anyone to his crowd yet.
+                - else
+                  has no followers. Add their wisdom to 
+                  %span{:style=>"text-decoration:underline;"}Your
+                  Crowd by following them!
+      %br.clear
+
+    .advert.add_hype
+      =link_to(image_tag('/images/app/hype_button.png'), '/')
+
+    .advert.add_store
+      =link_to(image_tag('/images/app/store_button.png'), '/')
+  
+  .clear
+

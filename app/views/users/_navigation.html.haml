@@ -1,0 +1,48 @@
+.navigation_holder
+  %h1#top_hypes_head
+    Favorites
+  %h1#reviews_head
+    Hypes
+  %h1#community_head
+    Community
+  .navigation
+    %ul.clearfix
+      / %li
+      /   %a{:href => "#user_profile"}
+      /     %span.link
+      /       User Profile
+      /     %span.description
+      /       View this user's profile.
+      %li
+        %a{:href => "#top_hypes"}
+          %span.link
+            Favorites
+      %li
+        %a{:href => "#reviews", :id=>"reviews_nav"}
+          %span.link
+            Hypes
+      %li
+        %a{:href => "#community", :id=>"community_nav"}
+          %span.link
+            Community
+      / %li
+      /   %a{:href => "#conversations"}
+      /     %span.link
+      /       Conversations
+      /     %span.description
+      /       My discussions on items
+      / %li
+      /   %a{:href => "#connections"}
+      /     %span.link
+      /       Connections
+      /     %span.description
+      /       Items I connect with
+  .clearfix
+.clearfix
+%h3#top_hypes_header.clearfix
+  Items that get me hyped
+%h3#reviews_header.clearfix
+  All my reviews
+%h3#community_header.clearfix
+  My followers and those I follow
+  

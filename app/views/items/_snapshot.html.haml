@@ -1,0 +1,96 @@
+.hypes.tab.clearfix#snapshot
+  .snapshot-section
+    .item_description
+      %p
+        = truncate(h(@item.short_description), :length => 195, :omission => '...')
+        = link_to('More','javascript:;', :class => 'more tabable', :rel => "details")
+    %h1
+      Hot Tips
+    .clearfix
+      - if current_user
+        =render(:partial  => 'tips/new')
+      #tips_holder
+        - if @tips.empty?
+          =render(:partial  => 'tips/no_tips')
+        - else
+          =render(:partial  => 'tips/tip_block', :object => @tips)
+    %h1
+      Hypes
+      =link_to('More', 'javascript:;', :class => 'more tabable', :rel => 'reviews')
+    -if @best_hype and @worst_hype
+      .battle_hypes.clearfix
+        = render(:partial => 'reviews/battle', :object => @best_hype, :locals => {:first => true})
+        = image_tag('/images/app/vs.png', :class => 'vs')
+        = render(:partial => 'reviews/battle', :object => @worst_hype)
+    -else
+      =render(:partial  => 'reviews/no_reviews')
+    %h1
+      Most Active Conversations
+      =link_to('More', 'javascript:;', :class => 'more tabable', :rel => 'conversations')
+    .conversation_wrapper
+      -if !@best_comments.empty?
+        - @best_comments.each_with_index do |best, index|
+          = render(:partial => 'conversation', :object => best, :locals => {:counter => index })
+
+      -else
+        =render(:partial  => 'items/no_conversation')
+
+  
+  .snapshot-panel
+    = link_to('more', graph_item_path(@item, :scope => params[:scope]), :class => 'favorite_link qtip', :id => "snapshot-link",:title=>"Expands Hype Snapshot&trade; to show larger display of the Meter,Buzz and Sentiment. ",:rel => 'bottomRight-topLeft-min-243',:style=>"position: absolute;top: 22px; right: 65px; background: url('/images/app/snapshot_link.png') no-repeat top left;  width: 22px;  height: 18px;  text-indent: -9999px;  font-size: 0px;")
+    .meter
+      =link_to(image_tag('/images/icons/help.png'), 'javascript:;', :title => 'Hype Meter&trade; is a consumer analytic of how ‘Hot’ or ‘Cold’ an item is throughout the social web right now.  We pull in Twitter and Facebook data to give consumers a current reading of how much that item is being talked about.', :class => 'help', :rel => 'leftMiddle-rightMiddle')
+      %h1
+        The Meter
+      -#%img.buzz-chart{:alt => 'meter-chart', :src => @google_meter}
+      = link_to image_tag(@google_meter),graph_item_path(@item, :scope => params[:scope]),:id => "meter-snapshot-link"
+      %span.temp#cool
+        Cool
+      %span.temp#moderate
+        Moderate
+      %span.temp#hot
+        Hot
+    .clear
+      &nbsp;
+    .buzz
+      =link_to(image_tag('/images/icons/help.png'), 'javascript:;', :title => "Hype Buzz&trade;  is a consumer analytic of the velocity of mentions of an item within an hour. The higher the number the more 'Buzz' the item has. We then display this ‘Buzz’ calculation over time to give consumers a historical perspective of how much that item is being talked about.  We pull in Twitter and Facebook for our data analysis.", :class => 'help', :rel => 'leftMiddle-rightMiddle-min-305')
+      %h1 
+        The Buzz
+      -#%img.buzz-chart{:alt => 'trends-chart', :src => @google_trends}
+      = link_to image_tag(@google_trends),graph_item_path(@item, :scope => params[:scope]),:id => "buzz-snapshot-link"
+      
+    .clear
+      &nbsp;
+    .sentiment
+      =link_to(image_tag('/images/icons/help.png'), 'javascript:;', :title => "Hype Sentiment&trade; is a tag and graphical display of the positive and negative reaction to an item. The data is gathered from ‘The Good’ and ‘The Bad’ within Hypes.", :class => 'help',:rel => 'leftMiddle-rightMiddle')
+      %h1 
+        The Sentiment
+      .pie-chart
+        - if @google_sentiment
+          -#%img.buzz-chart{:alt => 'pie-chart', :src => @google_sentiment}
+          = link_to image_tag(@google_sentiment),graph_item_path(@item, :scope => params[:scope]),:id => "pie-snapshot-link"
+        - else 
+          %p
+            Be the first to offer sentiment for this item by Hyping it.
+
+      %br.clear
+      .tag_cloud
+        - if @google_sentiment
+          - item_tag_cloud(item, @ids, %w(xxs xs s l xl xxl)) do |tag, css_size, css_type|
+            %span{:class => "#{css_size} #{css_type}"}
+              = h(tag)      
+      %br.clear
+      #legend
+        %span.pos
+          %span.block
+            +
+          %span.text
+            Positive
+        %span.neg
+          %span.block
+            = "-"
+          %span.text
+            Negative
+    .clear
+      &nbsp;
+=javascript_include_tag 'snapshot'

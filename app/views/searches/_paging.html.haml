@@ -1,0 +1,7 @@
+.paging
+  - if @page == 1
+    = link_to "More Results", search_url(:query => @query, :page => @page.to_i + 1), :class => 'next'
+  - else
+    = link_to "Previous", search_url(:query => @query, :page => @page.to_i - 1), :class => 'previous' unless @page.to_i == 1
+    « Page #{@page} » 
+    = link_to "Next", search_url(:query => @query, :page => @page.to_i + 1), :class => 'next'

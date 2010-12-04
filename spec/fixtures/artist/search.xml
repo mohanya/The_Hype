@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+  <results xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" for="metallica">
+    <opensearch:Query role="request" searchTerms="metallica" startPage="1"/>
+    <opensearch:totalResults>1161</opensearch:totalResults>
+    <opensearch:startIndex>0</opensearch:startIndex>
+    <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+    <artistmatches>
+      <artist>
+        <name>Metallica</name>
+        <mbid>65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab</mbid>
+        <url>www.last.fm/music/Metallica</url>
+        <image size="small">http://userserve-ak.last.fm/serve/34/7800613.jpg</image>
+        <image size="medium">http://userserve-ak.last.fm/serve/64/7800613.jpg</image>
+        <image size="large">http://userserve-ak.last.fm/serve/126/7800613.jpg</image>
+        <image size="extralarge">http://userserve-ak.last.fm/serve/252/7800613.jpg</image>
+        <image size="mega">http://userserve-ak.last.fm/serve/500/7800613/Metallica+scan10001586x3952lp.jpg</image>
+        <streamable>1</streamable>
+      </artist>
+    </artistmatches>
+  </results>
+</lfm>

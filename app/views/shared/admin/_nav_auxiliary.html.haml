@@ -1,0 +1,9 @@
+#nav_auxiliary
+  %ul
+    %li= link_to "View Site", root_url
+    - if @site.allow_blog?
+      %li= link_to "View Blog", blog_url
+    %li#nav_auxiliary_users= link_to "My Account", admin_user_url(current_user)
+    %li#nav_auxiliary_site_settings= link_to "Site Settings", edit_admin_site_setting_path
+    %li#nav_auxiliary_job_queue= link_to "Job Queue (#{Delayed::Job.count})", admin_jobs_url
+    %li= link_to "Logout", logout_url

@@ -1,0 +1,79 @@
+--- !ruby/object:Gem::Specification 
+name: patientslikeme-campaign_monitor
+version: !ruby/object:Gem::Version 
+  version: 1.3.0
+platform: ruby
+authors: 
+- Jeremy Weiskotten
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-01-11 00:00:00 -06:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: xml-simple
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 1.0.11
+    version: 
+description: A simple wrapper class that provides basic access to the Campaign Monitor API.
+email: jweiskotten@patientslikeme.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: []
+
+files: 
+- campaign_monitor.gemspec
+- init.rb
+- install.rb
+- MIT-LICENSE
+- Rakefile
+- README.rdoc
+- lib/campaign_monitor.rb
+- lib/campaign_monitor/campaign.rb
+- lib/campaign_monitor/client.rb
+- lib/campaign_monitor/helpers.rb
+- lib/campaign_monitor/list.rb
+- lib/campaign_monitor/result.rb
+- lib/campaign_monitor/subscriber.rb
+- support/faster-xml-simple/lib/faster_xml_simple.rb
+- support/faster-xml-simple/test/regression_test.rb
+- support/faster-xml-simple/test/test_helper.rb
+- support/faster-xml-simple/test/xml_simple_comparison_test.rb
+- test/campaign_monitor_test.rb
+has_rdoc: true
+homepage: http://github.com/patientslikeme/campaign_monitor/
+post_install_message: 
+rdoc_options: []
+
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: 
+- none
+rubyforge_project: 
+rubygems_version: 1.3.1
+signing_key: 
+specification_version: 2
+summary: Provides access to the Campaign Monitor API.
+test_files: 
+- test/campaign_monitor_test.rb

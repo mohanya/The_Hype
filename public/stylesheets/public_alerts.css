@@ -1,0 +1,12 @@
+/* -----------------------------------------------------
+	Alerts & Notices
+----------------------------------------------------- */
+#warning { width: 100%; color: #fff; background: #CC0000; border-bottom: 1px solid #EA0000; }
+#notice { width: 100%; color: #2c2c2c; background: #FFFC77; border-bottom: 1px solid #8C8972; }
+#warning_wrap, #notice_wrap { font-size: 1.4em; font-weight: bold; padding: 14px 20px; }
+/* -- [Form Notices] -- */
+div#errorExplanation { margin: 0px 10px 15px 0; margin-left: -15px; padding: 10px 15px; color: #fff; background: #c00; border: 3px solid #B00000; }
+div#errorExplanation h2 { font-size: 1.6em; color: #fff; background: transparent; margin-bottom: 7px; padding-left: 0; border-bottom: 1px solid #B00000; }
+div#errorExplanation p { font-size: 1.2em; margin-left: 0 !important; }
+div#errorExplanation ul { margin: 10px 0 5px 0; padding: 0 0 0 14px; }
+div#errorExplanation ul li { font-size: 1.1em; margin-bottom: 5px; line-height: 1.5em; }

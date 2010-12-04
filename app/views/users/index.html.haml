@@ -1,0 +1,6 @@
+.page_body
+  %h1.style_1
+    Users
+  .index.thumbs.clearfix
+    = render :partial => @users
+  = will_paginate(@users)

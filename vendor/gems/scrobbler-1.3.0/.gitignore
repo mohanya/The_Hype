@@ -1,0 +1,13 @@
+rdoc
+doc/*
+pkg/*
+nbproject
+scrobbler-*.gem
+*.rb~
+*.rake~
+coverage
+spec.html
+catalog.xml
+.yardoc
+.project
+.settings

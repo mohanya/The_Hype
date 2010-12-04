@@ -1,0 +1,11 @@
+- selected = selected || nil
+%ul#menu
+  %li{:class => "#{selected == 'contact' ? 'selected' : 'link'}"}
+    =link_to('Contact Us', '/contact')
+  %li{:class => "#{selected == 'privacy' ? 'selected' : 'link'}"}
+    =link_to('Privacy Policy', '/privacy')
+  %li.terms{:class => "#{selected == 'terms' ? 'selected' : 'link'}"}
+    =link_to('Terms of Use', '/terms')  
+  %li{:class => "#{selected == 'faq' ? 'selected' : 'link'}"}
+    =link_to('FAQ', '/faq')  
+    
